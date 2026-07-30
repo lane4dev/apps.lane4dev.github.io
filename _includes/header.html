@@ -1,9 +1,16 @@
 <div class='header'>
   <div class="container">
-    <a class="site-wordmark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
-      Independent Works<span aria-hidden="true">.</span>
+    {% assign home_url = "/" %}
+    {% if current_lang == "zh-CN" %}{% assign home_url = "/zh/" %}{% endif %}
+    <a class="site-wordmark" href="{{ home_url | relative_url }}" aria-label="{{ t.site.home_label }}">
+      {{ t.site.title }}<span aria-hidden="true">.</span>
     </a>
     {% include main-menu.html %}
+    {% if page.alternate_url %}
+      <a class="language-switch" href="{{ page.alternate_url | relative_url }}" lang="{{ page.alternate_lang }}" hreflang="{{ page.alternate_lang }}" aria-label="{{ t.site.language_label }}">
+        {{ t.site.language_name }}
+      </a>
+    {% endif %}
     {% include hamburger.html %}
   </div>
 </div>

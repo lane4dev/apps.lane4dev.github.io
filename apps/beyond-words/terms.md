@@ -6,6 +6,11 @@ permalink: /beyond-words/terms/
 description: "Terms governing use of Beyond Words, generated output, accounts, acceptable use, subscriptions, and service availability."
 effective_date: "2026-07-29"
 last_updated: "2026-07-29"
+lang: en
+translation_key: beyond-words-terms
+alternate_lang: zh-CN
+alternate_url: /zh/beyond-words/terms/
+x_default_url: /beyond-words/terms/
 ---
 
 {% assign app = site.data.apps[page.app_key] %}

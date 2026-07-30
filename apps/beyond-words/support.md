@@ -5,6 +5,11 @@ app_key: "beyond-words"
 permalink: /beyond-words/support/
 description: "Support options for Beyond Words accounts, subscriptions, transformations, context packs, privacy, and harmful-output reports."
 last_updated: "2026-07-29"
+lang: en
+translation_key: beyond-words-support
+alternate_lang: zh-CN
+alternate_url: /zh/beyond-words/support/
+x_default_url: /beyond-words/support/
 ---
 
 {% assign app = site.data.apps[page.app_key] %}

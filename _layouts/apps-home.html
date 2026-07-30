@@ -3,7 +3,10 @@ layout: default
 bodyClass: "page-apps-home"
 ---
 
-{% assign sorted_apps = site.apps | sort: "weight" %}
+{% assign current_lang = page.lang | default: site.lang | default: "en" %}
+{% assign t = site.data.i18n[current_lang] | default: site.data.i18n.en %}
+{% assign current_apps = site.apps | where: "lang", current_lang %}
+{% assign sorted_apps = current_apps | sort: "weight" %}
 
 <section class="tech-hero">
   <div class="tech-hero__grid" aria-hidden="true"></div>
@@ -13,51 +16,51 @@ bodyClass: "page-apps-home"
       <div class="col-12 col-lg-7">
         <div class="system-badge">
           <span class="system-badge__signal" aria-hidden="true"></span>
-          Independent works / System online
+          {{ t.home.badge }}
         </div>
         <h1>{{ page.title }}</h1>
         <p class="tech-hero__lead">{{ page.description }}</p>
         <div class="tech-hero__actions">
-          <a class="tech-button tech-button--primary" href="#projects">Explore projects</a>
+          <a class="tech-button tech-button--primary" href="#projects">{{ t.home.explore_projects }}</a>
           <a class="tech-button tech-button--ghost" href="https://tangyu.me">
-            Personal website <span aria-hidden="true">↗</span>
+            {{ t.home.personal_website }} <span aria-hidden="true">↗</span>
           </a>
         </div>
         <dl class="tech-hero__facts">
           <div>
             <dt>{{ sorted_apps | size | prepend: "0" | slice: -2, 2 }}</dt>
-            <dd>Active project</dd>
+            <dd>{{ t.home.active_project }}</dd>
           </div>
           <div>
             <dt>01</dt>
-            <dd>Platform</dd>
+            <dd>{{ t.home.platform }}</dd>
           </div>
           <div>
             <dt>∞</dt>
-            <dd>Ideas queued</dd>
+            <dd>{{ t.home.ideas_queued }}</dd>
           </div>
         </dl>
       </div>
       <div class="col-12 col-lg-5">
-        <div class="terminal-window js-reveal">
+        <div class="terminal-window js-reveal" aria-label="{{ t.home.terminal_label }}">
           <div class="terminal-window__bar">
             <div class="terminal-window__controls" aria-hidden="true">
               <span></span><span></span><span></span>
             </div>
-            <span>portfolio.about</span>
-            <span class="terminal-window__mode">LIVE</span>
+            <span>{{ t.home.terminal_title }}</span>
+            <span class="terminal-window__mode">{{ t.home.terminal_mode }}</span>
           </div>
           <div class="terminal-window__body">
             <p><span class="terminal-prompt">❯</span> whoami --context portfolio</p>
             <dl class="terminal-data">
-              <div><dt>role</dt><dd>Backend-leaning full-stack developer</dd></div>
-              <div><dt>focus</dt><dd>Web · Data · AI · Android</dd></div>
-              <div><dt>approach</dt><dd>Do one thing, and do it well.</dd></div>
-              <div><dt>site</dt><dd>Independent works and product documentation</dd></div>
+              <div><dt>role</dt><dd>{{ t.home.terminal_role }}</dd></div>
+              <div><dt>focus</dt><dd>{{ t.home.terminal_focus }}</dd></div>
+              <div><dt>approach</dt><dd>{{ t.home.terminal_approach }}</dd></div>
+              <div><dt>site</dt><dd>{{ t.home.terminal_site }}</dd></div>
             </dl>
             <div class="terminal-process">
-              <span>curiosity signal</span>
-              <span class="terminal-process__value">ACTIVE</span>
+              <span>{{ t.home.curiosity_signal }}</span>
+              <span class="terminal-process__value">{{ t.home.active }}</span>
               <div class="terminal-process__track"><span></span></div>
             </div>
             <p class="terminal-ready">
@@ -69,8 +72,8 @@ bodyClass: "page-apps-home"
       </div>
     </div>
   </div>
-  <a class="tech-hero__scroll" href="#projects" aria-label="Scroll to projects">
-    <span>SCROLL TO EXPLORE</span>
+  <a class="tech-hero__scroll" href="#projects" aria-label="{{ t.home.scroll_label }}">
+    <span>{{ t.home.scroll_text }}</span>
     <i aria-hidden="true"></i>
   </a>
 </section>
@@ -79,33 +82,37 @@ bodyClass: "page-apps-home"
   <div class="container">
     <header class="lab-heading js-reveal">
       <div>
-        <p class="lab-heading__index">01 / Selected work</p>
-        <h2>Project lab</h2>
+        <p class="lab-heading__index">01 / {{ t.home.selected_work }}</p>
+        <h2>{{ t.home.project_lab }}</h2>
       </div>
-      <p>Products, prototypes, and ongoing experiments built from first principles.</p>
+      <p>{{ t.home.project_intro }}</p>
     </header>
 
     <div class="project-stack">
       {% for app_page in sorted_apps %}
-        {% assign app = site.data.apps[app_page.app_key] %}
+        {% if current_lang == "zh-CN" %}
+          {% assign app = site.data.apps_zh[app_page.app_key] %}
+        {% else %}
+          {% assign app = site.data.apps[app_page.app_key] %}
+        {% endif %}
         <article class="project-panel js-reveal">
           <div class="project-panel__content">
             <div class="project-panel__topline">
               <span>PROJECT_{{ forloop.index | prepend: "0" }}</span>
               <span class="project-status"><i aria-hidden="true"></i>{{ app.status }}</span>
             </div>
-            <p class="project-panel__platform">{{ app.platform }} application</p>
+            <p class="project-panel__platform">{{ app.platform }} {{ t.home.application }}</p>
             <h3>{{ app.name }}</h3>
             <p class="project-panel__tagline">{{ app.tagline }}</p>
             <p class="project-panel__description">{{ app.short_description }}</p>
             <div class="project-panel__actions">
               <a href="{{ app_page.url | relative_url }}">
-                Open project <span aria-hidden="true">→</span>
+                {{ t.home.open_project }} <span aria-hidden="true">→</span>
               </a>
-              <span>{{ app.features | size }} capabilities</span>
+              <span>{{ app.features | size }} {{ t.home.capabilities }}</span>
             </div>
           </div>
-          <div class="project-schematic" aria-label="{{ app.name }} capability map">
+          <div class="project-schematic" aria-label="{{ app.name }} {{ t.home.capability_map }}">
             <div class="project-schematic__orbit project-schematic__orbit--outer"></div>
             <div class="project-schematic__orbit project-schematic__orbit--inner"></div>
             <div class="project-schematic__core">
@@ -130,30 +137,30 @@ bodyClass: "page-apps-home"
   <div class="container">
     <header class="lab-heading lab-heading--dark js-reveal">
       <div>
-        <p class="lab-heading__index">02 / Operating principles</p>
-        <h2>How things get built</h2>
+        <p class="lab-heading__index">02 / {{ t.home.operating_principles }}</p>
+        <h2>{{ t.home.build_heading }}</h2>
       </div>
     </header>
     <div class="row">
       <div class="col-12 col-md-4">
         <article class="principle-card js-reveal">
           <span class="principle-card__number">01</span>
-          <h3>Clear systems</h3>
-          <p>Understand the moving parts, define the boundaries, and make complexity legible.</p>
+          <h3>{{ t.home.principle_clear_title }}</h3>
+          <p>{{ t.home.principle_clear_body }}</p>
         </article>
       </div>
       <div class="col-12 col-md-4">
         <article class="principle-card js-reveal">
           <span class="principle-card__number">02</span>
-          <h3>Useful by default</h3>
-          <p>Start with the real workflow and remove every interaction that does not earn its place.</p>
+          <h3>{{ t.home.principle_useful_title }}</h3>
+          <p>{{ t.home.principle_useful_body }}</p>
         </article>
       </div>
       <div class="col-12 col-md-4">
         <article class="principle-card js-reveal">
           <span class="principle-card__number">03</span>
-          <h3>Respectful software</h3>
-          <p>Make behavior transparent, keep people in control, and treat their attention as finite.</p>
+          <h3>{{ t.home.principle_respect_title }}</h3>
+          <p>{{ t.home.principle_respect_body }}</p>
         </article>
       </div>
     </div>
@@ -164,9 +171,9 @@ bodyClass: "page-apps-home"
 <section class="home-transmission">
   <div class="container">
     <div class="home-transmission__inner js-reveal">
-      <span class="home-transmission__label">/ MANIFEST</span>
+      <span class="home-transmission__label">/ {{ t.home.manifest }}</span>
       <div class="content">{{ content }}</div>
-      <a href="https://tangyu.me">Continue to the personal website <span aria-hidden="true">↗</span></a>
+      <a href="https://tangyu.me">{{ t.home.continue_personal }} <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </section>

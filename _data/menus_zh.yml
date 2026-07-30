@@ -1,0 +1,15 @@
+main:
+  - name: "作品"
+    url: "/zh/"
+    weight: 1
+  - name: "言外"
+    url: "/zh/beyond-words/"
+    weight: 2
+
+footer:
+  - name: "作品"
+    url: "/zh/"
+    weight: 1
+  - name: "个人网站"
+    url: "https://tangyu.me"
+    weight: 2

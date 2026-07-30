@@ -6,6 +6,11 @@ permalink: /beyond-words/privacy/
 description: "How Beyond Words processes account information, user-provided text, service usage, diagnostics, and subscription data."
 effective_date: "2026-07-29"
 last_updated: "2026-07-29"
+lang: en
+translation_key: beyond-words-privacy
+alternate_lang: zh-CN
+alternate_url: /zh/beyond-words/privacy/
+x_default_url: /beyond-words/privacy/
 ---
 
 {% assign app = site.data.apps[page.app_key] %}

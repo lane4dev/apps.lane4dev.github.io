@@ -5,6 +5,11 @@ app_key: "beyond-words"
 permalink: /beyond-words/account-deletion/
 description: "How to request deletion of a Beyond Words account and associated cloud data."
 last_updated: "2026-07-29"
+lang: en
+translation_key: beyond-words-account-deletion
+alternate_lang: zh-CN
+alternate_url: /zh/beyond-words/account-deletion/
+x_default_url: /beyond-words/account-deletion/
 ---
 
 {% assign app = site.data.apps[page.app_key] %}

@@ -3,7 +3,13 @@ layout: default
 bodyClass: "page-app-detail"
 ---
 
-{% assign app = site.data.apps[page.app_key] %}
+{% assign current_lang = page.lang | default: site.lang | default: "en" %}
+{% assign t = site.data.i18n[current_lang] | default: site.data.i18n.en %}
+{% if current_lang == "zh-CN" %}
+  {% assign app = site.data.apps_zh[page.app_key] %}
+{% else %}
+  {% assign app = site.data.apps[page.app_key] %}
+{% endif %}
 
 {% include app-nav.html app=app %}
 

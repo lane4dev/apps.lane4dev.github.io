@@ -1,5 +1,9 @@
 <div id="main-menu" class="main-menu">
-  {% assign mainmenu = site.data.menus.main | sort: 'weight'  %}
+  {% if current_lang == "zh-CN" %}
+    {% assign mainmenu = site.data.menus_zh.main | sort: 'weight' %}
+  {% else %}
+    {% assign mainmenu = site.data.menus.main | sort: 'weight' %}
+  {% endif %}
   <ul>
     {% for item in mainmenu %}
     <li class="{% if item.url == page.url %}active{% endif %}">

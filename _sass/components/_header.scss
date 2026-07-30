@@ -30,6 +30,31 @@
     width: 100%;
   }
 }
+
+.language-switch {
+  display: none;
+  margin-left: 28px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+
+  @include media-breakpoint-up(md) {
+    display: inline-flex;
+  }
+
+  &:hover {
+    border-color: $secondary;
+    color: $secondary;
+    text-decoration: none;
+  }
+}
+
 .lock-scroll {
   .header {
     &.header-absolute {

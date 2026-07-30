@@ -1,0 +1,45 @@
+beyond-words:
+  name: "言外"
+  slug: "beyond-words"
+  tagline: "在合适的语境中，准确表达你的意思。"
+  short_description: "一款感知上下文的写作助手，支持改写、翻译、语气调整和提示词规范化。"
+  long_description: >-
+    言外在不虚构缺失事实的前提下帮助你转换现有文本。
+    选择语境、提供原文、检查生成结果，并在分享前继续调整。
+  status: "正在准备上架 Google Play"
+  platform: "Android"
+  store_label: "前往 Google Play"
+
+  base_path: "/zh/beyond-words/"
+  privacy_path: "/zh/beyond-words/privacy/"
+  terms_path: "/zh/beyond-words/terms/"
+  deletion_path: "/zh/beyond-words/account-deletion/"
+  support_path: "/zh/beyond-words/support/"
+
+  features:
+    - title: "感知上下文的改写"
+      description: "根据受众、渠道、语气或沟通目标调整措辞。"
+    - title: "保留意图的翻译"
+      description: "在转换为另一种语言时，保留消息的实际含义。"
+    - title: "提示词规范化"
+      description: "将粗略的一行请求整理为适合语言模型使用的结构化提示词。"
+    - title: "可复用语境包"
+      description: "使用内置或导入的语境包，获得可重复的转换效果。"
+    - title: "使用前检查"
+      description: "生成文本保持可编辑，以便核对事实、语气和适用性。"
+    - title: "历史记录与复用"
+      description: "返回设备中保存的既有结果，并继续调整。"
+
+  workflow:
+    - title: "选择语境"
+      description: "选择符合当前沟通场景的转换方式。"
+    - title: "提供现有文本"
+      description: "言外基于你提供的文本和上下文工作。"
+    - title: "检查并调整"
+      description: "复制、分享或用于其他场景之前检查结果。"
+
+  privacy:
+    firebase_services: "Firebase Authentication、Cloud Functions、Firestore 和 App Check"
+
+  support:
+    in_app_report_path: "使用生成结果旁边的“举报”操作。"

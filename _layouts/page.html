@@ -3,12 +3,14 @@ layout: default
 bodyClass: "page-app-detail"
 ---
 
+{% assign current_lang = page.lang | default: site.lang | default: "en" %}
+{% assign t = site.data.i18n[current_lang] | default: site.data.i18n.en %}
 <section class="app-detail">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-9">
         <header class="app-detail__header">
-          <p class="eyebrow">Independent Works</p>
+          <p class="eyebrow">{{ t.page.eyebrow }}</p>
           <h1>{{ page.title }}</h1>
           {% if page.description %}<p class="app-detail__lead">{{ page.description }}</p>{% endif %}
         </header>
