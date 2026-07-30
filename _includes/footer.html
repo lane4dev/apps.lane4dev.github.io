@@ -1,0 +1,27 @@
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-inner">
+          <h2 class="footer-title">{{ site.title }}</h2>
+          <ul>
+            {% assign footermenu = site.data.menus.footer | sort: 'weight' %}
+            {% for item in footermenu %}
+            <li class="{% if item.url == page.url %}active{% endif %}">
+              <a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">{{ item.name }}</a>
+            </li>
+            {% endfor %}
+
+            {% if page.app_key %}
+              {% assign footer_app = site.data.apps[page.app_key] %}
+              <li><a href="{{ footer_app.privacy_path | relative_url }}">Privacy</a></li>
+              <li><a href="{{ footer_app.terms_path | relative_url }}">Terms</a></li>
+              <li><a href="{{ footer_app.deletion_path | relative_url }}">Delete account</a></li>
+              <li><a href="{{ footer_app.support_path | relative_url }}">Support</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

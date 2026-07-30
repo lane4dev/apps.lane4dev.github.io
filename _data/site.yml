@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../.schemas/site.schema.json
+
+developer:
+  display_name: "Independent Developer"
+  legal_name: "REPLACE_ME_LEGAL_NAME"
+  country_or_region: "REPLACE_ME_COUNTRY_OR_REGION"
+  support_email: "REPLACE_ME_SUPPORT_EMAIL"
+  privacy_email: "REPLACE_ME_PRIVACY_EMAIL"
+  governing_law: "REPLACE_ME_GOVERNING_LAW"
+  website: "https://tangyu.me"
+
+support:
+  expected_response_time: "REPLACE_ME_SUPPORT_RESPONSE_TIME"

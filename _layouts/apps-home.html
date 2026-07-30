@@ -1,0 +1,173 @@
+---
+layout: default
+bodyClass: "page-apps-home"
+---
+
+{% assign sorted_apps = site.apps | sort: "weight" %}
+
+<section class="tech-hero">
+  <div class="tech-hero__grid" aria-hidden="true"></div>
+  <div class="tech-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="row align-items-center tech-hero__row">
+      <div class="col-12 col-lg-7">
+        <div class="system-badge">
+          <span class="system-badge__signal" aria-hidden="true"></span>
+          Independent works / System online
+        </div>
+        <h1>{{ page.title }}</h1>
+        <p class="tech-hero__lead">{{ page.description }}</p>
+        <div class="tech-hero__actions">
+          <a class="tech-button tech-button--primary" href="#projects">Explore projects</a>
+          <a class="tech-button tech-button--ghost" href="https://tangyu.me">
+            Personal website <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <dl class="tech-hero__facts">
+          <div>
+            <dt>{{ sorted_apps | size | prepend: "0" | slice: -2, 2 }}</dt>
+            <dd>Active project</dd>
+          </div>
+          <div>
+            <dt>01</dt>
+            <dd>Platform</dd>
+          </div>
+          <div>
+            <dt>∞</dt>
+            <dd>Ideas queued</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="col-12 col-lg-5">
+        <div class="terminal-window js-reveal">
+          <div class="terminal-window__bar">
+            <div class="terminal-window__controls" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span>portfolio.about</span>
+            <span class="terminal-window__mode">LIVE</span>
+          </div>
+          <div class="terminal-window__body">
+            <p><span class="terminal-prompt">❯</span> whoami --context portfolio</p>
+            <dl class="terminal-data">
+              <div><dt>role</dt><dd>Backend-leaning full-stack developer</dd></div>
+              <div><dt>focus</dt><dd>Web · Data · AI · Android</dd></div>
+              <div><dt>approach</dt><dd>Do one thing, and do it well.</dd></div>
+              <div><dt>site</dt><dd>Independent works and product documentation</dd></div>
+            </dl>
+            <div class="terminal-process">
+              <span>curiosity signal</span>
+              <span class="terminal-process__value">ACTIVE</span>
+              <div class="terminal-process__track"><span></span></div>
+            </div>
+            <p class="terminal-ready">
+              <span class="terminal-prompt">❯</span>
+              site --status online<span class="terminal-cursor" aria-hidden="true"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="tech-hero__scroll" href="#projects" aria-label="Scroll to projects">
+    <span>SCROLL TO EXPLORE</span>
+    <i aria-hidden="true"></i>
+  </a>
+</section>
+
+<section class="project-lab" id="projects">
+  <div class="container">
+    <header class="lab-heading js-reveal">
+      <div>
+        <p class="lab-heading__index">01 / Selected work</p>
+        <h2>Project lab</h2>
+      </div>
+      <p>Products, prototypes, and ongoing experiments built from first principles.</p>
+    </header>
+
+    <div class="project-stack">
+      {% for app_page in sorted_apps %}
+        {% assign app = site.data.apps[app_page.app_key] %}
+        <article class="project-panel js-reveal">
+          <div class="project-panel__content">
+            <div class="project-panel__topline">
+              <span>PROJECT_{{ forloop.index | prepend: "0" }}</span>
+              <span class="project-status"><i aria-hidden="true"></i>{{ app.status }}</span>
+            </div>
+            <p class="project-panel__platform">{{ app.platform }} application</p>
+            <h3>{{ app.name }}</h3>
+            <p class="project-panel__tagline">{{ app.tagline }}</p>
+            <p class="project-panel__description">{{ app.short_description }}</p>
+            <div class="project-panel__actions">
+              <a href="{{ app_page.url | relative_url }}">
+                Open project <span aria-hidden="true">→</span>
+              </a>
+              <span>{{ app.features | size }} capabilities</span>
+            </div>
+          </div>
+          <div class="project-schematic" aria-label="{{ app.name }} capability map">
+            <div class="project-schematic__orbit project-schematic__orbit--outer"></div>
+            <div class="project-schematic__orbit project-schematic__orbit--inner"></div>
+            <div class="project-schematic__core">
+              <span>{{ app.name | slice: 0 }}{{ app.name | split: " " | last | slice: 0 }}</span>
+              <small>CORE</small>
+            </div>
+            {% for feature in app.features limit: 3 %}
+              <div class="project-node project-node--{{ forloop.index }}">
+                <i aria-hidden="true"></i>
+                <span>{{ feature.title }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="build-principles">
+  <div class="build-principles__grid" aria-hidden="true"></div>
+  <div class="container">
+    <header class="lab-heading lab-heading--dark js-reveal">
+      <div>
+        <p class="lab-heading__index">02 / Operating principles</p>
+        <h2>How things get built</h2>
+      </div>
+    </header>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <article class="principle-card js-reveal">
+          <span class="principle-card__number">01</span>
+          <h3>Clear systems</h3>
+          <p>Understand the moving parts, define the boundaries, and make complexity legible.</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-4">
+        <article class="principle-card js-reveal">
+          <span class="principle-card__number">02</span>
+          <h3>Useful by default</h3>
+          <p>Start with the real workflow and remove every interaction that does not earn its place.</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-4">
+        <article class="principle-card js-reveal">
+          <span class="principle-card__number">03</span>
+          <h3>Respectful software</h3>
+          <p>Make behavior transparent, keep people in control, and treat their attention as finite.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if content != "" %}
+<section class="home-transmission">
+  <div class="container">
+    <div class="home-transmission__inner js-reveal">
+      <span class="home-transmission__label">/ MANIFEST</span>
+      <div class="content">{{ content }}</div>
+      <a href="https://tangyu.me">Continue to the personal website <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+{% endif %}

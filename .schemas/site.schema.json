@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portfolio site data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "developer",
+    "support"
+  ],
+  "properties": {
+    "developer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "display_name",
+        "legal_name",
+        "country_or_region",
+        "support_email",
+        "privacy_email",
+        "governing_law",
+        "website"
+      ],
+      "properties": {
+        "display_name": {
+          "type": "string"
+        },
+        "legal_name": {
+          "type": "string"
+        },
+        "country_or_region": {
+          "type": "string"
+        },
+        "support_email": {
+          "type": "string"
+        },
+        "privacy_email": {
+          "type": "string"
+        },
+        "governing_law": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_response_time"
+      ],
+      "properties": {
+        "expected_response_time": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<article class="app-card">
+  <div class="app-card__meta">{{ include.app.platform }} · {{ include.app.status }}</div>
+  <h2><a href="{{ include.app_page.url | relative_url }}">{{ include.app.name }}</a></h2>
+  <p>{{ include.app.short_description }}</p>
+  <a class="app-card__link" href="{{ include.app_page.url | relative_url }}">
+    View project <span aria-hidden="true">→</span>
+  </a>
+</article>

@@ -1,0 +1,38 @@
+.main-menu {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+  > ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 64px;
+    > li {
+      list-style: none;
+      font-size: 1.125rem;
+      > a {
+        padding: 26px 0;
+        display: inline-block;
+        font-weight: 500;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.88);
+        &:hover {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+      &.active {
+        > a {
+          color: $white;
+          font-weight: 600;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+            transition: all 225ms ease-in 0s;
+          }
+        }
+      }
+    }
+  }
+}

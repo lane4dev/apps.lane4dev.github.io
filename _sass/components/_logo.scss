@@ -1,0 +1,30 @@
+.site-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: $white;
+  font-family: $font-family-base;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+
+  &::before {
+    width: 24px;
+    height: 24px;
+    background: $secondary;
+    border: 6px solid $primary-dark;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ff2d92;
+    content: "";
+  }
+
+  span {
+    color: #ff2d92;
+  }
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}

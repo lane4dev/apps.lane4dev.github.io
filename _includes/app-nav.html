@@ -1,0 +1,16 @@
+<nav class="app-nav" aria-label="{{ include.app.name }} pages">
+  <div class="container">
+    <a class="app-nav__brand" href="{{ include.app.base_path | relative_url }}">
+      <span class="app-nav__signal" aria-hidden="true"></span>
+      <small>APP /</small>
+      {{ include.app.name }}
+    </a>
+    <div class="app-nav__links">
+      <a href="{{ include.app.base_path | relative_url }}" {% if page.url == include.app.base_path %}aria-current="page"{% endif %}>Overview</a>
+      <a href="{{ include.app.privacy_path | relative_url }}" {% if page.url == include.app.privacy_path %}aria-current="page"{% endif %}>Privacy</a>
+      <a href="{{ include.app.terms_path | relative_url }}" {% if page.url == include.app.terms_path %}aria-current="page"{% endif %}>Terms</a>
+      <a href="{{ include.app.deletion_path | relative_url }}" {% if page.url == include.app.deletion_path %}aria-current="page"{% endif %}>Delete account</a>
+      <a href="{{ include.app.support_path | relative_url }}" {% if page.url == include.app.support_path %}aria-current="page"{% endif %}>Support</a>
+    </div>
+  </div>
+</nav>

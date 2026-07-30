@@ -1,0 +1,155 @@
+---
+layout: default
+bodyClass: "page-app"
+---
+
+{% assign app = site.data.apps[page.app_key] %}
+
+<section class="tech-hero app-product-hero">
+  <div class="tech-hero__grid" aria-hidden="true"></div>
+  <div class="tech-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="row align-items-center app-product-hero__row">
+      <div class="col-12 col-lg-7">
+        <div class="system-badge">
+          <span class="system-badge__signal" aria-hidden="true"></span>
+          {{ app.platform }} / {{ app.status }}
+        </div>
+        <h1>{{ app.name }}</h1>
+        <p class="app-hero__tagline">{{ app.tagline }}</p>
+        <p class="app-hero__description">{{ app.long_description }}</p>
+
+        <div class="tech-hero__actions">
+          {% if app.store_enabled %}
+            <a class="tech-button tech-button--primary" href="{{ app.store_url }}" rel="noopener">{{ app.store_label }}</a>
+          {% else %}
+            <span class="tech-button tech-button--disabled" aria-disabled="true">{{ app.store_label }} — coming soon</span>
+          {% endif %}
+          <a class="tech-button tech-button--ghost" href="{{ app.support_path | relative_url }}">Support</a>
+        </div>
+
+        <dl class="tech-hero__facts app-product-hero__facts">
+          <div>
+            <dt>{{ app.features | size | prepend: "0" | slice: -2, 2 }}</dt>
+            <dd>Capabilities</dd>
+          </div>
+          <div>
+            <dt>{{ app.workflow | size | prepend: "0" | slice: -2, 2 }}</dt>
+            <dd>Workflow steps</dd>
+          </div>
+          <div>
+            <dt>{{ app.platform }}</dt>
+            <dd>Platform</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <div class="context-preview js-reveal" aria-label="Example context transformation">
+          <div class="context-preview__bar">
+            <div class="terminal-window__controls" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span>context.transform</span>
+            <span class="terminal-window__mode">READY</span>
+          </div>
+          <div class="context-preview__body">
+            <div class="context-preview__label">
+              <span>INPUT / ORIGINAL</span>
+              <span>EN</span>
+            </div>
+            <div class="context-preview__bubble">Can you send the updated file today?</div>
+            <div class="context-preview__route" aria-hidden="true">
+              <span></span><i>professional · concise</i><span></span>
+            </div>
+            <div class="context-preview__label">
+              <span>OUTPUT / TRANSFORMED</span>
+              <span class="context-preview__status">VERIFIED</span>
+            </div>
+            <div class="context-preview__bubble context-preview__bubble--accent">
+              Could you send the updated file by the end of today?
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include app-nav.html app=app %}
+
+<section class="app-section">
+  <div class="container">
+    <header class="lab-heading app-lab-heading js-reveal">
+      <div>
+        <p class="lab-heading__index">01 / Capabilities</p>
+        <h2>Adapt wording without losing control</h2>
+      </div>
+      <p>Focused transformations for real communication, with review and control kept in the loop.</p>
+    </header>
+    <div class="row">
+      {% for feature in app.features %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="app-feature js-reveal">
+          <span class="app-feature__index">CAP_{{ forloop.index | prepend: "0" }}</span>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="app-section app-workflow-lab">
+  <div class="build-principles__grid" aria-hidden="true"></div>
+  <div class="container">
+    <header class="lab-heading lab-heading--dark app-lab-heading js-reveal">
+      <div>
+        <p class="lab-heading__index">02 / Workflow</p>
+        <h2>Three deliberate steps</h2>
+      </div>
+      <p>Choose the intent, provide the source, then review the result before it leaves your hands.</p>
+    </header>
+    <div class="row">
+      {% for step in app.workflow %}
+      <div class="col-12 col-md-4">
+        <article class="workflow-step js-reveal">
+          <div class="workflow-step__number">0{{ forloop.index }}</div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="app-section app-transparency-lab">
+  <div class="container">
+    <div class="app-assurance js-reveal">
+      <div>
+        <p class="lab-heading__index">03 / Transparency</p>
+        <h2>Understand how your text and account data are handled</h2>
+        <p>
+          Review the policy, service terms, deletion process, and support
+          options before using cloud-backed features.
+        </p>
+      </div>
+      <div class="app-assurance__links">
+        <a href="{{ app.privacy_path | relative_url }}">Privacy Policy</a>
+        <a href="{{ app.terms_path | relative_url }}">Terms of Service</a>
+        <a href="{{ app.deletion_path | relative_url }}">Delete Account</a>
+        <a href="{{ app.support_path | relative_url }}">Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if content != "" %}
+<section class="app-section">
+  <div class="container">
+    <div class="content app-prose">{{ content }}</div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,73 @@
+beyond-words:
+  name: "Beyond Words"
+  slug: "beyond-words"
+  tagline: "Say what you mean, in the context that fits."
+  short_description: "A context-aware writing assistant for rewriting, translation, tone adjustment, and prompt normalization."
+  long_description: >-
+    Beyond Words helps you transform existing text without inventing missing
+    facts. Select a context, provide your text, review the generated result,
+    and refine it before sharing.
+  status: "Preparing for Google Play"
+  platform: "Android"
+  application_id: "REPLACE_ME_ANDROID_APPLICATION_ID"
+
+  store_enabled: false
+  store_label: "Get it on Google Play"
+  store_url: "REPLACE_ME_GOOGLE_PLAY_URL"
+
+  base_path: "/beyond-words/"
+  privacy_path: "/beyond-words/privacy/"
+  terms_path: "/beyond-words/terms/"
+  deletion_path: "/beyond-words/account-deletion/"
+  support_path: "/beyond-words/support/"
+
+  features:
+    - title: "Context-aware rewriting"
+      description: "Transform wording for a specific audience, channel, tone, or communication goal."
+    - title: "Translation with intent"
+      description: "Preserve the practical meaning of a message while adapting it to another language."
+    - title: "Prompt normalization"
+      description: "Turn a rough one-line request into a structured prompt suitable for a language model."
+    - title: "Reusable context packs"
+      description: "Use built-in or imported context packs for repeatable transformations."
+    - title: "Review before use"
+      description: "Generated text remains editable so you can verify facts, tone, and suitability."
+    - title: "History and reuse"
+      description: "Return to previous results stored on the device and continue refining them."
+
+  workflow:
+    - title: "Choose a context"
+      description: "Select the transformation that matches the communication situation."
+    - title: "Provide existing text"
+      description: "Beyond Words works from the text and context you supply."
+    - title: "Review and refine"
+      description: "Check the result before copying, sharing, or using it elsewhere."
+
+  privacy:
+    account_required: true
+    local_history_enabled: true
+    cloud_history_sync_enabled: false
+    analytics_enabled: false
+    diagnostics_enabled: false
+    advertising_enabled: false
+
+    firebase_services: "Firebase Authentication, Cloud Functions, Firestore, and App Check"
+    ai_provider_name: "REPLACE_ME_AI_PROVIDER_NAME"
+    ai_provider_privacy_url: "REPLACE_ME_AI_PROVIDER_PRIVACY_URL"
+    ai_content_retention: "REPLACE_ME_AI_CONTENT_RETENTION"
+    server_log_retention: "REPLACE_ME_SERVER_LOG_RETENTION"
+
+  subscriptions:
+    enabled: true
+    billing_provider: "Google Play Billing"
+    restore_supported: true
+
+  deletion:
+    in_app_path: "REPLACE_ME_IN_APP_DELETION_PATH"
+    request_url: "REPLACE_ME_ACCOUNT_DELETION_REQUEST_URL"
+    completion_period: "REPLACE_ME_ACCOUNT_DELETION_COMPLETION_PERIOD"
+    retained_record_period: "REPLACE_ME_REQUIRED_RECORD_RETENTION_PERIOD"
+
+  support:
+    harmful_output_reporting: true
+    in_app_report_path: "Use the Report action beside a generated result."

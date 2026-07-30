@@ -1,0 +1,33 @@
+url: https://apps.tangyu.me
+baseurl: ""
+permalink: pretty
+title: Independent Works
+description: A personal portfolio of thoughtfully made independent software.
+lang: en
+collections:
+  apps:
+    output: true
+    sort_by: weight
+  services:
+    output: false
+  team:
+    output: false
+defaults:
+  - scope:
+      path: ""
+      type: apps
+    values:
+      layout: app
+sass:
+  style: compressed
+plugins:
+  - jekyll-environment-variables
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - scripts
+  - docs
+  - THIRD_PARTY_NOTICES.md
+  - README.md
