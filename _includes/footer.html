@@ -15,18 +15,6 @@
               <a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">{{ item.name }}</a>
             </li>
             {% endfor %}
-
-            {% if page.app_key %}
-              {% if current_lang == "zh-CN" %}
-                {% assign footer_app = site.data.apps_zh[page.app_key] %}
-              {% else %}
-                {% assign footer_app = site.data.apps[page.app_key] %}
-              {% endif %}
-              <li><a href="{{ footer_app.privacy_path | relative_url }}">{{ t.nav.privacy }}</a></li>
-              <li><a href="{{ footer_app.terms_path | relative_url }}">{{ t.nav.terms }}</a></li>
-              <li><a href="{{ footer_app.deletion_path | relative_url }}">{{ t.nav.delete_account }}</a></li>
-              <li><a href="{{ footer_app.support_path | relative_url }}">{{ t.nav.support }}</a></li>
-            {% endif %}
           </ul>
         </div>
       </div>

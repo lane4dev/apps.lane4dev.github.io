@@ -116,7 +116,7 @@ bodyClass: "page-apps-home"
             <div class="project-schematic__orbit project-schematic__orbit--outer"></div>
             <div class="project-schematic__orbit project-schematic__orbit--inner"></div>
             <div class="project-schematic__core">
-              <span>{{ app.name | slice: 0 }}{{ app.name | split: " " | last | slice: 0 }}</span>
+              <span>{{ app.name }}</span>
               <small>CORE</small>
             </div>
             {% for feature in app.features limit: 3 %}

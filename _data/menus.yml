@@ -1,15 +1,9 @@
 main:
-  - name: "Work"
-    url: "/"
-    weight: 1
   - name: "Beyond Words"
     url: "/beyond-words/"
-    weight: 2
+    weight: 1
 
 footer:
-  - name: "Work"
-    url: "/"
-    weight: 1
   - name: "Personal website"
     url: "https://tangyu.me"
-    weight: 2
+    weight: 1

@@ -4,16 +4,24 @@
   {% else %}
     {% assign mainmenu = site.data.menus.main | sort: 'weight' %}
   {% endif %}
-  <ul>
+  <nav class="main-menu-mobile__navigation" aria-label="{{ t.nav.pages_label }}">
+    <ul class="main-menu-mobile__links">
     {% for item in mainmenu %}
-    <li class="{% if item.url == page.url %}active{% endif %}">
-      <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+    <li class="main-menu-mobile__item{% if item.type == 'project' %} main-menu-mobile__item--project{% endif %}{% if item.url == page.url %} active{% endif %}">
+      <a href="{{ item.url | relative_url }}">
+        {% if item.type == "project" %}<span class="main-menu-mobile__item-label" aria-hidden="true">{% if current_lang == "zh-CN" %}项目{% else %}PROJECT{% endif %}</span>{% endif %}
+        <span>{{ item.name }}</span>
+      </a>
     </li>
     {% endfor %}
-    {% if page.alternate_url %}
-    <li>
-      <a href="{{ page.alternate_url | relative_url }}" lang="{{ page.alternate_lang }}" hreflang="{{ page.alternate_lang }}">{{ t.site.language_name }}</a>
-    </li>
-    {% endif %}
-  </ul>
+    </ul>
+  </nav>
+  {% if page.alternate_url %}
+  <div class="main-menu-mobile__language" aria-label="{{ t.site.language_label }}">
+    <span class="main-menu-mobile__language-label" aria-hidden="true">{% if current_lang == "zh-CN" %}语言{% else %}LANGUAGE{% endif %}</span>
+    <a href="{{ page.alternate_url | relative_url }}" lang="{{ page.alternate_lang }}" hreflang="{{ page.alternate_lang }}">
+      <span aria-hidden="true">↗</span>{{ t.site.language_name }}
+    </a>
+  </div>
+  {% endif %}
 </div>

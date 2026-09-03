@@ -6,8 +6,11 @@
   {% endif %}
   <ul>
     {% for item in mainmenu %}
-    <li class="{% if item.url == page.url %}active{% endif %}">
-      <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+    <li class="{% if item.type == 'project' %}main-menu__item--project {% endif %}{% if item.url == page.url %}active{% endif %}">
+      <a href="{{ item.url | relative_url }}">
+        {% if item.type == "project" %}<span class="main-menu__item-label" aria-hidden="true">{% if current_lang == "zh-CN" %}项目{% else %}PROJECT{% endif %}</span>{% endif %}
+        <span>{{ item.name }}</span>
+      </a>
     </li>
     {% endfor %}
   </ul>

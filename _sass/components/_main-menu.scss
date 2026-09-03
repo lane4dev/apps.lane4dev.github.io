@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 64px;
+    gap: 40px;
     > li {
       list-style: none;
       font-size: 1.125rem;
@@ -21,6 +21,16 @@
         &:hover {
           color: $white;
           text-decoration: none;
+        }
+      }
+      &.main-menu__item--project {
+        > a {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          padding: 26px 0;
+          color: rgba(255, 255, 255, 0.72);
+          font-size: 0.875rem;
         }
       }
       &.active {
@@ -36,4 +46,12 @@
       }
     }
   }
+}
+
+.main-menu__item-label {
+  color: $secondary;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
 }
