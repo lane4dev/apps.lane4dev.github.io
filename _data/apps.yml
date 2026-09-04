@@ -9,11 +9,9 @@ beyond-words:
     and refine it before sharing.
   status: "Preparing for Google Play"
   platform: "Android"
-  application_id: "REPLACE_ME_ANDROID_APPLICATION_ID"
 
   store_enabled: false
   store_label: "Get it on Google Play"
-  store_url: "REPLACE_ME_GOOGLE_PLAY_URL"
 
   base_path: "/beyond-words/"
   privacy_path: "/beyond-words/privacy/"
@@ -52,21 +50,11 @@ beyond-words:
     advertising_enabled: false
 
     firebase_services: "Firebase Authentication, Cloud Functions, Firestore, and App Check"
-    ai_provider_name: "REPLACE_ME_AI_PROVIDER_NAME"
-    ai_provider_privacy_url: "REPLACE_ME_AI_PROVIDER_PRIVACY_URL"
-    ai_content_retention: "REPLACE_ME_AI_CONTENT_RETENTION"
-    server_log_retention: "REPLACE_ME_SERVER_LOG_RETENTION"
 
   subscriptions:
     enabled: true
     billing_provider: "Google Play Billing"
     restore_supported: true
-
-  deletion:
-    in_app_path: "REPLACE_ME_IN_APP_DELETION_PATH"
-    request_url: "REPLACE_ME_ACCOUNT_DELETION_REQUEST_URL"
-    completion_period: "REPLACE_ME_ACCOUNT_DELETION_COMPLETION_PERIOD"
-    retained_record_period: "REPLACE_ME_REQUIRED_RECORD_RETENTION_PERIOD"
 
   support:
     harmful_output_reporting: true

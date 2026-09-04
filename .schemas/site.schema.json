@@ -4,8 +4,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "developer",
-    "support"
+    "developer"
   ],
   "properties": {
     "developer": {
@@ -16,8 +15,6 @@
         "legal_name",
         "country_or_region",
         "support_email",
-        "privacy_email",
-        "governing_law",
         "website"
       ],
       "properties": {
@@ -33,27 +30,9 @@
         "support_email": {
           "type": "string"
         },
-        "privacy_email": {
-          "type": "string"
-        },
-        "governing_law": {
-          "type": "string"
-        },
         "website": {
           "type": "string",
           "format": "uri"
-        }
-      }
-    },
-    "support": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "expected_response_time"
-      ],
-      "properties": {
-        "expected_response_time": {
-          "type": "string"
         }
       }
     }

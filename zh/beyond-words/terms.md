@@ -158,21 +158,13 @@ x_default_url: /beyond-words/terms/
 在法律允许的情况下，你同意就你的非法内容、服务滥用或实质违反本条款导致的第三方索赔，
 为 {{ developer.legal_name }} 提供抗辩和赔偿。
 
-## 16. 管辖法律与争议
-
-本条款受 **{{ developer.governing_law }}** 管辖，不考虑法律冲突原则；
-你所在国家的强制性消费者法律另有规定的除外。
-
-提出正式索赔前，请通过
-[{{ developer.support_email }}](mailto:{{ developer.support_email }})联系我们进行审查。
-
-## 17. 条款变更
+## 16. 条款变更
 
 我们可能为了反映产品、提供方、法律或安全变化而更新本条款。
 更新版本会显示新的“最后更新”日期。在法律允许的情况下，
 生效日期后继续使用即表示接受更新后的条款。
 
-## 18. 联系方式
+## 17. 联系方式
 
 **{{ developer.legal_name }}**  
 以 {{ developer.display_name }} 名义运营  

@@ -214,23 +214,13 @@ Where permitted by law, you agree to defend and indemnify
 {{ developer.legal_name }} against third-party claims arising from your unlawful
 content, misuse of the service, or material violation of these Terms.
 
-## 16. Governing law and disputes
-
-These Terms are governed by **{{ developer.governing_law }}**, without regard to
-conflict-of-law principles, except where mandatory consumer law in your country
-provides otherwise.
-
-Before filing a formal claim, contact
-[{{ developer.support_email }}](mailto:{{ developer.support_email }}) so the
-issue can be reviewed.
-
-## 17. Changes to these Terms
+## 16. Changes to these Terms
 
 We may update these Terms to reflect product, provider, legal, or security
 changes. The updated version will show a new “Last updated” date. Continued use
 after the effective date constitutes acceptance where permitted by law.
 
-## 18. Contact
+## 17. Contact
 
 **{{ developer.legal_name }}**  
 Operating as {{ developer.display_name }}  

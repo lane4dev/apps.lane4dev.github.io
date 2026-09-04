@@ -22,9 +22,6 @@ x_default_url: /beyond-words/support/
 Email:
 [{{ developer.support_email }}](mailto:{{ developer.support_email }})
 
-Expected response time:
-**{{ site.data.site.support.expected_response_time }}**.
-
 Include the following where relevant:
 
 - application version;
@@ -104,7 +101,7 @@ Confirm that:
 - [Delete account and data]({{ app.deletion_path | relative_url }})
 
 Privacy requests:
-[{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }})
+[{{ developer.support_email }}](mailto:{{ developer.support_email }})
 
 ## Service status
 

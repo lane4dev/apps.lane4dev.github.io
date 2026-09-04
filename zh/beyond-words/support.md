@@ -22,8 +22,6 @@ x_default_url: /beyond-words/support/
 
 电子邮件：[{{ developer.support_email }}](mailto:{{ developer.support_email }})
 
-预计响应时间：**{{ site.data.site.support.expected_response_time }}**。
-
 请根据问题提供以下信息：
 
 - 应用版本；
@@ -90,7 +88,7 @@ x_default_url: /beyond-words/support/
 - [服务条款]({{ app.terms_path | relative_url }})
 - [删除账户和数据]({{ app.deletion_path | relative_url }})
 
-隐私请求：[{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }})
+隐私请求：[{{ developer.support_email }}](mailto:{{ developer.support_email }})
 
 ## 服务状态
 

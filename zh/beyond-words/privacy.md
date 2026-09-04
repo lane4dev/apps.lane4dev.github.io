@@ -46,10 +46,8 @@ x_default_url: /beyond-words/privacy/
 当你请求转换时，我们会处理输入文本、所选语境或语境包、转换指令、语言和语气选项，
 以及生成结果。请求还可能包含账户或请求标识符及成功或错误状态。
 
-提交的文本和必要指令会发送至 **{{ app_config.privacy.ai_provider_name }}** 以生成响应。
-该提供方的隐私信息见[其隐私页面]({{ app_config.privacy.ai_provider_privacy_url }})。
-
-提供方的内容保留期限：**{{ app_config.privacy.ai_content_retention }}**。
+提交的文本和必要指令会发送至第三方 AI 服务提供方以生成响应。该提供方会依照其适用的
+服务条款和隐私实践处理文本。
 
 请勿提交密码、银行卡信息、政府签发的身份证件号码、机密商业信息、健康记录，
 或你无权处理的其他信息。
@@ -117,7 +115,7 @@ x_default_url: /beyond-words/privacy/
 
 - **Google Firebase** — {{ app.privacy.firebase_services }}；
 - **Google Play** — 应用分发、订阅账单、购买记录和权益信息；
-- **{{ app_config.privacy.ai_provider_name }}** — 生成请求的文本转换；
+- 第三方 AI 服务提供方 — 生成请求的文本转换；
 - 托管公共页面和回复支持请求所需的基础设施或邮件服务提供方。
 
 这些提供方可能在你所在国家或地区以外处理信息，其合同条款和技术控制适用于相应处理活动。
@@ -128,8 +126,8 @@ x_default_url: /beyond-words/privacy/
 
 - 本地历史保留在设备上，直到你删除历史、清除应用数据或卸载应用；
 - 账户和配额记录在账户有效期间及账户删除流程中保留；
-- 服务器及安全日志保留：**{{ app_config.privacy.server_log_retention }}**；
-- AI 提供方的内容保留期限：**{{ app_config.privacy.ai_content_retention }}**；
+- 服务器及安全日志仅在保障安全、防止欺诈和运行服务所合理需要的期限内保留；
+- AI 提供方对内容的处理和保留受其适用的服务条款和隐私实践约束；
 - 在税务、会计、防欺诈、争议处理或法律要求下，可能保留购买及交易记录。
 
 ## 6. 共享与披露
@@ -155,7 +153,7 @@ x_default_url: /beyond-words/privacy/
 - 在应用中编辑或删除本地历史；
 - 通过 Google Play 管理或取消订阅；
 - 通过应用或[账户删除页面]({{ app.deletion_path | relative_url }})删除账户；
-- 发送邮件至 [{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }})
+- 发送邮件至 [{{ developer.support_email }}](mailto:{{ developer.support_email }})
   提交隐私请求。
 
 处理请求前，我们可能需要验证你的身份。
@@ -181,5 +179,5 @@ x_default_url: /beyond-words/privacy/
 **{{ developer.legal_name }}**  
 以 {{ developer.display_name }} 名义运营  
 {{ developer.country_or_region }}  
-隐私：[{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }})  
+隐私：[{{ developer.support_email }}](mailto:{{ developer.support_email }})<br>
 支持：[{{ developer.support_email }}](mailto:{{ developer.support_email }})

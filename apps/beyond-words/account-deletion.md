@@ -24,7 +24,7 @@ below.
 ## Delete from the application
 
 1. Open {{ app.name }}.
-2. Go to **{{ app.deletion.in_app_path }}**.
+2. Open the account-deletion control in the application's account settings.
 3. Review the data that will be deleted.
 4. Complete any required re-authentication.
 5. Confirm the deletion request.
@@ -34,17 +34,11 @@ device from deleting the account.
 
 ## Request deletion without the application
 
-Use the following request channel:
-
-[Submit an account deletion request]({{ app.deletion.request_url }})
-
-The request process may require verification through the email address or
-authentication method associated with the account. Do not send passwords,
-one-time codes, or payment card information.
-
-For assistance, contact
-[{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }}) with the
-subject **Beyond Words account deletion**.
+Email [{{ developer.support_email }}](mailto:{{ developer.support_email }})
+with the subject **Beyond Words account deletion**. The request process may
+require verification through the email address or authentication method
+associated with the account. Do not send passwords, one-time codes, or payment
+card information.
 
 ## Data scheduled for deletion
 
@@ -79,20 +73,15 @@ Limited information may be retained where reasonably necessary for:
 - demonstrating compliance with a valid legal obligation;
 - backup systems that are overwritten on a defined cycle.
 
-Required records may be retained for:
-**{{ app.deletion.retained_record_period }}**.
-
-Retained records are restricted to the purpose that requires their retention
-and are not used to continue providing the deleted account.
+Retained records are kept only for the period reasonably required for the
+purpose that requires them and are not used to continue providing the deleted
+account.
 
 ## Processing period
 
-Verified deletion requests are normally completed within:
-**{{ app.deletion.completion_period }}**.
-
-Access may be disabled before all backup copies expire. You will receive
-confirmation through the verified contact channel when the primary deletion
-process is complete.
+Verified deletion requests are completed without undue delay. Access may be
+disabled before all backup copies expire. You will receive confirmation through
+the verified contact channel when the primary deletion process is complete.
 
 ## Google Play subscriptions
 
@@ -111,6 +100,6 @@ obligations and policies.
 ## Questions
 
 Privacy contact:
-[{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }})  
+[{{ developer.support_email }}](mailto:{{ developer.support_email }})<br>
 Support:
 [{{ developer.support_email }}](mailto:{{ developer.support_email }})

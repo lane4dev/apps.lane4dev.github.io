@@ -59,12 +59,9 @@ When you request a transformation, the application processes:
 - technical request metadata such as timestamps, request identifiers, and
   success or error status.
 
-The submitted text and necessary instructions are transmitted to
-**{{ app.privacy.ai_provider_name }}** to generate a response. The provider's
-privacy information is available at
-[its published privacy page]({{ app.privacy.ai_provider_privacy_url }}).
-
-Provider-side content retention: **{{ app.privacy.ai_content_retention }}**.
+The submitted text and necessary instructions are transmitted to a third-party
+AI service provider to generate a response. That provider processes the text
+under its own applicable terms and privacy practices.
 
 Do not submit passwords, payment card details, government identifiers,
 confidential business information, health records, or other information that
@@ -151,7 +148,7 @@ their own terms, including:
 - **Google Firebase** — {{ app.privacy.firebase_services }};
 - **Google Play** — application distribution, subscription billing, purchase
   records, and entitlement information;
-- **{{ app.privacy.ai_provider_name }}** — generation of requested text
+- third-party AI service providers — generation of requested text
   transformations;
 - infrastructure or email providers used to host the public pages and respond
   to support requests.
@@ -168,10 +165,10 @@ this policy.
   data, or uninstall the application.
 - Account and quota records remain while the account is active and during the
   account deletion process.
-- Server and security logs are retained for:
-  **{{ app.privacy.server_log_retention }}**.
-- AI provider content retention is:
-  **{{ app.privacy.ai_content_retention }}**.
+- Server and security logs are retained only for the period reasonably needed
+  for security, fraud prevention, and service operation.
+- AI-provider handling and retention are subject to the provider's applicable
+  terms and privacy practices.
 - Purchase and transaction records may be retained where required for tax,
   accounting, fraud prevention, dispute resolution, or legal compliance.
 
@@ -206,7 +203,7 @@ You can:
 - delete your account through the application or the
   [account deletion page]({{ app.deletion_path | relative_url }});
 - contact us at
-  [{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }}) for a
+  [{{ developer.support_email }}](mailto:{{ developer.support_email }}) for a
   privacy request.
 
 We may need to verify your identity before completing a request.
@@ -237,5 +234,5 @@ appropriate channel.
 **{{ developer.legal_name }}**  
 Operating as {{ developer.display_name }}  
 {{ developer.country_or_region }}  
-Privacy: [{{ developer.privacy_email }}](mailto:{{ developer.privacy_email }})  
+Privacy: [{{ developer.support_email }}](mailto:{{ developer.support_email }})<br>
 Support: [{{ developer.support_email }}](mailto:{{ developer.support_email }})
