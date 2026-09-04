@@ -8,6 +8,10 @@ _site/
 vendor/
 .bundle/
 
+# Bootstrap Sass source; this is not a Bundler dependency directory.
+!_sass/bootstrap/vendor/
+!_sass/bootstrap/vendor/_rfs.scss
+
 # JavaScript dependencies
 node_modules/
 
