@@ -53,10 +53,22 @@ bodyClass: "page-apps-home"
           <div class="terminal-window__body">
             <p><span class="terminal-prompt">❯</span> whoami --context portfolio</p>
             <dl class="terminal-data">
-              <div><dt>role</dt><dd>{{ t.home.terminal_role }}</dd></div>
-              <div><dt>focus</dt><dd>{{ t.home.terminal_focus }}</dd></div>
-              <div><dt>approach</dt><dd>{{ t.home.terminal_approach }}</dd></div>
-              <div><dt>site</dt><dd>{{ t.home.terminal_site }}</dd></div>
+              <div>
+                <dt>role</dt>
+                <dd>{{ t.home.terminal_role }}</dd>
+              </div>
+              <div>
+                <dt>focus</dt>
+                <dd>{{ t.home.terminal_focus }}</dd>
+              </div>
+              <div>
+                <dt>approach</dt>
+                <dd>{{ t.home.terminal_approach }}</dd>
+              </div>
+              <div>
+                <dt>site</dt>
+                <dd>{{ t.home.terminal_site }}</dd>
+              </div>
             </dl>
             <div class="terminal-process">
               <span>{{ t.home.curiosity_signal }}</span>
@@ -90,43 +102,48 @@ bodyClass: "page-apps-home"
 
     <div class="project-stack">
       {% for app_page in sorted_apps %}
-        {% if current_lang == "zh-CN" %}
-          {% assign app = site.data.apps_zh[app_page.app_key] %}
-        {% else %}
-          {% assign app = site.data.apps[app_page.app_key] %}
-        {% endif %}
-        <article class="project-panel js-reveal">
-          <div class="project-panel__content">
-            <div class="project-panel__topline">
-              <span>PROJECT_{{ forloop.index | prepend: "0" }}</span>
-              <span class="project-status"><i aria-hidden="true"></i>{{ app.status }}</span>
-            </div>
-            <p class="project-panel__platform">{{ app.platform }} {{ t.home.application }}</p>
-            <h3>{{ app.name }}</h3>
-            <p class="project-panel__tagline">{{ app.tagline }}</p>
-            <p class="project-panel__description">{{ app.short_description }}</p>
-            <div class="project-panel__actions">
-              <a href="{{ app_page.url | relative_url }}">
-                {{ t.home.open_project }} <span aria-hidden="true">→</span>
-              </a>
-              <span>{{ app.features | size }} {{ t.home.capabilities }}</span>
-            </div>
+      {% assign app_config = site.data.apps[app_page.app_key] %}
+      {% if current_lang == "zh-CN" %}
+      {% assign app = site.data.apps_zh[app_page.app_key] %}
+      {% else %}
+      {% assign app = site.data.apps[app_page.app_key] %}
+      {% endif %}
+      <article class="project-panel js-reveal">
+        <div class="project-panel__content">
+          <div class="project-panel__topline">
+            <span>PROJECT_{{ forloop.index | prepend: "0" }}</span>
+            <span class="project-status"><i aria-hidden="true"></i>{{ app.status }}</span>
           </div>
-          <div class="project-schematic" aria-label="{{ app.name }} {{ t.home.capability_map }}">
-            <div class="project-schematic__orbit project-schematic__orbit--outer"></div>
-            <div class="project-schematic__orbit project-schematic__orbit--inner"></div>
-            <div class="project-schematic__core">
-              <span>{{ app.name }}</span>
-              <small>CORE</small>
-            </div>
-            {% for feature in app.features limit: 3 %}
-              <div class="project-node project-node--{{ forloop.index }}">
-                <i aria-hidden="true"></i>
-                <span>{{ feature.title }}</span>
-              </div>
-            {% endfor %}
+          <p class="project-panel__platform">{{ app.platform }} {{ t.home.application }}</p>
+          <h3>{{ app.name }}</h3>
+          <p class="project-panel__tagline">{{ app.tagline }}</p>
+          <p class="project-panel__description">{{ app.short_description }}</p>
+          <div class="project-panel__actions">
+            <a href="{{ app_page.url | relative_url }}">
+              {{ t.home.open_project }} <span aria-hidden="true">→</span>
+            </a>
+            <span>{{ app.features | size }} {{ t.home.capabilities }}</span>
           </div>
-        </article>
+        </div>
+        <div class="project-schematic" aria-label="{{ app.name }} {{ t.home.capability_map }}">
+          <div class="project-schematic__orbit project-schematic__orbit--outer"></div>
+          <div class="project-schematic__orbit project-schematic__orbit--inner"></div>
+          <div class="project-schematic__core">
+            {% if app_config.app_icon %}
+            <img class="project-schematic__app-icon" src="{{ app_config.app_icon | relative_url }}"
+              alt="{{ app.name }} app icon" width="80" height="80" loading="lazy">
+            {% else %}
+            <span>{{ app.name }}</span>
+            {% endif %}
+          </div>
+          {% for feature in app.features limit: 3 %}
+          <div class="project-node project-node--{{ forloop.index }}">
+            <i aria-hidden="true"></i>
+            <span>{{ feature.title }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </article>
       {% endfor %}
     </div>
   </div>

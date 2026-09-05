@@ -570,7 +570,13 @@
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 18%,
+    #000 82%,
+    transparent
+  );
   pointer-events: none;
 }
 
@@ -644,7 +650,10 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
-  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
 
   &:hover {
     text-decoration: none;
@@ -1016,11 +1025,19 @@
   min-height: 560px;
   overflow: hidden;
   background:
-    radial-gradient(circle at center, rgba(255, 45, 146, 0.13), transparent 38%),
+    radial-gradient(
+      circle at center,
+      rgba(255, 45, 146, 0.13),
+      transparent 38%
+    ),
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     var(--app-primary-dark);
-  background-size: auto, 40px 40px, 40px 40px, auto;
+  background-size:
+    auto,
+    40px 40px,
+    40px 40px,
+    auto;
 }
 
 .project-schematic__orbit {
@@ -1069,13 +1086,13 @@
     font-size: 1.5rem;
     font-weight: 700;
   }
+}
 
-  small {
-    color: var(--app-accent);
-    font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.14em;
-  }
+.project-schematic__app-icon {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
 .project-node {
@@ -1096,7 +1113,9 @@
     background: #ff2d92;
     border: 2px solid var(--app-primary-dark);
     border-radius: 50%;
-    box-shadow: 0 0 0 1px #ff2d92, 0 0 14px rgba(255, 45, 146, 0.7);
+    box-shadow:
+      0 0 0 1px #ff2d92,
+      0 0 14px rgba(255, 45, 146, 0.7);
   }
 }
 
@@ -1148,7 +1167,10 @@
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
-  transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease;
 
   &::after {
     position: absolute;
@@ -1229,7 +1251,9 @@
 .js-enabled .js-reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .js-enabled .js-reveal.is-visible {
@@ -1562,7 +1586,10 @@
   border: 1px solid #e8e8e8;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
 
   &::after {
     position: absolute;
@@ -1648,7 +1675,11 @@
 
 .app-transparency-lab {
   background:
-    radial-gradient(circle at 85% 30%, rgba(255, 45, 146, 0.055), transparent 22%),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(255, 45, 146, 0.055),
+      transparent 22%
+    ),
     #fff;
 }
 
