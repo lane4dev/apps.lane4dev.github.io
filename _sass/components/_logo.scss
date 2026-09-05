@@ -9,14 +9,11 @@
   letter-spacing: -0.02em;
   text-decoration: none;
 
-  &::before {
-    width: 24px;
-    height: 24px;
-    background: $secondary;
-    border: 6px solid $primary-dark;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ff2d92;
-    content: "";
+  &__logo {
+    display: block;
+    width: 28px;
+    height: 28px;
+    flex: 0 0 auto;
   }
 
   span {

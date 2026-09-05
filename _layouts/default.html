@@ -7,7 +7,7 @@
   <title>{% if page.meta_title %}{{ page.meta_title | escape }}{% elsif page.title %}{{ page.title | escape }} · {{ t.site.title | escape }}{% else %}{{ t.site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon-32x32.svg' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="alternate" hreflang="{{ current_lang }}" href="{{ page.url | absolute_url }}">
   {% if page.alternate_url and page.alternate_lang %}
