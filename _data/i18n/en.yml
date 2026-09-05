@@ -60,9 +60,7 @@ app:
   transparency_intro: "Review the policy, service terms, deletion process, and support options before using cloud-backed features."
 nav:
   overview: "Overview"
-  privacy: "Privacy"
   privacy_policy: "Privacy Policy"
-  terms: "Terms"
   terms_of_service: "Terms of Service"
   delete_account: "Delete account"
   support: "Support"

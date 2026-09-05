@@ -60,9 +60,7 @@ app:
   transparency_intro: "使用云端功能前，请查阅隐私政策、服务条款、删除流程和支持方式。"
 nav:
   overview: "概览"
-  privacy: "隐私"
   privacy_policy: "隐私政策"
-  terms: "条款"
   terms_of_service: "服务条款"
   delete_account: "删除账户"
   support: "支持"
