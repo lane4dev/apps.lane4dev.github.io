@@ -3,9 +3,9 @@ title: "Terms of Service"
 layout: legal
 app_key: "beyond-words"
 permalink: /beyond-words/terms/
-description: "Terms governing use of Beyond Words, generated output, accounts, acceptable use, subscriptions, and service availability."
+description: "Terms governing use of Beyond Words, generated output, anonymous service access, context packs, purchases, and service availability."
 effective_date: "2026-07-29"
-last_updated: "2026-07-29"
+last_updated: "2026-09-24"
 lang: en
 translation_key: beyond-words-terms
 alternate_lang: zh-CN
@@ -26,39 +26,43 @@ By accessing or using the application, you agree to these Terms.
 ## 1. The service
 
 {{ app.name }} provides tools for transforming user-provided text, including
-rewriting, translation, tone adjustment, and prompt normalization. Available
-features, limits, models, context packs, and supported platforms may change.
+rewriting, tone adjustment, and context-aware expression. The application
+normally preserves the language of the input unless a selected context pack
+expressly directs otherwise. Available features, limits, models, context packs,
+and supported platforms may change.
 
 The service assists with drafting. It does not replace your judgment,
 professional review, or responsibility for the final text.
 
 ## 2. Eligibility
 
-You must be legally able to enter into these Terms. If you use the service on
-behalf of an organization, you represent that you are authorized to bind that
-organization.
+You must be at least 18 years old and legally able to enter into these Terms.
+If you use the service on behalf of an organization, you represent that you are
+authorized to bind that organization.
 
-The service is not intended for children below the minimum age required by
-applicable law or Google Play requirements.
+The service is not directed to, and is not intended for, people under 18.
 
-## 3. Accounts
+## 3. Anonymous service access
 
-You are responsible for:
+The application does not provide a user-facing account or sign-in method. To
+provide cloud-backed features, it automatically creates a Firebase anonymous
+identifier. This identifier is used for authentication, quota enforcement,
+fraud and abuse prevention, and purchase-entitlement verification.
 
-- providing accurate account information;
-- maintaining the security of your sign-in method and device;
-- promptly reporting unauthorized account use;
-- activity performed through your account, except where caused by our failure
-  to use reasonable security measures.
+You are responsible for maintaining the security of your device and for use of
+the service from it. Promptly contact support if you believe that your device or
+service access has been compromised.
 
-You may not transfer, sell, or share access in a way that circumvents quotas,
-subscription restrictions, or security controls.
+You may not transfer, sell, or share service access in a way that circumvents
+quotas, subscription restrictions, or security controls.
 
 ## 4. User content
 
 You retain ownership of text and other content you submit. You grant us a
-limited right to process that content solely to operate, secure, support, and
-improve the service as described in the Privacy Policy.
+limited right to process that content solely to operate, secure, and support the
+service. We may use feedback or harmful-output reports that you choose to submit
+to investigate issues and improve safety safeguards, as described in the
+Privacy Policy.
 
 You represent that you have the rights and authority needed to submit the
 content and request its processing.
@@ -74,7 +78,7 @@ output before using or sharing it.
 
 You are responsible for:
 
-- verifying names, dates, figures, claims, citations, and translations;
+- verifying names, dates, figures, claims, citations, and any language changes;
 - deciding whether the tone is appropriate for the intended recipient;
 - obtaining professional advice where legal, medical, financial, employment,
   safety, or other high-impact decisions are involved;
@@ -116,9 +120,17 @@ instructions, or outcomes supplied by their authors.
 ## 8. Subscriptions, quotas, and billing
 
 {% if app.subscriptions.enabled %}
-Paid features are offered through {{ app.subscriptions.billing_provider }}.
-Prices, billing periods, trial terms, taxes, and renewal information are shown
-before purchase.
+Paid offerings are provided through {{ app.subscriptions.billing_provider }}.
+The current public offerings include a monthly Premium subscription and a
+one-time Lifetime purchase. Prices, billing periods, trial terms, taxes, and
+renewal information are shown before purchase.
+
+The Premium subscription includes a higher built-in model allowance, access to
+OpenAI-compatible custom model services, and voice input. An eligible new user
+may be offered a 7-day trial through Google Play. The Lifetime purchase
+permanently unlocks configuration of a custom model service. It does not provide
+unlimited built-in model use or voice input, and fees for a custom model service
+are charged by the service provider you choose.
 
 Subscriptions generally renew automatically unless canceled through Google
 Play before the renewal date. Cancellation stops future renewal but does not
@@ -129,10 +141,13 @@ Google Play policy.
 The application provides a mechanism to restore or re-check eligible purchases.
 {% endif %}
 
-Usage quotas may reset daily, monthly, or according to the applicable plan.
-Unused quota does not carry over unless the plan explicitly states otherwise.
-Abuse, chargebacks, refunds, subscription expiration, or failed verification
-may change feature access.
+Built-in model use is subject to the quota shown for your effective plan. The
+free and Lifetime plans currently include 10 built-in transformations per day;
+the Premium subscription currently includes 2,000 built-in model points per
+billing period. Custom model service requests do not use the built-in model
+allowance. Unused allowance does not carry over unless a plan expressly states
+otherwise. Abuse, chargebacks, refunds, subscription expiration, or failed
+verification may change feature access.
 {% else %}
 The current production version does not offer paid subscriptions. These Terms
 will be updated before paid service is introduced.
@@ -153,25 +168,35 @@ these Terms.
 
 ## 10. Third-party services
 
-The service relies on Google Play, Firebase, an AI model provider, and other
-infrastructure providers. Your use of those services may also be governed by
-their terms and policies.
+The service relies on Google Play, Firebase, Google Gemini, and other
+infrastructure providers. The built-in model service and voice transcription
+use Google Gemini. See the [Gemini API Additional Terms of Service](https://ai.google.dev/gemini-api/terms)
+and [Google Privacy Policy](https://policies.google.com/privacy) for Google's
+applicable terms and data handling.
+
+If you configure an OpenAI-compatible custom model service, requests are sent
+directly from your device to the provider you select. That provider's terms,
+privacy practices, availability, and charges apply to that service.
 
 We are not responsible for third-party services outside our reasonable control.
 
 ## 11. Availability and changes
 
 We may modify, suspend, or discontinue features, models, quotas, context packs,
-or platform support. We aim to provide reasonable notice when a material
-change adversely affects paid access, but emergency security, legal, or
-provider changes may require immediate action.
+or platform support. We aim to provide reasonable notice when a material change
+adversely affects paid access, but emergency security, legal, or provider
+changes may require immediate action. A Lifetime purchase permanently unlocks
+the in-application ability to configure a custom model service; it does not
+guarantee the continued availability, compatibility, or pricing of any
+third-party service.
 
 The service may be interrupted by maintenance, network failures, provider
 outages, device limitations, or events beyond our control.
 
 ## 12. Suspension and termination
 
-You may stop using the service at any time and may request account deletion.
+You may stop using the service at any time. You can delete local history in the
+application and remove local custom context packs or custom model configuration.
 
 We may suspend or terminate access if reasonably necessary to:
 

@@ -32,12 +32,12 @@ required_paths = [
     ROOT / "_apps" / "beyond-words-zh.md",
     ROOT / "apps" / "beyond-words" / "privacy.md",
     ROOT / "apps" / "beyond-words" / "terms.md",
-    ROOT / "apps" / "beyond-words" / "account-deletion.md",
     ROOT / "apps" / "beyond-words" / "support.md",
+    ROOT / "apps" / "beyond-words" / "custom-context-packs.md",
     ROOT / "zh" / "beyond-words" / "privacy.md",
     ROOT / "zh" / "beyond-words" / "terms.md",
-    ROOT / "zh" / "beyond-words" / "account-deletion.md",
     ROOT / "zh" / "beyond-words" / "support.md",
+    ROOT / "zh" / "beyond-words" / "custom-context-packs.md",
 ]
 
 for required in required_paths:

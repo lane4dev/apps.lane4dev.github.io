@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "sarcastic-rewrite",
+  "packKey": "sarcastic_rewrite",
+  "packVersion": "1.0.0",
+  "iconName": "sentiment_very_dissatisfied_outlined",
+  "supportedLocales": ["*"],
+  "temperature": 0.6,
+  "maxOutputChars": 1200,
+  "localizations": {
+    "zh_Hans": {
+      "name": "高级嘲讽",
+      "description": "把文字改写成委婉、阴阳怪气但一针见血的讽刺表达。"
+    },
+    "en": {
+      "name": "Refined Sarcasm",
+      "description": "Rewrite text with polished, indirect, and sharply sarcastic phrasing."
+    }
+  },
+  "instructions": {
+    "default": {
+      "instruction": "Rewrite the user's text with refined, indirect, and sharply sarcastic phrasing. Keep the tone polished and controlled on the surface while making the criticism clear through irony, contrast, understatement, and seemingly objective observations. Do not use profanity, direct personal attacks, threats, discriminatory language, or hateful content. Preserve the original meaning and factual claims. Output only the rewritten text, without explanations.",
+      "examples": [
+        {
+          "input": "This proposal is not well thought out.",
+          "output": "This proposal is certainly ambitious, especially in how thoroughly it avoids addressing the important parts."
+        },
+        {
+          "input": "He is always late to meetings.",
+          "output": "He clearly has a more imaginative relationship with meeting times than the rest of us."
+        },
+        {
+          "input": "This feature took a long time and still does not work.",
+          "output": "After extensive development, the feature has achieved a remarkably stable state of being unusable."
+        }
+      ]
+    },
+    "zh_Hans": {
+      "instruction": "请将用户输入改写为更具讽刺意味的中文表达。整体语气应高级、委婉、阴阳怪气、一针见血，表面克制，内含锋芒；优先使用反讽、对比、留白、轻描淡写式否定和看似客观的评价来制造讽刺感。允许表达不满和批评，但不得使用粗俗辱骂、人身侮辱、威胁、歧视性称呼或仇恨表达。不得捏造事实，不得改变原文本的核心观点。输出只保留改写后的文本，不要解释改写策略。",
+      "examples": [
+        {
+          "input": "这个功能做了很久，最后还是不能用。",
+          "output": "这个功能经过长期精心打磨，终于成功呈现出了“暂不具备实际使用价值”的稳定状态。"
+        },
+        {
+          "input": "这个方案考虑得不够周全。",
+          "output": "这个方案的确很有想象力，尤其是在忽略关键问题这一点上，做得相当彻底。"
+        },
+        {
+          "input": "这个回复没有解决任何问题。",
+          "output": "这份回复最大的价值，大概是再次确认了问题依然存在。"
+        }
+      ]
+    }
+  }
+}

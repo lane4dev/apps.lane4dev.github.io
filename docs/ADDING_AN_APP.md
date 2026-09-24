@@ -51,7 +51,6 @@ Create:
 apps/feather-ledger/
 ├── privacy.md
 ├── terms.md
-├── account-deletion.md
 └── support.md
 ```
 

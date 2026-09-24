@@ -15,9 +15,9 @@ beyond-words:
   store_label: "Get it on Google Play"
 
   base_path: "/beyond-words/"
+  custom_packs_path: "/beyond-words/custom-context-packs/"
   privacy_path: "/beyond-words/privacy/"
   terms_path: "/beyond-words/terms/"
-  deletion_path: "/beyond-words/account-deletion/"
   support_path: "/beyond-words/support/"
 
   features:
@@ -43,7 +43,7 @@ beyond-words:
       description: "Check the result before copying, sharing, or using it elsewhere."
 
   privacy:
-    account_required: true
+    account_required: false
     local_history_enabled: true
     cloud_history_sync_enabled: false
     analytics_enabled: false

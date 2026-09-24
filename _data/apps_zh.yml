@@ -11,9 +11,9 @@ beyond-words:
   store_label: "前往 Google Play"
 
   base_path: "/zh/beyond-words/"
+  custom_packs_path: "/zh/beyond-words/custom-context-packs/"
   privacy_path: "/zh/beyond-words/privacy/"
   terms_path: "/zh/beyond-words/terms/"
-  deletion_path: "/zh/beyond-words/account-deletion/"
   support_path: "/zh/beyond-words/support/"
 
   features:

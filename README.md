@@ -12,9 +12,9 @@ copy this package over the repository root.
 
 - `/` — application directory
 - `/beyond-words/` — Beyond Words landing page
+- `/beyond-words/custom-context-packs/` — Custom Context Pack Guide
 - `/beyond-words/privacy/` — Privacy Policy
 - `/beyond-words/terms/` — Terms of Service
-- `/beyond-words/account-deletion/` — Account and data deletion
 - `/beyond-words/support/` — Support
 
 ## Apply to Jekyll Serif
