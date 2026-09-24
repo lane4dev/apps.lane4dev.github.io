@@ -31,28 +31,18 @@ instruction and examples are included with the transformation request sent to
 the model service you selected. See the [Privacy Policy]({{ app.privacy_path | relative_url }})
 for the applicable processing details.
 
-## Example pack: download or import by URL
-
-The following verified example is a single custom pack, not a built-in
-manifest:
-
-- [Download the Refined Sarcasm JSON example]({{ example_pack_path | relative_url }})
-
-To import it from a URL, copy this complete HTTPS address into the app:
-
-`{{ example_pack_url }}`
-
-For a file import, download the JSON file without changing its contents.
-
 ## Import a pack
 
-1. In the app, open **Mode Packs**.
-2. Under **My Packs**, select **Add Custom Pack**.
-3. Choose **Import from file** and select a JSON file, or choose **Import from
-   URL** and enter a direct HTTPS URL to one JSON document.
-4. Review the preview, then select **Import**. If the pack has the same custom
-   ID as an existing pack, review it and select **Update** only when you intend
-   to replace that pack.
+1. On the main conversion screen, open the top-right three-dot menu and select
+   **Settings**.
+2. Under **Content & Transform**, select **Mode Packs**. You can also open the
+   mode-pack picker on the main screen and select **Manage**.
+3. In the **My Packs** section, select **Add Custom Pack**.
+4. Select **Import from file** to choose a local JSON file, or **Import from
+   URL** to enter a direct HTTPS URL to one JSON document.
+5. Review the import preview, then select **Import**. If the preview identifies
+   an existing custom pack with the same ID, select **Update** only when you
+   intend to replace that pack.
 
 The file and downloaded URL response must be UTF-8 JSON and no larger than
 512 KiB. URL imports require HTTPS, allow only HTTPS redirects, and time out
@@ -133,3 +123,23 @@ file.
 Before sharing a pack by URL, keep the URL HTTPS, serve the JSON directly, and
 avoid storing private instructions or information in the file. A shared URL can
 be imported by anyone who can access it.
+
+## Example packs
+
+Each example below is a verified, ready-to-import custom pack, not a built-in
+manifest. Download the JSON file and import it from your device, or copy the
+HTTPS address into the app's **Import from URL** option. For a file import,
+download the file without changing its contents.
+
+<div class="pack-cards">
+  <div class="pack-card">
+    <h3>Refined Sarcasm</h3>
+    <p>Rewrites text with polished, indirect, and sharply sarcastic phrasing.
+    Includes English and Simplified Chinese instructions with examples.</p>
+    <a class="pack-card__download" href="{{ example_pack_path | relative_url }}" download>Download JSON</a>
+    <div class="pack-card__url">
+      <span>Import URL</span>
+      <code>{{ example_pack_url }}</code>
+    </div>
+  </div>
+</div>

@@ -522,6 +522,61 @@
   a {
     overflow-wrap: anywhere;
   }
+
+  .pack-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .pack-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid var(--app-border);
+    border-radius: 6px;
+    background: var(--app-surface-offset);
+
+    h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      color: $black;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  }
+
+  .pack-card__download {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.45rem 1.1rem;
+    border: 1px solid var(--app-primary);
+    border-radius: 3px;
+    color: var(--app-primary);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--app-primary);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .pack-card__url {
+    font-size: 0.85rem;
+    color: var(--app-muted);
+
+    code {
+      display: block;
+      overflow-wrap: anywhere;
+    }
+  }
 }
 
 .app-prose {
