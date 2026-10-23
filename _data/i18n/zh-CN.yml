@@ -1,6 +1,6 @@
 site:
-  title: "作品集"
-  home_label: "作品集首页"
+  title: "lane4dev • apps"
+  home_label: "lane4dev • apps 首页"
   language_name: "EN"
   language_label: "Switch to English"
 home:
@@ -65,6 +65,6 @@ nav:
   work: "作品"
   personal_website: "个人网站"
 page:
-  eyebrow: "作品集"
+  eyebrow: "lane4dev • apps"
   effective_date: "生效日期"
   last_updated: "最后更新"

@@ -1,10 +1,10 @@
 site:
-  title: "Independent Works"
-  home_label: "Independent Works home"
+  title: "lane4dev • apps"
+  home_label: "lane4dev • apps home"
   language_name: "中文"
   language_label: "切换到中文"
 home:
-  badge: "Independent works / System online"
+  badge: "My works / System online"
   explore_projects: "Explore projects"
   personal_website: "Personal website"
   active_project: "Active project"
@@ -16,7 +16,7 @@ home:
   terminal_role: "Backend-leaning full-stack developer"
   terminal_focus: "Web · Data · AI · Android"
   terminal_approach: "Do one thing, and do it well."
-  terminal_site: "Independent works and product documentation"
+  terminal_site: "My works and product documentation"
   curiosity_signal: "curiosity signal"
   active: "ACTIVE"
   scroll_label: "Scroll to projects"
@@ -65,6 +65,6 @@ nav:
   work: "Work"
   personal_website: "Personal website"
 page:
-  eyebrow: "Independent Works"
+  eyebrow: "lane4dev • apps"
   effective_date: "Effective date"
   last_updated: "Last updated"
