@@ -267,15 +267,23 @@
 }
 
 // Coverflow geometry: slide slots are $app-shot-slide of the viewport width,
-// images fill 72% of a slot. Center slide scales 1.5x, so the scaled center
-// (54% of viewport width) plus both full side images (25% each) fit without
-// overlap or clipping.
+// images fill 78% of a slot. Center slide scales 1.5x, so the scaled center
+// plus both tilted side images fit without clipping. The track is exactly
+// viewport-wide, and leading/trailing spacers (real flex items, not
+// padding-inline) let the first and last slides center — some browsers drop
+// a scroll container's trailing padding from the scrollable area, which
+// left the last slide stuck off-center.
 $app-shot-slide: 35%;
 
 .app-shots__viewport {
   aspect-ratio: 5 / 4;
-  padding-inline: calc((100% - #{$app-shot-slide}) / 2);
+  // The 1.5x-scaled slide boxes poke out past the viewport vertically;
+  // overflow-y must stay hidden or the container becomes vertically
+  // scrollable and vertical page swipes drag the shots along.
   overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x pan-y;
+  overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 
@@ -289,9 +297,13 @@ $app-shot-slide: 35%;
   height: 100%;
 }
 
+.app-shots__spacer {
+  flex: 0 0 calc((100% - #{$app-shot-slide}) / 2);
+}
+
 .app-shots__slide {
   display: flex;
-  flex: 0 0 100%;
+  flex: 0 0 #{$app-shot-slide};
   align-items: center;
   justify-content: center;
   padding: 16px 0;
@@ -300,7 +312,7 @@ $app-shot-slide: 35%;
   opacity: calc(1 - var(--shot-distance, 0) * 0.45);
 
   img {
-    width: 72%;
+    width: 78%;
     height: auto;
     aspect-ratio: 9 / 16;
     border-radius: 6px;
@@ -1494,7 +1506,9 @@ $app-shot-slide: 35%;
 .app-shots__nav {
   position: absolute;
   top: 50%;
-  z-index: 2;
+  // Slides get JS z-index 0-100; keep the buttons above every slide or a
+  // transitioning slide's scaled box swallows clicks on the button area.
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1755,6 +1769,16 @@ $app-shot-slide: 35%;
 
   .app-product-hero__facts {
     flex-wrap: wrap;
+  }
+
+  // Taller container with a dominant center image; side images bleed
+  // slightly off-screen and tuck behind the scaled center (z-index in JS).
+  .app-shots__viewport {
+    aspect-ratio: 9 / 10;
+  }
+
+  .app-shots__slide img {
+    width: 108%;
   }
 
   .page-app .app-section {

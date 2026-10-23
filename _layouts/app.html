@@ -56,11 +56,13 @@ bodyClass: "page-app"
           <div class="app-shots__stage">
             <div class="app-shots__viewport" tabindex="0">
               <div class="app-shots__track">
+                <div class="app-shots__spacer" aria-hidden="true"></div>
                 {% for shot in app_config.screenshots %}
                 <div class="app-shots__slide">
                   <img src="{{ shot | relative_url }}" alt="{{ app.name }} {{ t.app.screenshot_alt }} {{ forloop.index }}"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
                 </div>
                 {% endfor %}
+                <div class="app-shots__spacer" aria-hidden="true"></div>
               </div>
             </div>
             <button type="button" class="app-shots__nav app-shots__nav--prev" data-shots-prev aria-label="{{ t.app.screenshots_prev }}">&lsaquo;</button>
