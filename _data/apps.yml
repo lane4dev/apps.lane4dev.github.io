@@ -2,6 +2,13 @@ beyond-words:
   name: "Beyond Words"
   slug: "beyond-words"
   app_icon: "/assets/images/beyond_words/app_logo.png"
+  screenshots:
+    - "/assets/images/beyond_words/screen_shoot_zh/01.png"
+    - "/assets/images/beyond_words/screen_shoot_zh/02.png"
+    - "/assets/images/beyond_words/screen_shoot_zh/03.png"
+    - "/assets/images/beyond_words/screen_shoot_zh/04.png"
+    - "/assets/images/beyond_words/screen_shoot_zh/05.png"
+    - "/assets/images/beyond_words/screen_shoot_zh/06.png"
   tagline: "Say what you mean, in the context that fits."
   short_description: "A context-aware writing assistant for rewriting, translation, tone adjustment, and prompt normalization."
   long_description: >-

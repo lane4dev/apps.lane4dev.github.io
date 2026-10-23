@@ -52,30 +52,24 @@ bodyClass: "page-app"
       </div>
 
       <div class="col-12 col-lg-5">
-        <div class="context-preview js-reveal" aria-label="{{ t.app.preview_label }}">
-          <div class="context-preview__bar">
-            <div class="terminal-window__controls" aria-hidden="true">
-              <span></span><span></span><span></span>
+        <div class="app-shots js-reveal" aria-roledescription="carousel" aria-label="{{ t.app.screenshots_label }}">
+          <div class="app-shots__stage">
+            <div class="app-shots__viewport" tabindex="0">
+              <div class="app-shots__track">
+                {% for shot in app_config.screenshots %}
+                <div class="app-shots__slide">
+                  <img src="{{ shot | relative_url }}" alt="{{ app.name }} {{ t.app.screenshot_alt }} {{ forloop.index }}"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                </div>
+                {% endfor %}
+              </div>
             </div>
-            <span>context.transform</span>
-            <span class="terminal-window__mode">READY</span>
+            <button type="button" class="app-shots__nav app-shots__nav--prev" data-shots-prev aria-label="{{ t.app.screenshots_prev }}">&lsaquo;</button>
+            <button type="button" class="app-shots__nav app-shots__nav--next" data-shots-next aria-label="{{ t.app.screenshots_next }}">&rsaquo;</button>
           </div>
-          <div class="context-preview__body">
-            <div class="context-preview__label">
-              <span>{{ t.app.input_original }}</span>
-              <span>EN</span>
-            </div>
-            <div class="context-preview__bubble">{{ t.app.input_text }}</div>
-            <div class="context-preview__route" aria-hidden="true">
-              <span></span><i>{{ t.app.route }}</i><span></span>
-            </div>
-            <div class="context-preview__label">
-              <span>{{ t.app.output_transformed }}</span>
-              <span class="context-preview__status">{{ t.app.verified }}</span>
-            </div>
-            <div class="context-preview__bubble context-preview__bubble--accent">
-              {{ t.app.output_text }}
-            </div>
+          <div class="app-shots__dots">
+            {% for shot in app_config.screenshots %}
+            <button type="button" class="app-shots__dot{% if forloop.first %} is-active{% endif %}" data-shots-dot aria-label="{{ t.app.screenshot_alt }} {{ forloop.index }}"></button>
+            {% endfor %}
           </div>
         </div>
       </div>
