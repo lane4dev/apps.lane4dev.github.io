@@ -185,7 +185,5 @@ x_default_url: /beyond-words/terms/
 
 ## 17. 联系方式
 
-**{{ developer.legal_name }}**  
-以 {{ developer.display_name }} 名义运营  
-{{ developer.country_or_region }}  
+**{{ developer.legal_name }}**  ， {{ developer.country_or_region }}  
 [{{ developer.support_email }}](mailto:{{ developer.support_email }})

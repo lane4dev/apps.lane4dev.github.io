@@ -247,7 +247,5 @@ after the effective date constitutes acceptance where permitted by law.
 
 ## 17. Contact
 
-**{{ developer.legal_name }}**  
-Operating as {{ developer.display_name }}  
-{{ developer.country_or_region }}  
+**{{ developer.legal_name }}**  , {{ developer.country_or_region }}  
 [{{ developer.support_email }}](mailto:{{ developer.support_email }})

@@ -255,30 +255,14 @@ information that helps us locate relevant server-side records before completing
 a request. We will respond to privacy requests in accordance with applicable
 law.
 
-## 9. Children's privacy
-
-{{ app.name }} is not directed to, and is not intended for, people under 18.
-We do not knowingly offer the service to people under 18. If you believe that a
-person under 18 has provided personal information through the service, contact
-us so the matter can be reviewed.
-
-## 10. International transfers
-
-Information may be processed in countries where our service providers operate.
-Where required, we use contractual or other recognized safeguards for
-international transfers.
-
-## 11. Changes to this policy
+## 9. Changes to this policy
 
 We may update this policy when the service, providers, or legal requirements
 change. The revised policy will identify a new “Last updated” date. Material
 changes may also be communicated in the application or through another
 appropriate channel.
 
-## 12. Contact
+## 10. Contact
 
-**{{ developer.legal_name }}**  
-Operating as {{ developer.display_name }}  
-{{ developer.country_or_region }}  
-Privacy: [{{ developer.support_email }}](mailto:{{ developer.support_email }})<br>
+**{{ developer.legal_name }}**  , {{ developer.country_or_region }}  
 Support: [{{ developer.support_email }}](mailto:{{ developer.support_email }})

@@ -187,25 +187,12 @@ x_default_url: /beyond-words/privacy/
 由于应用不提供用户可见的账户，在处理请求前，我们可能需要你提供有助于定位相关服务端记录的
 信息。我们会依照适用法律处理隐私请求。
 
-## 9. 儿童隐私
-
-{{ app.name }} 不面向、也不意图向未满 18 周岁的人提供服务。我们不会故意向未满 18 周岁的人
-提供本服务。如你认为未满 18 周岁的人通过本服务提供了个人信息，请联系我们进行审查。
-
-## 10. 跨境传输
-
-信息可能在服务提供方运营所在的国家处理。在法律要求的情况下，我们会采用合同或其他认可的
-跨境传输保障措施。
-
-## 11. 政策变更
+## 9. 政策变更
 
 当服务、提供方或法律要求发生变化时，我们可能更新本政策。新版本会标明新的“最后更新”日期；
 重大变更也可能通过应用或其他适当渠道通知。
 
-## 12. 联系方式
+## 10. 联系方式
 
-**{{ developer.legal_name }}**  
-以 {{ developer.display_name }} 名义运营  
-{{ developer.country_or_region }}  
-隐私：[{{ developer.support_email }}](mailto:{{ developer.support_email }})<br>
+**{{ developer.legal_name }}**  ，{{ developer.country_or_region }}  
 支持：[{{ developer.support_email }}](mailto:{{ developer.support_email }})
