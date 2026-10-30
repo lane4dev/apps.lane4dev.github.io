@@ -267,16 +267,15 @@
 }
 
 // Coverflow geometry: slide slots are $app-shot-slide of the viewport width,
-// images fill 78% of a slot. Center slide scales 1.5x, so the scaled center
-// plus both tilted side images fit without clipping. The track is exactly
+// images fit within each slot, and the center slide scales 1.5x. The track is
 // viewport-wide, and leading/trailing spacers (real flex items, not
 // padding-inline) let the first and last slides center — some browsers drop
 // a scroll container's trailing padding from the scrollable area, which
 // left the last slide stuck off-center.
-$app-shot-slide: 35%;
+$app-shot-slide: 48%;
 
 .app-shots__viewport {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 2 / 3;
   // The 1.5x-scaled slide boxes poke out past the viewport vertically;
   // overflow-y must stay hidden or the container becomes vertically
   // scrollable and vertical page swipes drag the shots along.
@@ -312,6 +311,7 @@ $app-shot-slide: 35%;
   opacity: calc(1 - var(--shot-distance, 0) * 0.45);
 
   img {
+    flex-shrink: 0;
     width: 78%;
     height: auto;
     aspect-ratio: 9 / 16;
@@ -1771,14 +1771,13 @@ $app-shot-slide: 35%;
     flex-wrap: wrap;
   }
 
-  // Taller container with a dominant center image; side images bleed
-  // slightly off-screen and tuck behind the scaled center (z-index in JS).
+  // Keep the larger mobile screenshots within the taller viewport.
   .app-shots__viewport {
-    aspect-ratio: 9 / 10;
+    aspect-ratio: 5 / 8;
   }
 
   .app-shots__slide img {
-    width: 108%;
+    width: 81%;
   }
 
   .page-app .app-section {
