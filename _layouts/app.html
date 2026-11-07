@@ -28,7 +28,15 @@ bodyClass: "page-app"
 
         <div class="tech-hero__actions">
           {% if app_config.store_enabled %}
-            <a class="tech-button tech-button--primary" href="{{ app_config.store_url }}" rel="noopener">{{ app.store_label }}</a>
+            <a class="play-store-button" href="{{ app_config.store_url }}" rel="noopener" aria-label="{{ app.store_label }}">
+              <svg class="play-store-button__icon" viewBox="0 0 32 36" aria-hidden="true" focusable="false">
+                <path fill="#00d4ff" d="M1 1.5v33L18 18z" />
+                <path fill="#00ef8e" d="M1 1.5 22 13l-4 5z" />
+                <path fill="#ff3a44" d="M1 34.5 22 23l-4-5z" />
+                <path fill="#ffce00" d="m22 13 8 4.3c.8.4.8 1 0 1.4L22 23l-4-5z" />
+              </svg>
+              <span class="play-store-button__text"><span>{{ app.store_prefix }}</span><strong>Google Play</strong></span>
+            </a>
           {% else %}
             <span class="tech-button tech-button--disabled" aria-disabled="true">{{ app.store_label }} — {{ t.app.coming_soon }}</span>
           {% endif %}

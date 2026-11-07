@@ -15,11 +15,13 @@ beyond-words:
     Beyond Words helps you transform existing text without inventing missing
     facts. Select a context, provide your text, review the generated result,
     and refine it before sharing.
-  status: "Preparing for Google Play"
+  status: "Available on Google Play"
   platform: "Android"
 
-  store_enabled: false
+  store_enabled: true
+  store_url: "https://play.google.com/store/apps/details?id=me.tangyu.beyondwords"
   store_label: "Get it on Google Play"
+  store_prefix: "GET IT ON"
 
   base_path: "/beyond-words/"
   custom_packs_path: "/beyond-words/custom-context-packs/"

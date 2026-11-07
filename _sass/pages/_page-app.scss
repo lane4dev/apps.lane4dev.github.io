@@ -757,6 +757,52 @@ $app-shot-slide: 48%;
   }
 }
 
+.play-store-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 11px;
+  border: 1px solid #a6a6a6;
+  border-radius: 6px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+
+  &:hover {
+    border-color: #fff;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+}
+
+.play-store-button__icon {
+  width: 28px;
+  height: 32px;
+  flex: none;
+}
+
+.play-store-button__text {
+  display: grid;
+  font-family: Arial, sans-serif;
+  font-size: 0.6rem;
+  line-height: 1.1;
+
+  strong {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+}
+
 .tech-button--ghost {
   border-color: rgba(255, 255, 255, 0.24);
   color: rgba(255, 255, 255, 0.84);

@@ -6,9 +6,10 @@ beyond-words:
   long_description: >-
     言外在不虚构缺失事实的前提下帮助你转换现有文本。
     选择语境、提供原文、检查生成结果，并在分享前继续调整。
-  status: "正在准备上架 Google Play"
+  status: "已在 Google Play 上架"
   platform: "Android"
   store_label: "前往 Google Play"
+  store_prefix: "立即下载"
 
   base_path: "/zh/beyond-words/"
   custom_packs_path: "/zh/beyond-words/custom-context-packs/"
