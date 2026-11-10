@@ -17,7 +17,7 @@ bodyClass: "page-app"
   <div class="tech-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <div class="row align-items-center app-product-hero__row">
-      <div class="col-12 col-lg-7">
+      <div class="col-12{% if app_config.screenshots.size > 0 %} col-lg-4{% endif %}">
         <div class="system-badge">
           <span class="system-badge__signal" aria-hidden="true"></span>
           {{ app.platform }} / {{ app.status }}
@@ -59,7 +59,11 @@ bodyClass: "page-app"
         </dl>
       </div>
 
-      <div class="col-12 col-lg-5">
+      {% if app_config.screenshots.size > 0 %}
+      <div class="col-12 col-lg-8">
+        {% if app_config.screenshots.size == 1 %}
+        <img class="app-single-shot" src="{{ app_config.screenshots.first | relative_url }}" alt="{{ app.name }} {{ t.app.screenshot_alt }}" loading="eager">
+        {% else %}
         <div class="app-shots js-reveal" aria-roledescription="carousel" aria-label="{{ t.app.screenshots_label }}">
           <div class="app-shots__stage">
             <div class="app-shots__viewport" tabindex="0">
@@ -82,7 +86,9 @@ bodyClass: "page-app"
             {% endfor %}
           </div>
         </div>
+        {% endif %}
       </div>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -94,9 +100,9 @@ bodyClass: "page-app"
     <header class="lab-heading app-lab-heading js-reveal">
       <div>
         <p class="lab-heading__index">01 / {{ t.app.capabilities }}</p>
-        <h2>{{ t.app.capabilities_heading }}</h2>
+        <h2>{{ app.capabilities_heading | default: t.app.capabilities_heading }}</h2>
       </div>
-      <p>{{ t.app.capabilities_intro }}</p>
+      <p>{{ app.capabilities_intro | default: t.app.capabilities_intro }}</p>
     </header>
     <div class="row">
       {% for feature in app.features %}
@@ -118,9 +124,9 @@ bodyClass: "page-app"
     <header class="lab-heading lab-heading--dark app-lab-heading js-reveal">
       <div>
         <p class="lab-heading__index">02 / {{ t.app.workflow }}</p>
-        <h2>{{ t.app.workflow_heading }}</h2>
+        <h2>{{ app.workflow_heading | default: t.app.workflow_heading }}</h2>
       </div>
-      <p>{{ t.app.workflow_intro }}</p>
+      <p>{{ app.workflow_intro | default: t.app.workflow_intro }}</p>
     </header>
     <div class="row">
       {% for step in app.workflow %}
@@ -141,8 +147,8 @@ bodyClass: "page-app"
     <div class="app-assurance js-reveal">
       <div>
         <p class="lab-heading__index">03 / {{ t.app.transparency }}</p>
-        <h2>{{ t.app.transparency_heading }}</h2>
-        <p>{{ t.app.transparency_intro }}</p>
+        <h2>{{ app.transparency_heading | default: t.app.transparency_heading }}</h2>
+        <p>{{ app.transparency_intro | default: t.app.transparency_intro }}</p>
       </div>
       <div class="app-assurance__links">
         <a href="{{ app.privacy_path | relative_url }}">{{ t.nav.privacy_policy }}</a>

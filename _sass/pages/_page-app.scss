@@ -1541,8 +1541,37 @@ $app-shot-slide: 48%;
   cursor: not-allowed;
 }
 
+.app-single-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .app-product-hero .app-shots {
   margin-left: auto;
+}
+
+@include media-breakpoint-up(lg) {
+  .app-product-hero .app-shots__viewport {
+    // Keep the carousel within the first screen while using the full column width.
+    height: max(360px, calc(100vh - 290px));
+    aspect-ratio: auto;
+  }
+
+  .app-product-hero .app-shots__spacer {
+    flex-basis: 33.333%;
+  }
+
+  .app-product-hero .app-shots__slide {
+    flex-basis: 33.333%;
+
+    img {
+      width: auto;
+      max-width: 90%;
+      max-height: 65%;
+    }
+  }
 }
 
 .app-shots__stage {

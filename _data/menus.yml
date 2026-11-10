@@ -3,6 +3,10 @@ main:
     url: "/beyond-words/"
     weight: 1
 
+  - name: "Heading Brief"
+    url: "/heading-brief/"
+    weight: 2
+
 footer:
   - name: "Personal website"
     url: "https://tangyu.me"

@@ -3,6 +3,10 @@ main:
     url: "/zh/beyond-words/"
     weight: 1
 
+  - name: "章节速览"
+    url: "/zh/heading-brief/"
+    weight: 2
+
 footer:
   - name: "个人网站"
     url: "https://tangyu.me"

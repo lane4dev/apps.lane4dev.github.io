@@ -69,3 +69,40 @@ beyond-words:
   support:
     harmful_output_reporting: true
     in_app_report_path: "Use the Report action beside a generated result."
+
+heading-brief:
+  name: "Heading Brief"
+  slug: "heading-brief"
+  screenshots:
+    - "/assets/images/heading_brief/screen_shoot/01.png"
+  tagline: "Get to the point, one section at a time."
+  short_description: "A browser extension that summarizes article sections beside the original text."
+  long_description: "Choose a heading to summarize its section and subsections without leaving the page."
+  status: "Store listing pending"
+  platform: "Chrome"
+  store_enabled: false
+  store_label: "Chrome Web Store"
+  base_path: "/heading-brief/"
+  privacy_path: "/heading-brief/privacy/"
+  terms_path: "/heading-brief/terms/"
+  support_path: "/heading-brief/support/"
+  capabilities_heading: "Read at your own pace"
+  capabilities_intro: "Choose the sections and AI provider that fit how you read."
+  workflow_heading: "Three steps to a summary"
+  workflow_intro: "Set up a provider, open an article, and choose a section."
+  transparency_heading: "Choose where your content goes"
+  transparency_intro: "Review how the extension handles page content, settings, and summary requests."
+  features:
+    - title: "Choose your AI provider"
+      description: "Select a supported provider and model, set an output language, and customize the prompt."
+    - title: "Summarize a section"
+      description: "Summarize a heading and its subsections, or the whole article when its main title is detected."
+    - title: "Keep the original in view"
+      description: "Read summaries beside the source, inspect extracted text, copy a result, or generate it again."
+  workflow:
+    - title: "Set up your provider"
+      description: "Choose a model and enter an API key if needed, or configure a supported endpoint."
+    - title: "Open an article"
+      description: "Heading Brief finds article headings on enabled sites and adds summary buttons."
+    - title: "Choose a section"
+      description: "Select a button to generate a summary beside the original text."

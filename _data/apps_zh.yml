@@ -44,3 +44,37 @@ beyond-words:
 
   support:
     in_app_report_path: "使用生成结果旁边的“举报”操作。"
+
+heading-brief:
+  name: "章节速览"
+  slug: "heading-brief"
+  tagline: "逐节阅读，直达重点。"
+  short_description: "一款浏览器扩展，可在原文旁概括文章章节。"
+  long_description: "选择标题，即可在当前页面获取该章节及其子章节的摘要。"
+  status: "商店页面待上线"
+  platform: "Chrome"
+  store_label: "Chrome 网上应用店"
+  base_path: "/zh/heading-brief/"
+  privacy_path: "/zh/heading-brief/privacy/"
+  terms_path: "/zh/heading-brief/terms/"
+  support_path: "/zh/heading-brief/support/"
+  capabilities_heading: "按自己的节奏阅读"
+  capabilities_intro: "选择需要阅读的章节和适合你的 AI 服务。"
+  workflow_heading: "三步获取摘要"
+  workflow_intro: "配置服务、打开文章，然后选择一个章节。"
+  transparency_heading: "由你选择内容的去向"
+  transparency_intro: "了解扩展如何处理网页内容、设置和摘要请求。"
+  features:
+    - title: "选择 AI 服务"
+      description: "选择受支持的服务和模型，设置输出语言并自定义提示词。"
+    - title: "概括章节"
+      description: "概括标题及其子章节；识别到文章主标题时，也可概括全文。"
+    - title: "对照原文阅读"
+      description: "在原文旁阅读摘要，查看提取的内容、复制结果或重新生成。"
+  workflow:
+    - title: "配置服务"
+      description: "选择模型，并在需要时输入 API 密钥，或配置受支持的端点。"
+    - title: "打开文章"
+      description: "章节速览在已启用的网站上查找文章标题并添加摘要按钮。"
+    - title: "选择章节"
+      description: "点击按钮，在原文旁生成摘要。"
