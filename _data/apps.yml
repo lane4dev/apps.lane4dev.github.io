@@ -73,6 +73,7 @@ beyond-words:
 heading-brief:
   name: "Heading Brief"
   slug: "heading-brief"
+  app_icon: "/assets/images/heading_brief/app_logo.png"
   screenshots:
     - "/assets/images/heading_brief/screen_shoot/01.png"
   tagline: "Get to the point, one section at a time."
