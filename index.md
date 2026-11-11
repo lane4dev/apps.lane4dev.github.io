@@ -1,5 +1,5 @@
 ---
-title: "Turning useful ideas into working software."
+title: "Turning useful ideas into working software"
 layout: apps-home
 description: "Independent experiments and focused products, engineered for clarity, usefulness, and a little bit of wonder."
 permalink: /
