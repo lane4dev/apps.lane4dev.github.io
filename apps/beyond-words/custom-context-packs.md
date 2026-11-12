@@ -137,20 +137,28 @@ download the file without changing its contents.
   <div class="pack-card">
     <h3>Translate to English</h3>
     <p>Translates text from any language into natural, accurate English.</p>
-    <a class="pack-card__download" href="{{ translation_pack_path | relative_url }}" download>Download JSON</a>
     <div class="pack-card__url">
-      <span>Import URL</span>
+      <span class="pack-card__url-label">Import URL</span>
       <code>{{ translation_pack_url }}</code>
     </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="Copy Translate to English import URL">Copy URL</button>
+      <a class="pack-card__download" href="{{ translation_pack_path | relative_url }}" download>Download JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="Copied!" data-copy-error="Copy failed. Please select the URL above."></span>
   </div>
   <div class="pack-card">
     <h3>Refined Sarcasm</h3>
     <p>Rewrites text with polished, indirect, and sharply sarcastic phrasing.
     Includes English and Simplified Chinese instructions with examples.</p>
-    <a class="pack-card__download" href="{{ example_pack_path | relative_url }}" download>Download JSON</a>
     <div class="pack-card__url">
-      <span>Import URL</span>
+      <span class="pack-card__url-label">Import URL</span>
       <code>{{ example_pack_url }}</code>
     </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="Copy Refined Sarcasm import URL">Copy URL</button>
+      <a class="pack-card__download" href="{{ example_pack_path | relative_url }}" download>Download JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="Copied!" data-copy-error="Copy failed. Please select the URL above."></span>
   </div>
 </div>

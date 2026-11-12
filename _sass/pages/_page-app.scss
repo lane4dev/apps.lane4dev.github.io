@@ -561,41 +561,76 @@ $app-shot-slide: 48%;
 
   .pack-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1rem;
     margin-top: 1.5rem;
   }
 
   .pack-card {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    min-width: 0;
     padding: 1.5rem;
     border: 1px solid var(--app-border);
-    border-radius: 6px;
-    background: var(--app-surface-offset);
+    border-radius: 10px;
+    background: #fff;
 
     h3 {
-      margin: 0;
+      margin: 0 0 0.5rem;
       font-size: 1.15rem;
       color: $black;
     }
 
     p {
-      margin: 0;
+      margin: 0 0 1.5rem;
       font-size: 0.95rem;
     }
   }
 
-  .pack-card__download {
-    align-self: flex-start;
+  .pack-card__url {
     margin-top: auto;
-    padding: 0.45rem 1.1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    background: var(--app-surface-offset);
+    color: var(--app-muted);
+    font-size: 0.8rem;
+
+    code {
+      display: block;
+      margin-top: 0.3rem;
+      color: #414252;
+      font-size: 0.8rem;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  .pack-card__url-label {
+    font-weight: 700;
+  }
+
+  .pack-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .pack-card__download,
+  .pack-card__copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.5rem 0.9rem;
     border: 1px solid var(--app-primary);
-    border-radius: 3px;
+    border-radius: 5px;
+    background: transparent;
     color: var(--app-primary);
+    font-size: 0.9rem;
     font-weight: 600;
+    line-height: 1.3;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       background: var(--app-primary);
@@ -604,13 +639,30 @@ $app-shot-slide: 48%;
     }
   }
 
-  .pack-card__url {
-    font-size: 0.85rem;
-    color: var(--app-muted);
+  .pack-card__copy {
+    background: var(--app-primary);
+    color: #fff;
 
-    code {
-      display: block;
-      overflow-wrap: anywhere;
+    &:hover {
+      background: var(--app-primary-dark);
+      color: #fff;
+    }
+  }
+
+  .pack-card__copy,
+  .pack-card__download {
+    &:focus-visible {
+      outline: 2px solid var(--app-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  .pack-card__copy-status {
+    color: var(--app-muted);
+    font-size: 0.85rem;
+
+    &:not(:empty) {
+      margin-top: 0.6rem;
     }
   }
 }

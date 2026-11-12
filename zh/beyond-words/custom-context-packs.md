@@ -119,19 +119,27 @@ HTML 下载页面、ZIP 文件或内置语境包清单。
   <div class="pack-card">
     <h3>翻译成中文</h3>
     <p>将任意语言的文字翻译成自然、准确的简体中文。</p>
-    <a class="pack-card__download" href="{{ translation_pack_path | relative_url }}" download>下载 JSON</a>
     <div class="pack-card__url">
-      <span>导入 URL</span>
+      <span class="pack-card__url-label">导入 URL</span>
       <code>{{ translation_pack_url }}</code>
     </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="复制翻译成中文的导入 URL">复制 URL</button>
+      <a class="pack-card__download" href="{{ translation_pack_path | relative_url }}" download>下载 JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
   </div>
   <div class="pack-card">
     <h3>高级嘲讽</h3>
     <p>以委婉、克制而一针见血的讽刺风格改写文本，包含中文和英文指令及示例。</p>
-    <a class="pack-card__download" href="{{ example_pack_path | relative_url }}" download>下载 JSON</a>
     <div class="pack-card__url">
-      <span>导入 URL</span>
+      <span class="pack-card__url-label">导入 URL</span>
       <code>{{ example_pack_url }}</code>
     </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="复制高级嘲讽的导入 URL">复制 URL</button>
+      <a class="pack-card__download" href="{{ example_pack_path | relative_url }}" download>下载 JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
   </div>
 </div>

@@ -42,5 +42,8 @@
   {% include footer.html %}
   {% include sub-footer.html %}
   <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+  {% if page.translation_key == "beyond-words-custom-context-packs" %}
+  <script src="{{ '/assets/js/copy-pack-url.js' | relative_url }}"></script>
+  {% endif %}
 </body>
 </html>
