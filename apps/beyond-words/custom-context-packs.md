@@ -84,7 +84,7 @@ characters).
 
 ## Minimal example
 
-```json
+{% highlight json %}
 {
   "schemaVersion": 1,
   "id": "plain-language-rewrite",
@@ -112,7 +112,7 @@ characters).
     }
   }
 }
-```
+{% endhighlight %}
 
 ## Safety and compatibility rules
 

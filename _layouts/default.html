@@ -17,6 +17,9 @@
   <link rel="alternate" hreflang="x-default" href="{{ page.x_default_url | absolute_url }}">
   {% endif %}
   <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
+  {% if page.translation_key == "beyond-words-custom-context-packs" %}
+  <link href="{{ '/assets/css/rouge-github.css' | relative_url }}" rel="stylesheet">
+  {% endif %}
 
   {% assign meta_description = page.description | default: site.description %}
   {% if meta_description %}<meta name="description" content="{{ meta_description | escape }}">{% endif %}

@@ -4,6 +4,7 @@ permalink: pretty
 title: lane4dev • apps
 description: A personal portfolio of thoughtfully made independent software.
 lang: en
+highlighter: rouge
 collections:
   apps:
     output: true

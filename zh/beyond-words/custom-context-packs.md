@@ -71,7 +71,7 @@ HTML 下载页面、ZIP 文件或内置语境包清单。
 
 ## 最小示例
 
-```json
+{% highlight json %}
 {
   "schemaVersion": 1,
   "id": "plain-language-rewrite",
@@ -99,7 +99,7 @@ HTML 下载页面、ZIP 文件或内置语境包清单。
     }
   }
 }
-```
+{% endhighlight %}
 
 ## 安全与兼容性规则
 
