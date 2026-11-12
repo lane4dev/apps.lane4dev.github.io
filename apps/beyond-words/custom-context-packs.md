@@ -15,6 +15,8 @@ x_default_url: /beyond-words/custom-context-packs/
 {% assign app = site.data.apps[page.app_key] %}
 {% assign example_pack_path = '/assets/downloads/beyond-words/sarcastic_rewrite.v1.json' %}
 {% assign example_pack_url = example_pack_path | absolute_url %}
+{% assign translation_pack_path = '/assets/downloads/beyond-words/translate_to_english.v1.json' %}
+{% assign translation_pack_url = translation_pack_path | absolute_url %}
 
 **Last updated:** {{ page.last_updated }}
 
@@ -132,6 +134,15 @@ HTTPS address into the app's **Import from URL** option. For a file import,
 download the file without changing its contents.
 
 <div class="pack-cards">
+  <div class="pack-card">
+    <h3>Translate to English</h3>
+    <p>Translates text from any language into natural, accurate English.</p>
+    <a class="pack-card__download" href="{{ translation_pack_path | relative_url }}" download>Download JSON</a>
+    <div class="pack-card__url">
+      <span>Import URL</span>
+      <code>{{ translation_pack_url }}</code>
+    </div>
+  </div>
   <div class="pack-card">
     <h3>Refined Sarcasm</h3>
     <p>Rewrites text with polished, indirect, and sharply sarcastic phrasing.

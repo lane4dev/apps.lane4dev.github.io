@@ -15,6 +15,8 @@ x_default_url: /beyond-words/custom-context-packs/
 {% assign app = site.data.apps_zh[page.app_key] %}
 {% assign example_pack_path = '/assets/downloads/beyond-words/sarcastic_rewrite.v1.json' %}
 {% assign example_pack_url = example_pack_path | absolute_url %}
+{% assign translation_pack_path = '/assets/downloads/beyond-words/translate_to_chinese.v1.json' %}
+{% assign translation_pack_url = translation_pack_path | absolute_url %}
 
 **最后更新：** {{ page.last_updated }}
 
@@ -114,6 +116,15 @@ HTML 下载页面、ZIP 文件或内置语境包清单。
 从设备导入，或将 HTTPS 地址复制到应用的“从 URL 导入”。从文件导入时，请勿修改文件内容。
 
 <div class="pack-cards">
+  <div class="pack-card">
+    <h3>翻译成中文</h3>
+    <p>将任意语言的文字翻译成自然、准确的简体中文。</p>
+    <a class="pack-card__download" href="{{ translation_pack_path | relative_url }}" download>下载 JSON</a>
+    <div class="pack-card__url">
+      <span>导入 URL</span>
+      <code>{{ translation_pack_url }}</code>
+    </div>
+  </div>
   <div class="pack-card">
     <h3>高级嘲讽</h3>
     <p>以委婉、克制而一针见血的讽刺风格改写文本，包含中文和英文指令及示例。</p>

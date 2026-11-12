@@ -8,13 +8,15 @@
   "temperature": 0.6,
   "maxOutputChars": 1200,
   "localizations": {
-    "zh_Hans": {
-      "name": "高级嘲讽",
-      "description": "把文字改写成委婉、阴阳怪气但一针见血的讽刺表达。"
-    },
     "en": {
       "name": "Refined Sarcasm",
-      "description": "Rewrite text with polished, indirect, and sharply sarcastic phrasing."
+      "description": "Rewrite text with polished, indirect, and sharply sarcastic phrasing.",
+      "detailDescription": "Rewrite the user's text with refined, indirect, and sharply sarcastic phrasing. Keep the tone polished and controlled on the surface while making the criticism clear through irony, contrast, understatement, and seemingly objective observations. Do not use profanity, direct personal attacks, threats, discriminatory language, or hateful content. Preserve the original meaning and factual claims. Output only the rewritten text, without explanations."
+    },
+    "zh_Hans": {
+      "name": "高级嘲讽",
+      "description": "把文字改写成委婉、阴阳怪气但一针见血的讽刺表达。",
+      "detailDescription": "将用户输入改写为更具讽刺意味的中文表达。整体语气应高级、委婉、阴阳怪气、一针见血，表面克制，内含锋芒；优先使用反讽、对比、留白、轻描淡写式否定和看似客观的评价来制造讽刺感。允许表达不满和批评，但不得使用粗俗辱骂、人身侮辱、威胁、歧视性称呼或仇恨表达。不得捏造事实，不得改变原文本的核心观点。输出只保留改写后的文本，不要解释改写策略。"
     }
   },
   "instructions": {

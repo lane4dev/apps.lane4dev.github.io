@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "translate-to-chinese",
+  "packKey": "translate_to_chinese",
+  "packVersion": "1.0.0",
+  "iconName": "translate",
+  "supportedLocales": [
+    "*"
+  ],
+  "temperature": 0.2,
+  "maxOutputChars": 3000,
+  "localizations": {
+    "en": {
+      "name": "Translate to Chinese",
+      "description": "Translate text from any language into natural, accurate Simplified Chinese."
+    },
+    "zh_Hans": {
+      "name": "翻译成中文",
+      "description": "将任意语言的文字翻译成自然、准确的简体中文。"
+    },
+    "zh_Hant": {
+      "name": "翻譯成中文",
+      "description": "將任意語言的文字翻譯成自然、準確的繁體中文。"
+    },
+    "ja": {
+      "name": "中国語に翻訳",
+      "description": "任意の言語のテキストを自然で正確な簡体字中国語に翻訳します。"
+    },
+    "ko": {
+      "name": "중국어로 번역",
+      "description": "모든 언어의 텍스트를 자연스럽고 정확한 간체 중국어로 번역합니다."
+    },
+    "es_419": {
+      "name": "Traducir al chino",
+      "description": "Traduce texto de cualquier idioma a chino simplificado natural y preciso."
+    },
+    "pt_BR": {
+      "name": "Traduzir para o chinês",
+      "description": "Traduz texto de qualquer idioma para chinês simplificado natural e preciso."
+    },
+    "de": {
+      "name": "Ins Chinesische übersetzen",
+      "description": "Übersetzt Text aus jeder Sprache in natürliches, genaues vereinfachtes Chinesisch."
+    },
+    "fr": {
+      "name": "Traduire en chinois",
+      "description": "Traduisez le texte de n'importe quelle langue en chinois simplifié naturel et précis."
+    }
+  },
+  "instructions": {
+    "default": {
+      "instruction": "Translate the user's text into natural, accurate Simplified Chinese (zh-Hans), regardless of the source language or interface locale. Automatically identify the source language, including mixed-language input. Preserve the original meaning, intent, tone, level of formality, facts, names, numbers, units, dates, conditions, negation, and uncertainty. Use fluent, idiomatic Chinese without adding, omitting, exaggerating, or reinterpreting information. Preserve paragraph structure, lists, Markdown formatting, URLs, code, and placeholders. Keep technical identifiers, variable names, and product names unchanged unless a widely accepted Chinese translation exists. Translate meaningful text in mixed-language input while retaining elements that should not be translated. If the input is already in Simplified Chinese, reproduce it without unnecessary rewriting. If the meaning is ambiguous, preserve the ambiguity rather than inventing context. Output only the translated text, without explanations, labels, quotation marks, or language annotations.",
+      "examples": [
+        {
+          "input": "Could you please send me the updated report by Friday?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        },
+        {
+          "input": "この件については、改めてご連絡いたします。",
+          "output": "关于这件事，我会再与您联系。"
+        },
+        {
+          "input": "No te preocupes, todo va a salir bien.",
+          "output": "别担心，一切都会好起来的。"
+        },
+        {
+          "input": "Je ne suis pas sûr que ce soit la meilleure solution.",
+          "output": "我不确定这是不是最好的解决方案。"
+        },
+        {
+          "input": "Please review the API documentation before 明日のミーティング。",
+          "output": "请在明天的会议之前查看 API 文档。"
+        },
+        {
+          "input": "这个功能目前还不支持离线使用。",
+          "output": "这个功能目前还不支持离线使用。"
+        }
+      ]
+    }
+  }
+}
