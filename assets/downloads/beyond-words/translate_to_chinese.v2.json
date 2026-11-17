@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "id": "translate-to-chinese",
+  "packKey": "translate_to_chinese",
+  "packVersion": "2.0.0",
+  "iconName": "translate",
+  "supportedLocales": [
+    "*"
+  ],
+  "temperature": 0.2,
+  "maxOutputChars": 3000,
+  "localizations": {
+    "en": {
+      "name": "Translate to Chinese",
+      "description": "Translate text from any language into natural, accurate Simplified Chinese",
+      "detailDescription": "Translate the user's text into natural, accurate Simplified Chinese, regardless of the source language or interface locale. Automatically identify the source language, including mixed-language input. Preserve the original meaning, intent, tone, level of formality, facts, names, numbers, units, dates, conditions, negation, and uncertainty. Use fluent, idiomatic Chinese without adding, omitting, exaggerating, or reinterpreting information. Preserve paragraph structure, lists, Markdown formatting, URLs, code, and placeholders. Keep technical identifiers, variable names, and product names unchanged unless a widely accepted Chinese translation exists. Translate meaningful text in mixed-language input while retaining elements that should not be translated. If the input is already in Simplified Chinese, reproduce it without unnecessary rewriting. If the meaning is ambiguous, preserve the ambiguity rather than inventing context. Output only the translated text, without explanations, labels, quotation marks, or language annotations.",
+      "examples": [
+        {
+          "input": "Could you please send me the updated report by Friday?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "zh_Hans": {
+      "name": "翻译成中文",
+      "description": "将任意语言的文字翻译成自然、准确的简体中文",
+      "detailDescription": "将用户输入翻译成自然、准确的简体中文，无论源语言或界面语言为何。自动识别源语言，包括混合语言输入。保留原意、意图、语气、正式程度、事实、名称、数字、单位、日期、条件、否定和不确定性。使用流畅、地道的中文，不添加、省略、夸大或重新解释信息。保留段落结构、列表、Markdown 格式、URL、代码和占位符。保持技术标识符、变量名和产品名不变，除非存在广泛接受的中文翻译。在混合语言输入中翻译有意义的文本，同时保留不应翻译的元素。如果输入已经是简体中文，则无需不必要的改写即可复现。如果含义模糊，请保留模糊性，而不是编造上下文。仅输出翻译后的文本，不要解释、标注、引号或语言注释。",
+      "examples": [
+        {
+          "input": "Could you please send me the updated report by Friday?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "zh_Hant": {
+      "name": "翻譯成中文",
+      "description": "將任意語言的文字翻譯成自然、準確的繁體中文",
+      "detailDescription": "將用戶輸入翻譯成自然、準確的繁體中文，無論源語言或界面語言為何。自動識別源語言，包括混合語言輸入。保留原意、意圖、語氣、正式程度、事實、名稱、數字、單位、日期、條件、否定和不確定性。使用流暢、地道的中文，不添加、省略、誇大或重新解釋信息。保留段落結構、列表、Markdown 格式、URL、代碼和佔位符。保持技術標識符、變量名和產品名不變，除非存在廣泛接受的中文翻譯。在混合語言輸入中翻譯有意義的文本，同時保留不應翻譯的元素。如果輸入已經是繁體中文，則無需不必要的改寫即可復現。如果含義模糊，請保留模糊性，而不是編造上下文。僅輸出翻譯後的文本，不要解釋、標註、引號或語言註釋。",
+      "examples": [
+        {
+          "input": "Could you please send me the updated report by Friday?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "ja": {
+      "name": "中国語に翻訳",
+      "description": "任意の言語のテキストを自然で正確な簡体字中国語に翻訳します",
+      "detailDescription": "ユーザーのテキストを自然で正確な簡体字中国語に翻訳します。ソース言語やインターフェイスのロケールに関係なく、混合言語の入力も含めて自動的にソース言語を識別します。元の意味、意図、トーン、形式のレベル、事実、名前、数字、単位、日付、条件、否定、および不確実性を保持します。情報を追加、削除、誇張、または再解釈せずに流暢で慣用的な中国語を使用してください。段落構造、リスト、Markdown形式、URL、コード、およびプレースホルダーを保持します。広く受け入れられている中国語の翻訳が存在しない限り、技術的な識別子、変数名、および製品名は変更しないでください。翻訳すべきでない要素を保持しながら、混合言語入力の意味のあるテキストを翻訳します。入力がすでに簡体字中国語の場合は、不必要な書き換えなしで再現してください。意味があいまいな場合は、文脈を作り出すのではなく、そのあいまいさを保持してください。説明、ラベル、引用符、または言語注釈なしで翻訳されたテキストのみを出力してください。",
+      "examples": [
+        {
+          "input": "金曜日までに更新されたレポートを送っていただけますか？",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "ko": {
+      "name": "중국어로 번역",
+      "description": "모든 언어의 텍스트를 자연스럽고 정확한 간체 중국어로 번역합니다",
+      "detailDescription": "사용자의 텍스트를 자연스럽고 정확한 간체 중국어로 번역합니다. 소스 언어 또는 인터페이스 로케일에 관계없이 혼합 언어 입력을 포함하여 소스 언어를 자동으로 식별합니다. 원래 의미, 의도, 톤, 형식 수준, 사실, 이름, 숫자, 단위, 날짜, 조건, 부정 및 불확실성을 유지합니다. 정보를 추가, 생략, 과장 또는 재해석하지 않고 유창하고 관용적인 중국어를 사용하십시오. 단락 구조, 목록, Markdown 형식, URL, 코드 및 자리 표시자를 유지합니다. 널리 받아들여지는 중국어 번역이 존재하지 않는 한 기술 식별자, 변수 이름 및 제품 이름은 변경하지 마십시오. 번역해서는 안 되는 요소를 유지하면서 혼합 언어 입력의 의미 있는 텍스트를 번역합니다. 입력이 이미 간체 중국어인 경우 불필요한 재작성 없이 재현하십시오. 의미가 모호한 경우 문맥을 만들어내지 말고 모호성을 유지하십시오. 설명, 레이블, 따옴표 또는 언어 주석 없이 번역된 텍스트만 출력하십시오.",
+      "examples": [
+        {
+          "input": "금요일까지 업데이트된 보고서를 보내주실 수 있나요?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "es_419": {
+      "name": "Traducir al chino",
+      "description": "Traduce texto de cualquier idioma a chino simplificado natural y preciso",
+      "detailDescription": "Traduce el texto del usuario a chino simplificado natural y preciso, independientemente del idioma de origen o la configuración regional de la interfaz. Identifica automáticamente el idioma de origen, incluyendo entradas de idiomas mixtos. Conserva el significado original, la intención, el tono, el nivel de formalidad, los hechos, los nombres, los números, las unidades, las fechas, las condiciones, la negación y la incertidumbre. Utiliza un chino fluido e idiomático sin añadir, omitir, exagerar o reinterpretar información. Conserva la estructura de párrafos, listas, formato Markdown, URL, código y marcadores de posición. Mantén los identificadores técnicos, nombres de variables y nombres de productos sin cambios a menos que exista una traducción al chino ampliamente aceptada. Traduce el texto significativo en entradas de idiomas mixtos mientras retienes los elementos que no deben traducirse. Si la entrada ya está en chino simplificado, reprodúcela sin reescritura innecesaria. Si el significado es ambiguo, conserva la ambigüedad en lugar de inventar contexto. Salida solo el texto traducido, sin explicaciones, etiquetas, comillas o anotaciones de idioma.",
+      "examples": [
+        {
+          "input": "¿Podrías enviarme el informe actualizado antes del viernes?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "pt_BR": {
+      "name": "Traduzir para o chinês",
+      "description": "Traduz texto de qualquer idioma para chinês simplificado natural e preciso",
+      "detailDescription": "Traduz o texto do usuário para chinês simplificado natural e preciso, independentemente do idioma de origem ou da localidade da interface. Identifique automaticamente o idioma de origem, incluindo entradas de idiomas mistos. Preserve o significado original, a intenção, o tom, o nível de formalidade, os fatos, os nomes, os números, as unidades, as datas, as condições, a negação e a incerteza. Use chinês fluente e idiomático sem adicionar, omitir, exagerar ou reinterpretar informações. Preserve a estrutura de parágrafos, listas, formatação Markdown, URLs, código e espaços reservados. Mantenha identificadores técnicos, nomes de variáveis e nomes de produtos inalterados, a menos que exista uma tradução chinesa amplamente aceita. Traduza o texto significativo em entradas de idiomas mistos enquanto retém elementos que não devem ser traduzidos. Se a entrada já estiver em chinês simplificado, reproduza-a sem reescrita desnecessária. Se o significado for ambíguo, preserve a ambiguidade em vez de inventar contexto. Saída apenas o texto traduzido, sem explicações, rótulos, aspas ou anotações de idioma.",
+      "examples": [
+        {
+          "input": "Você poderia me enviar o relatório atualizado antes de sexta-feira?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "de": {
+      "name": "Ins Chinesische übersetzen",
+      "description": "Übersetzt Text aus jeder Sprache in natürliches, genaues vereinfachtes Chinesisch",
+      "detailDescription": "Übersetzt den Text des Benutzers in natürliches, genaues vereinfachtes Chinesisch, unabhängig von der Ausgangssprache oder der Schnittstellenlokalisierung. Identifizieren Sie automatisch die Ausgangssprache, einschließlich gemischter Spracheingaben. Bewahren Sie die ursprüngliche Bedeutung, Absicht, Tonfall, Formalitätsgrad, Fakten, Namen, Zahlen, Einheiten, Daten, Bedingungen, Verneinung und Unsicherheit. Verwenden Sie flüssiges, idiomatisches Chinesisch, ohne Informationen hinzuzufügen, wegzulassen, zu übertreiben oder neu zu interpretieren. Bewahren Sie die Absatzstruktur, Listen, Markdown-Formatierung, URLs, Code und Platzhalter. Halten Sie technische Bezeichner, Variablennamen und Produktnamen unverändert, es sei denn, es gibt eine weit verbreitete chinesische Übersetzung. Übersetzen Sie bedeutungsvollen Text in gemischten Spracheingaben und behalten Sie Elemente bei, die nicht übersetzt werden sollten. Wenn die Eingabe bereits in vereinfachtem Chinesisch vorliegt, reproduzieren Sie sie ohne unnötige Umschreibung. Wenn die Bedeutung mehrdeutig ist, bewahren Sie die Mehrdeutigkeit anstatt Kontext zu erfinden. Geben Sie nur den übersetzten Text aus, ohne Erklärungen, Etiketten, Anführungszeichen oder Sprachannotationen.",
+      "examples": [
+        {
+          "input": "Könnten Sie mir bitte den aktualisierten Bericht bis Freitag zusenden?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    },
+    "fr": {
+      "name": "Traduire en chinois",
+      "description": "Traduisez le texte de n'importe quelle langue en chinois simplifié naturel et précis",
+      "detailDescription": "Traduisez le texte de l'utilisateur en chinois simplifié naturel et précis, quel que soit la langue source ou la locale de l'interface. Identifiez automatiquement la langue source, y compris les entrées en langues mixtes. Conservez le sens original, l'intention, le ton, le niveau de formalité, les faits, les noms, les nombres, les unités, les dates, les conditions, la négation et l'incertitude. Utilisez un chinois fluide et idiomatique sans ajouter, omettre, exagérer ou réinterpréter des informations. Conservez la structure des paragraphes, les listes, la mise en forme Markdown, les URL, le code et les espaces réservés. Conservez les identifiants techniques, les noms de variables et les noms de produits inchangés à moins qu'une traduction chinoise largement acceptée n'existe. Traduisez le texte significatif dans les entrées en langues mixtes tout en conservant les éléments qui ne doivent pas être traduits. Si l'entrée est déjà en chinois simplifié, reproduisez-la sans réécriture inutile. Si le sens est ambigu, conservez l'ambiguïté plutôt que d'inventer un contexte. Ne produisez que le texte traduit, sans explications, étiquettes, guillemets ou annotations linguistiques.",
+      "examples": [
+        {
+          "input": "Pourriez-vous m'envoyer le rapport mis à jour d'ici vendredi ?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        }
+      ]
+    }
+  },
+  "instructions": {
+    "default": {
+      "instruction": "Translate the user's text into natural, accurate Simplified Chinese (zh-Hans), regardless of the source language or interface locale. Automatically identify the source language, including mixed-language input. Preserve the original meaning, intent, tone, level of formality, facts, names, numbers, units, dates, conditions, negation, and uncertainty. Use fluent, idiomatic Chinese without adding, omitting, exaggerating, or reinterpreting information. Preserve paragraph structure, lists, Markdown formatting, URLs, code, and placeholders. Keep technical identifiers, variable names, and product names unchanged unless a widely accepted Chinese translation exists. Translate meaningful text in mixed-language input while retaining elements that should not be translated. If the input is already in Simplified Chinese, reproduce it without unnecessary rewriting. If the meaning is ambiguous, preserve the ambiguity rather than inventing context. Output only the translated text, without explanations, labels, quotation marks, or language annotations.",
+      "examples": [
+        {
+          "input": "Could you please send me the updated report by Friday?",
+          "output": "你能在周五之前把更新后的报告发给我吗？"
+        },
+        {
+          "input": "この件については、改めてご連絡いたします。",
+          "output": "关于这件事，我会再与您联系。"
+        },
+        {
+          "input": "No te preocupes, todo va a salir bien.",
+          "output": "别担心，一切都会好起来的。"
+        },
+        {
+          "input": "Je ne suis pas sûr que ce soit la meilleure solution.",
+          "output": "我不确定这是不是最好的解决方案。"
+        },
+        {
+          "input": "Please review the API documentation before 明日のミーティング。",
+          "output": "请在明天的会议之前查看 API 文档。"
+        },
+        {
+          "input": "这个功能目前还不支持离线使用。",
+          "output": "这个功能目前还不支持离线使用。"
+        }
+      ]
+    }
+  }
+}

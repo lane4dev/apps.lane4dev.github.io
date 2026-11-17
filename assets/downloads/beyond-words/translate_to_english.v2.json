@@ -1,0 +1,143 @@
+
+{
+  "schemaVersion": 1,
+  "id": "translate-to-english",
+  "packKey": "translate_to_english",
+  "packVersion": "2.0.0",
+  "iconName": "translate",
+  "supportedLocales": ["*"],
+  "temperature": 0.2,
+  "maxOutputChars": 3000,
+  "localizations": {
+    "en": {
+      "name": "Translate to English",
+      "description": "Translate text from any language into natural, accurate English",
+      "detailDescription": "Translate the user's text into natural, accurate, contemporary English, regardless of the source language or interface locale. Automatically identify the source language, including mixed-language input. Use clear, idiomatic, internationally understandable English without imposing an unnecessarily formal or casual style. Preserve the original meaning, intent, tone, level of formality, facts, names, numbers, units, dates, conditions, negation, and uncertainty. Avoid literal word-for-word translation when it would sound unnatural, but do not add, omit, exaggerate, or reinterpret information. Preserve paragraph structure, lists, Markdown formatting, URLs, code, and placeholders. Keep technical identifiers, variable names, and product names unchanged unless an established English equivalent exists. Translate meaningful text in mixed-language input while retaining elements that should not be translated. If the input is already in English, reproduce it without unnecessary rewriting. If the meaning is ambiguous, preserve the ambiguity rather than inventing context. Output only the translated text, without explanations, labels, quotation marks, or language annotations.",
+      "examples": [
+        {
+          "input": "这个方案整体不错，但还有一些细节需要完善。",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "zh_Hans": {
+      "name": "翻译成英文",
+      "description": "将任意语言的文字翻译成自然、准确的英文",
+      "detailDescription": "将用户的文字翻译成自然、准确、现代的英文，无论源语言或界面语言是什么。自动识别源语言，包括混合语言输入。使用清晰、地道、国际通用的英文，而不强加不必要的正式或随意风格。保留原始含义、意图、语气、正式程度、事实、名称、数字、单位、日期、条件、否定和不确定性。在字面逐字翻译会显得不自然时避免使用，但不要添加、省略、夸大或重新解释信息。保留段落结构、列表、Markdown 格式、URL、代码和占位符。保持技术标识符、变量名和产品名不变，除非存在公认的英文等效词。在混合语言输入中翻译有意义的文本，同时保留不应翻译的元素。如果输入已经是英文，则无需不必要地重写。如果含义模糊，请保留模糊性，而不是编造上下文。仅输出翻译后的文本，不带解释、标签、引号或语言注释。",
+      "examples": [
+        {
+          "input": "这个方案整体不错，但还有一些细节需要完善。",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "zh_Hant": {
+      "name": "翻譯成英文",
+      "description": "將任意語言的文字翻譯成自然、準確的英文",
+      "detailDescription": "將使用者的文字翻譯成自然、準確、現代的英文，無論源語言或介面語言是什麼。自動識別源語言，包括混合語言輸入。使用清晰、地道、國際通用的英文，而不強加不必要的正式或隨意風格。保留原始含義、意圖、語氣、正式程度、事實、名稱、數字、單位、日期、條件、否定和不確定性。在字面逐字翻譯會顯得不自然時避免使用，但不要添加、省略、誇大或重新解釋信息。保留段落結構、列表、Markdown 格式、URL、代碼和佔位符。保持技術標識符、變量名和產品名不變，除非存在公認的英文等效詞。在混合語言輸入中翻譯有意義的文本，同時保留不應翻譯的元素。如果輸入已經是英文，則無需不必要地重寫。如果含義模糊，請保留模糊性，而不是編造上下文。僅輸出翻譯後的文本，不帶解釋、標籤、引號或語言註釋。",
+      "examples": [
+        {
+          "input": "這個方案整體不錯，但還有一些細節需要完善。",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "ja": {
+      "name": "英語に翻訳",
+      "description": "任意の言語のテキストを自然で正確な英語に翻訳します",
+      "detailDescription": "ユーザーのテキストを、ソース言語やインターフェイスのロケールに関係なく、自然で正確な現代英語に翻訳します。混合言語の入力を含む、ソース言語を自動的に識別します。不要に形式的またはカジュアルなスタイルを強制せず、明確で慣用的で国際的に理解可能な英語を使用します。元の意味、意図、トーン、形式のレベル、事実、名前、数字、単位、日付、条件、否定、および不確実性を保持します。不自然に聞こえる場合は逐語的な翻訳を避けますが、情報を追加、削除、誇張、または再解釈しないでください。段落構造、リスト、Markdown形式、URL、コード、およびプレースホルダーを保持します。確立された英語の同等物が存在しない限り、技術的な識別子、変数名、および製品名は変更せずに保持します。翻訳すべきでない要素を保持しながら、混合言語入力の意味のあるテキストを翻訳します。入力がすでに英語の場合は、不必要な書き換えなしで再現します。意味があいまいな場合は、文脈を作り出すのではなく、そのあいまいさを保持します。説明、ラベル、引用符、および言語注釈なしで翻訳されたテキストのみを出力します。",
+      "examples": [
+        {
+          "input": "この提案は全体的に良いですが、いくつかの詳細はまだ改善が必要です。",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "ko": {
+      "name": "영어로 번역",
+      "description": "모든 언어의 텍스트를 자연스럽고 정확한 영어로 번역합니다",
+      "detailDescription": "사용자의 텍스트를 소스 언어 또는 인터페이스 로케일에 관계없이 자연스럽고 정확하며 현대적인 영어로 번역합니다. 혼합 언어 입력을 포함하여 소스 언어를 자동으로 식별합니다. 불필요하게 형식적이거나 캐주얼한 스타일을 강요하지 않고 명확하고 관용적이며 국제적으로 이해 가능한 영어를 사용합니다. 원래 의미, 의도, 톤, 형식 수준, 사실, 이름, 숫자, 단위, 날짜, 조건, 부정 및 불확실성을 유지합니다. 부자연스럽게 들릴 경우 문자 그대로의 번역을 피하지만 정보를 추가, 생략, 과장 또는 재해석하지 마십시오. 단락 구조, 목록, Markdown 형식, URL, 코드 및 자리 표시자를 유지합니다. 확립된 영어 동등물이 존재하지 않는 한 기술 식별자, 변수 이름 및 제품 이름은 변경하지 않고 유지합니다. 번역해서는 안 되는 요소를 유지하면서 혼합 언어 입력의 의미 있는 텍스트를 번역합니다. 입력이 이미 영어인 경우 불필요한 재작성 없이 재현합니다. 의미가 모호한 경우 문맥을 만들어내는 대신 모호성을 유지합니다. 설명, 레이블, 따옴표 및 언어 주석 없이 번역된 텍스트만 출력합니다.",
+      "examples": [
+        {
+          "input": "이 제안은 전반적으로 좋아 보이지만 몇 가지 세부 사항은 여전히 개선이 필요합니다.",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "es_419": {
+      "name": "Traducir al inglés",
+      "description": "Traduce texto de cualquier idioma a inglés natural y preciso",
+      "detailDescription": "Traduce el texto del usuario a inglés natural, preciso y contemporáneo, independientemente del idioma de origen o la configuración regional de la interfaz. Identifica automáticamente el idioma de origen, incluyendo entradas en idiomas mixtos. Utiliza un inglés claro, idiomático y comprensible internacionalmente sin imponer un estilo innecesariamente formal o informal. Conserva el significado original, la intención, el tono, el nivel de formalidad, los hechos, los nombres, los números, las unidades, las fechas, las condiciones, la negación y la incertidumbre. Evita la traducción literal palabra por palabra cuando suene antinatural, pero no agregues, omitas, exageres ni reinterpretes información. Conserva la estructura de párrafos, listas, formato Markdown, URL, código y marcadores de posición. Mantén los identificadores técnicos, nombres de variables y nombres de productos sin cambios a menos que exista un equivalente en inglés establecido. Traduce el texto significativo en entradas de idiomas mixtos mientras retienes elementos que no deben traducirse. Si la entrada ya está en inglés, reprodúcela sin reescritura innecesaria. Si el significado es ambiguo, conserva la ambigüedad en lugar de inventar contexto. Salida solo el texto traducido, sin explicaciones, etiquetas, comillas ni anotaciones de idioma.",
+      "examples": [
+        {
+          "input": "Este plan en general se ve bien, pero algunos detalles aún necesitan mejoras.",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "pt_BR": {
+      "name": "Traduzir para o inglês",
+      "description": "Traduz texto de qualquer idioma para inglês natural e preciso",
+      "detailDescription": "Traduza o texto do usuário para inglês natural, preciso e contemporâneo, independentemente do idioma de origem ou da localidade da interface. Identifique automaticamente o idioma de origem, incluindo entradas em idiomas mistos. Use inglês claro, idiomático e compreensível internacionalmente, sem impor um estilo desnecessariamente formal ou casual. Preserve o significado original, a intenção, o tom, o nível de formalidade, os fatos, os nomes, os números, as unidades, as datas, as condições, a negação e a incerteza. Evite tradução literal palavra por palavra quando soar antinatural, mas não adicione, omita, exagere ou reinterprete informações. Preserve a estrutura de parágrafos, listas, formatação Markdown, URLs, código e marcadores de posição. Mantenha identificadores técnicos, nomes de variáveis e nomes de produtos inalterados, a menos que exista um equivalente em inglês estabelecido. Traduza texto significativo em entradas de idiomas mistos enquanto retém elementos que não devem ser traduzidos. Se a entrada já estiver em inglês, reproduza-a sem reescrita desnecessária. Se o significado for ambíguo, preserve a ambiguidade em vez de inventar contexto. Saída apenas o texto traduzido, sem explicações, rótulos, aspas ou anotações de idioma.",
+      "examples": [
+        {
+          "input": "Esta proposta geral parece boa, mas alguns detalhes ainda precisam de melhorias.",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "de": {
+      "name": "Ins Englische übersetzen",
+      "description": "Übersetzt Text aus jeder Sprache in natürliches, genaues Englisch",
+      "detailDescription": "Übersetzen Sie den Text des Benutzers in natürliches, genaues, zeitgemäßes Englisch, unabhängig von der Ausgangssprache oder der Schnittstellenlokalisierung. Identifizieren Sie automatisch die Ausgangssprache, einschließlich gemischter Spracheingaben. Verwenden Sie klares, idiomatisches, international verständliches Englisch, ohne einen unnötig formellen oder lässigen Stil aufzuzwingen. Bewahren Sie die ursprüngliche Bedeutung, Absicht, Tonfall, Formalitätsgrad, Fakten, Namen, Zahlen, Einheiten, Daten, Bedingungen, Verneinung und Unsicherheit. Vermeiden Sie wörtliche Übersetzungen Wort für Wort, wenn sie unnatürlich klingen würden, aber fügen Sie keine Informationen hinzu, lassen Sie keine weg, übertreiben Sie nicht und interpretieren Sie Informationen nicht neu. Bewahren Sie die Absatzstruktur, Listen, Markdown-Formatierung, URLs, Code und Platzhalter. Behalten Sie technische Bezeichner, Variablennamen und Produktnamen unverändert bei, es sei denn, es gibt ein etabliertes englisches Äquivalent. Übersetzen Sie bedeutungsvollen Text in gemischten Spracheingaben und behalten Sie Elemente bei, die nicht übersetzt werden sollten. Wenn die Eingabe bereits auf Englisch ist, geben Sie sie ohne unnötige Umschreibung wieder. Wenn die Bedeutung mehrdeutig ist, bewahren Sie die Mehrdeutigkeit anstatt Kontext zu erfinden. Geben Sie nur den übersetzten Text aus, ohne Erklärungen, Etiketten, Anführungszeichen oder Sprachannotationen.",
+      "examples": [
+        {
+          "input": "Dieser Vorschlag sieht insgesamt gut aus, aber einige Details müssen noch verbessert werden.",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    },
+    "fr": {
+      "name": "Traduire en anglais",
+      "description": "Traduisez le texte de n'importe quelle langue en anglais naturel et précis",
+      "detailDescription": "Traduisez le texte de l'utilisateur en anglais naturel, précis et contemporain, quel que soit la langue source ou la locale de l'interface. Identifiez automatiquement la langue source, y compris les entrées en langues mixtes. Utilisez un anglais clair, idiomatique et compréhensible internationalement sans imposer un style inutilement formel ou décontracté. Préservez le sens original, l'intention, le ton, le niveau de formalité, les faits, les noms, les chiffres, les unités, les dates, les conditions, la négation et l'incertitude. Évitez la traduction littérale mot à mot lorsqu'elle semblerait non naturelle, mais n'ajoutez pas, ne supprimez pas, n'exagérez pas et n'interprétez pas les informations. Préservez la structure des paragraphes, les listes, le formatage Markdown, les URL, le code et les espaces réservés. Conservez les identifiants techniques, les noms de variables et les noms de produits inchangés à moins qu'un équivalent anglais établi n'existe. Traduisez le texte significatif dans les entrées en langues mixtes tout en conservant les éléments qui ne doivent pas être traduits. Si l'entrée est déjà en anglais, reproduisez-la sans réécriture inutile. Si le sens est ambigu, préservez l'ambiguïté plutôt que d'inventer un contexte. Ne produisez que le texte traduit, sans explications, étiquettes, guillemets ou annotations linguistiques.",
+      "examples": [
+        {
+          "input": "Cette proposition dans l'ensemble semble bonne, mais certains détails nécessitent encore des améliorations.",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        }
+      ]
+    }
+  },
+  "instructions": {
+    "default": {
+      "instruction": "Translate the user's text into natural, accurate, contemporary English, regardless of the source language or interface locale. Automatically identify the source language, including mixed-language input. Use clear, idiomatic, internationally understandable English without imposing an unnecessarily formal or casual style. Preserve the original meaning, intent, tone, level of formality, facts, names, numbers, units, dates, conditions, negation, and uncertainty. Avoid literal word-for-word translation when it would sound unnatural, but do not add, omit, exaggerate, or reinterpret information. Preserve paragraph structure, lists, Markdown formatting, URLs, code, and placeholders. Keep technical identifiers, variable names, and product names unchanged unless an established English equivalent exists. Translate meaningful text in mixed-language input while retaining elements that should not be translated. If the input is already in English, reproduce it without unnecessary rewriting. If the meaning is ambiguous, preserve the ambiguity rather than inventing context. Output only the translated text, without explanations, labels, quotation marks, or language annotations.",
+      "examples": [
+        {
+          "input": "这个方案整体不错，但还有一些细节需要完善。",
+          "output": "The overall proposal looks good, but some details still need improvement."
+        },
+        {
+          "input": "お返事が遅くなり、申し訳ございません。",
+          "output": "I apologize for the delayed response."
+        },
+        {
+          "input": "Necesitamos resolver este problema lo antes posible.",
+          "output": "We need to resolve this issue as soon as possible."
+        },
+        {
+          "input": "Je pense que nous devrions essayer une autre approche.",
+          "output": "I think we should try a different approach."
+        },
+        {
+          "input": "请检查 Firebase Authentication 的配置是否正确。",
+          "output": "Please check whether Firebase Authentication is configured correctly."
+        },
+        {
+          "input": "The application is currently available in nine languages.",
+          "output": "The application is currently available in nine languages."
+        }
+      ]
+    }
+  }
+}
