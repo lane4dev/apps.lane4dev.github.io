@@ -1,5 +1,5 @@
 ---
-title: "Heading Brief"
+title: "AI Heading Brief"
 layout: app
 app_key: "heading-brief"
 weight: 20

@@ -28,6 +28,7 @@ bodyClass: "page-app"
 
         <div class="tech-hero__actions">
           {% if app_config.store_enabled %}
+            {% if app_config.store_type == "google-play" %}
             <a class="play-store-button" href="{{ app_config.store_url }}" rel="noopener" aria-label="{{ app.store_label }}">
               <svg class="play-store-button__icon" viewBox="0 0 32 36" aria-hidden="true" focusable="false">
                 <path fill="#00d4ff" d="M1 1.5v33L18 18z" />
@@ -37,6 +38,13 @@ bodyClass: "page-app"
               </svg>
               <span class="play-store-button__text"><span>{{ app.store_prefix }}</span><strong>Google Play</strong></span>
             </a>
+            {% elsif app_config.store_type == "chrome-web-store" %}
+            <a class="chrome-store-button" href="{{ app_config.store_url }}" rel="noopener" aria-label="{{ app.store_label }}">
+              <img src="{{ app_config.store_badge | relative_url }}" alt="" width="340" height="96">
+            </a>
+            {% else %}
+            <a class="tech-button tech-button--primary" href="{{ app_config.store_url }}" rel="noopener">{{ app.store_label }}</a>
+            {% endif %}
           {% else %}
             <span class="tech-button tech-button--disabled" aria-disabled="true">{{ app.store_label }} — {{ t.app.coming_soon }}</span>
           {% endif %}

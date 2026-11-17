@@ -3,7 +3,7 @@ main:
     url: "/beyond-words/"
     weight: 1
 
-  - name: "Heading Brief"
+  - name: "AI Heading Brief"
     url: "/heading-brief/"
     weight: 2
 

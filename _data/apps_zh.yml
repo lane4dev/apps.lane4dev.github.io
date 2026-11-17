@@ -46,12 +46,12 @@ beyond-words:
     in_app_report_path: "使用生成结果旁边的“举报”操作。"
 
 heading-brief:
-  name: "章节速览"
+  name: "AI 章节速览"
   slug: "heading-brief"
   tagline: "逐节阅读，直达重点。"
   short_description: "一款浏览器扩展，可在原文旁概括文章章节。"
   long_description: "选择标题，即可在当前页面获取该章节及其子章节的摘要。"
-  status: "商店页面待上线"
+  status: "已在 Chrome 网上应用店上架"
   platform: "Chrome"
   store_label: "Chrome 网上应用店"
   base_path: "/zh/heading-brief/"

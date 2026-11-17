@@ -3,7 +3,7 @@ title: "Terms of Service"
 layout: legal
 app_key: "heading-brief"
 permalink: /heading-brief/terms/
-description: "Terms governing use of the Heading Brief browser extension."
+description: "Terms governing use of the AI Heading Brief browser extension."
 lang: en
 translation_key: heading-brief-terms
 alternate_lang: zh-CN
@@ -16,11 +16,11 @@ x_default_url: /heading-brief/terms/
 **Developer:** {{ developer.legal_name }}  
 **Contact:** [{{ developer.support_email }}](mailto:{{ developer.support_email }})
 
-These terms govern your use of the Heading Brief browser extension (the “extension”). By using the extension, you agree to these terms. If you do not agree, do not use the extension.
+These terms govern your use of the AI Heading Brief browser extension (the “extension”). By using the extension, you agree to these terms. If you do not agree, do not use the extension.
 
 ## The extension
 
-Heading Brief identifies sections on supported webpages and lets you request AI-generated summaries. Features depend on the page, your browser, network availability, and the AI provider and model you select. We may change, suspend, or discontinue features.
+AI Heading Brief identifies sections on supported webpages and lets you request AI-generated summaries. Features depend on the page, your browser, network availability, and the AI provider and model you select. We may change, suspend, or discontinue features.
 
 ## Your use and content
 

@@ -3,7 +3,7 @@ title: "Support"
 layout: app-page
 app_key: "heading-brief"
 permalink: /heading-brief/support/
-description: "Get help with Heading Brief and its AI provider settings."
+description: "Get help with AI Heading Brief and its AI provider settings."
 lang: en
 translation_key: heading-brief-support
 alternate_lang: zh-CN

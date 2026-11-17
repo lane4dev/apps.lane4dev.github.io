@@ -3,7 +3,7 @@ title: "Privacy Policy"
 layout: legal
 app_key: "heading-brief"
 permalink: /heading-brief/privacy/
-description: "How Heading Brief handles webpage content, settings, and summary requests."
+description: "How AI Heading Brief handles webpage content, settings, and summary requests."
 lang: en
 translation_key: heading-brief-privacy
 alternate_lang: zh-CN
@@ -16,7 +16,7 @@ x_default_url: /heading-brief/privacy/
 **Developer:** {{ developer.legal_name }}  
 **Contact:** [{{ developer.support_email }}](mailto:{{ developer.support_email }})
 
-This policy describes how Heading Brief (the “extension”) handles information when you use it. It applies to the extension; third-party websites, AI providers, and browser services have their own policies.
+This policy describes how AI Heading Brief (the “extension”) handles information when you use it. It applies to the extension; third-party websites, AI providers, and browser services have their own policies.
 
 ## Information the extension handles
 
