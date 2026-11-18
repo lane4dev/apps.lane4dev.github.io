@@ -1,8 +1,8 @@
-versionName: "1.1.4"
-versionCode: 49
+versionName: "1.1.5"
+versionCode: 50
 minAndroidSdk: 21
-apkUrl: "https://download.behind-the-shadow.xyz/beyond-words/stable/v1.1.4/beyond-words-v1.1.4-release.apk"
-sha256: 6d8c5a08a18c4d52d96c2ade3dc95033346969fd24804725467ca37a13a0c632
+apkUrl: "https://download.behind-the-shadow.xyz/beyond-words/stable/v1.1.5/beyond-words-v1.1.5-release.apk"
+sha256: 6595bbc3dc143c1357382981ec021f6378e720c1ce07ee8026937dc244b04112
 releaseNotes:
   zh: null
   en: null
