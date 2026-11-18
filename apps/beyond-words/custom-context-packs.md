@@ -13,9 +13,9 @@ x_default_url: /beyond-words/custom-context-packs/
 ---
 
 {% assign app = site.data.apps[page.app_key] %}
-{% assign example_pack_path = '/assets/downloads/beyond-words/sarcastic_rewrite.v1.json' %}
+{% assign example_pack_path = '/assets/downloads/beyond-words/sarcastic_rewrite.v2.json' %}
 {% assign example_pack_url = example_pack_path | absolute_url %}
-{% assign translation_pack_path = '/assets/downloads/beyond-words/translate_to_english.v1.json' %}
+{% assign translation_pack_path = '/assets/downloads/beyond-words/translate_to_english.v2.json' %}
 {% assign translation_pack_url = translation_pack_path | absolute_url %}
 
 **Last updated:** {{ page.last_updated }}
