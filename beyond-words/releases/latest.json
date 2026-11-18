@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /beyond-words/releases/latest.json
+---
+{{ site.data.beyond_words_release | jsonify }}

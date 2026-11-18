@@ -48,8 +48,13 @@ bodyClass: "page-app"
           {% else %}
             <span class="tech-button tech-button--disabled" aria-disabled="true">{{ app.store_label }} — {{ t.app.coming_soon }}</span>
           {% endif %}
-          <a class="tech-button tech-button--ghost" href="{{ app.support_path | relative_url }}">{{ t.nav.support }}</a>
+          {% if page.app_key == "beyond-words" %}
+          <a class="tech-button tech-button--ghost" href="{{ site.data.beyond_words_release.apkUrl | escape }}">{{ app.apk_label }}</a>
+          {% endif %}
         </div>
+        {% if page.app_key == "beyond-words" %}
+        <p style="font-size: 0.875rem;">{{ app.apk_install_note }}</p>
+        {% endif %}
 
         <dl class="tech-hero__facts app-product-hero__facts">
           <div>

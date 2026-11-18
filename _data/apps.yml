@@ -23,6 +23,8 @@ beyond-words:
   store_url: "https://play.google.com/store/apps/details?id=me.tangyu.beyondwords"
   store_label: "Get it on Google Play"
   store_prefix: "GET IT ON"
+  apk_label: "Download APK"
+  apk_install_note: "Some features are unavailable in the APK version. We recommend downloading from Google Play"
 
   base_path: "/beyond-words/"
   custom_packs_path: "/beyond-words/custom-context-packs/"
