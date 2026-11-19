@@ -6,6 +6,8 @@ bodyClass: "page-app"
 {% assign current_lang = page.lang | default: site.lang | default: "en" %}
 {% assign t = site.data.i18n[current_lang] | default: site.data.i18n.en %}
 {% assign app_config = site.data.apps[page.app_key] %}
+{% assign release_key = page.app_key | replace: "-", "_" | append: "_release" %}
+{% assign app_release = site.data[release_key] %}
 {% if current_lang == "zh-CN" %}
   {% assign app = site.data.apps_zh[page.app_key] %}
 {% else %}
@@ -45,14 +47,17 @@ bodyClass: "page-app"
             {% else %}
             <a class="tech-button tech-button--primary" href="{{ app_config.store_url }}" rel="noopener">{{ app.store_label }}</a>
             {% endif %}
-          {% else %}
+          {% elsif app.store_label %}
             <span class="tech-button tech-button--disabled" aria-disabled="true">{{ app.store_label }} — {{ t.app.coming_soon }}</span>
           {% endif %}
-          {% if page.app_key == "beyond-words" %}
-          <a class="tech-button tech-button--ghost" href="{{ site.data.beyond_words_release.apkUrl | escape }}">{{ app.apk_label }}</a>
+          {% if app_config.test_invite_url and app_config.test_invite_url != "" %}
+          <a class="tech-button tech-button--primary" href="{{ app_config.test_invite_url | escape }}" rel="noopener">{{ app.test_invite_label | escape }}</a>
+          {% endif %}
+          {% if app_release.apkUrl and app_release.apkUrl != "" %}
+          <a class="tech-button tech-button--ghost" href="{{ app_release.apkUrl | escape }}">{{ app.apk_label }}</a>
           {% endif %}
         </div>
-        {% if page.app_key == "beyond-words" %}
+        {% if app_release.apkUrl and app_release.apkUrl != "" and app.apk_install_note %}
         <p style="font-size: 0.875rem;">{{ app.apk_install_note }}</p>
         {% endif %}
 

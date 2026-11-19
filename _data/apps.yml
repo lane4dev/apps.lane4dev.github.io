@@ -73,6 +73,55 @@ beyond-words:
     harmful_output_reporting: true
     in_app_report_path: "Use the Report action beside a generated result."
 
+
+accounted-for:
+  name: "Accounted For"
+  slug: "accounted-for"
+  app_icon: "/assets/images/accounted_for/app_logo.png"
+  test_invite_label: "Join Google Play closed testing"
+  test_invite_url: ""
+  apk_label: "Download APK"
+  screenshots:
+    - "/assets/images/accounted_for/screen_shoot_zh/01.png"
+    - "/assets/images/accounted_for/screen_shoot_zh/02.png"
+    - "/assets/images/accounted_for/screen_shoot_zh/03.png"
+    - "/assets/images/accounted_for/screen_shoot_zh/04.png"
+    - "/assets/images/accounted_for/screen_shoot_zh/05.png"
+    - "/assets/images/accounted_for/screen_shoot_zh/06.png"
+  tagline: "A clearer picture of every expense and income."
+  short_description: "A personal finance app for recording transactions, managing accounts, and planning bills."
+  long_description: "Record income and expenses, manage accounts, review monthly reports, and plan future bills and reminders. Your ledger stays on your device."
+  status: "Personal finance"
+  platform: "Android"
+
+  store_enabled: false
+
+  base_path: "/accounted-for/"
+  privacy_path: "/accounted-for/privacy/"
+  terms_path: "/accounted-for/terms/"
+  support_path: "/accounted-for/support/"
+  capabilities_heading: "A ledger for everyday life"
+  capabilities_intro: "Keep track of your money, from daily transactions to upcoming bills."
+  workflow_heading: "Keep your ledger in order"
+  workflow_intro: "Record transactions, plan ahead, and review your finances."
+  transparency_heading: "Your data, on your device"
+  transparency_intro: "Learn about local storage, backups, and the support available to you."
+
+  features:
+    - title: "Record income and expenses"
+      description: "Choose an account and category, add an amount, date and note, and attach files."
+    - title: "Manage accounts"
+      description: "Track balances and transfers, and choose which accounts count toward your total."
+    - title: "Plan future bills"
+      description: "Set up scheduled or recurring transactions, subscriptions, and reminders. Due subscriptions are posted when the app starts."
+  workflow:
+    - title: "Record"
+      description: "Add transactions and organize them by account and category."
+    - title: "Plan"
+      description: "Schedule future bills and set reminders."
+    - title: "Review and back up"
+      description: "Review reports and regularly save a backup and your original attachments."
+
 heading-brief:
   name: "AI Heading Brief"
   slug: "heading-brief"
