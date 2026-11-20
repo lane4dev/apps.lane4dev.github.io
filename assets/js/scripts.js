@@ -54,17 +54,41 @@ var appShots = document.querySelectorAll('.app-shots');
 
 appShots.forEach(function(root) {
   var viewport = root.querySelector('.app-shots__viewport');
-  var slides = root.querySelectorAll('.app-shots__slide');
+  var track = root.querySelector('.app-shots__track');
+  var originals = root.querySelectorAll('.app-shots__slide');
+  var slides;
   var dots = root.querySelectorAll('.app-shots__dot');
   var prevButton = root.querySelector('[data-shots-prev]');
   var nextButton = root.querySelector('[data-shots-next]');
   var autoTimer = null;
   var settleTimer = null;
-  var lastMeasured = 0; // slide nearest the viewport center
-  var pending = null;    // slide a transition is currently heading to
+  var lastMeasured = 1; // Physical position, including the boundary copies.
+  var pending = null;
 
-  if (!viewport || !prevButton || !nextButton || slides.length === 0) {
+  if (!viewport || !track || !prevButton || !nextButton || originals.length < 2) {
     return;
+  }
+
+  var firstCopy = originals[0].cloneNode(true);
+  var lastCopy = originals[originals.length - 1].cloneNode(true);
+  firstCopy.setAttribute('aria-hidden', 'true');
+  lastCopy.setAttribute('aria-hidden', 'true');
+  track.insertBefore(lastCopy, originals[0]);
+  track.insertBefore(firstCopy, originals[originals.length - 1].nextSibling);
+  slides = track.querySelectorAll('.app-shots__slide');
+
+  function positionOf(index) {
+    var slide = slides[index];
+    return slide.offsetLeft + slide.offsetWidth / 2 - viewport.offsetWidth / 2;
+  }
+
+  function logicalIndex(index) {
+    return (index - 1 + originals.length) % originals.length;
+  }
+
+  function jumpTo(index) {
+    viewport.scrollTo({ left: positionOf(index), behavior: 'instant' });
+    lastMeasured = index;
   }
 
   function stopAuto() {
@@ -75,15 +99,21 @@ appShots.forEach(function(root) {
   }
 
   function goTo(index) {
-    var count = slides.length;
-    pending = ((index % count) + count) % count;
-    var slide = slides[pending];
-    var target = slide.offsetLeft + slide.offsetWidth / 2 - viewport.offsetWidth / 2;
-    var jump = Math.abs(target - viewport.scrollLeft) > viewport.offsetWidth * 2;
+    // If another request arrives while crossing an edge, continue from the
+    // equivalent original slide before moving on to the next destination.
+    if (index < 0) {
+      jumpTo(originals.length);
+      index = originals.length - 1;
+    } else if (index >= slides.length) {
+      jumpTo(1);
+      index = 2;
+    }
+    pending = index;
     viewport.scrollTo({
-      left: target,
-      behavior: jump ? 'auto' : 'smooth'
+      left: positionOf(index),
+      behavior: motionAllowed ? 'smooth' : 'instant'
     });
+    update();
   }
 
   // Buttons and autoplay must chain from where the carousel is heading.
@@ -123,7 +153,7 @@ appShots.forEach(function(root) {
 
     lastMeasured = index;
 
-    var shown = activeIndex();
+    var shown = logicalIndex(activeIndex());
 
     dots.forEach(function(dot, i) {
       dot.classList.toggle('is-active', i === shown);
@@ -132,6 +162,12 @@ appShots.forEach(function(root) {
 
   function settle() {
     pending = null;
+    update();
+    if (lastMeasured === 0) {
+      jumpTo(originals.length);
+    } else if (lastMeasured === slides.length - 1) {
+      jumpTo(1);
+    }
     update();
   }
 
@@ -160,13 +196,21 @@ appShots.forEach(function(root) {
   dots.forEach(function(dot, i) {
     dot.addEventListener('click', function() {
       stopAuto();
-      goTo(i);
+      var target = i + 1;
+      var current = activeIndex();
+      if (i === 0 && current === originals.length) {
+        target = slides.length - 1;
+      } else if (i === originals.length - 1 && current === 1) {
+        target = 0;
+      }
+      goTo(target);
     });
   });
 
+  jumpTo(1);
   update();
 
-  // ponytail: fixed 6s autoplay, stop entirely on first user interaction
+  // Fixed 6s autoplay, stop entirely on first user interaction
   if (motionAllowed && slides.length > 1) {
     autoTimer = setInterval(function() {
       goTo(activeIndex() + 1);
