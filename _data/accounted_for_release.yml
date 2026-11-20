@@ -1,8 +1,8 @@
-versionName: "0.100.3"
-versionCode: 4
+versionName: "0.100.4"
+versionCode: 5
 minAndroidSdk: 21
-apkUrl: "https://storage.behind-the-shadow.xyz/accounted-for/stable/v0.100.3/accounted-for-v0.100.3-release.apk"
-sha256: d12840716cb690abb088bd561e72a6dbf95f3fd4b803e8b4a2025a94d98f4eeb
+apkUrl: "https://storage.behind-the-shadow.xyz/accounted-for/stable/v0.100.4/accounted-for-v0.100.4-release.apk"
+sha256: a6874a4d7d4bfa0b93918f1a413a024867aaef9cef67eccab3366306cb55f08e
 releaseNotes:
   zh: null
   en: null
