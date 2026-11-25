@@ -4,7 +4,7 @@ layout: app-page
 app_key: "beyond-words"
 permalink: /beyond-words/custom-context-packs/
 description: "Create, validate, download, and import custom context packs for Beyond Words."
-last_updated: "2026-09-24"
+last_updated: "2026-11-25"
 lang: en
 translation_key: beyond-words-custom-context-packs
 alternate_lang: zh-CN
@@ -158,6 +158,32 @@ download the file without changing its contents.
     <div class="pack-card__actions">
       <button class="pack-card__copy" type="button" data-copy-url aria-label="Copy Refined Sarcasm import URL">Copy URL</button>
       <a class="pack-card__download" href="{{ example_pack_path | relative_url }}" download>Download JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="Copied!" data-copy-error="Copy failed. Please select the URL above."></span>
+  </div>
+  <div class="pack-card">
+    <h3>Helldiver Recruitment</h3>
+    <p>Turns everyday moments into an over-the-top Helldivers 2-style recruitment pitch.</p>
+    <div class="pack-card__url">
+      <span class="pack-card__url-label">Import URL</span>
+      <code>{{ '/assets/downloads/beyond-words/helldivers_recruitment.v1.json' | absolute_url }}</code>
+    </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="Copy Helldiver Recruitment import URL">Copy URL</button>
+      <a class="pack-card__download" href="{{ '/assets/downloads/beyond-words/helldivers_recruitment.v1.json' | relative_url }}" download>Download JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="Copied!" data-copy-error="Copy failed. Please select the URL above."></span>
+  </div>
+  <div class="pack-card">
+    <h3>Nature Documentary</h3>
+    <p>Narrates everyday moments in the calm, awe-struck style of a wildlife documentary.</p>
+    <div class="pack-card__url">
+      <span class="pack-card__url-label">Import URL</span>
+      <code>{{ '/assets/downloads/beyond-words/nature-documentary.v1.json' | absolute_url }}</code>
+    </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="Copy Nature Documentary import URL">Copy URL</button>
+      <a class="pack-card__download" href="{{ '/assets/downloads/beyond-words/nature-documentary.v1.json' | relative_url }}" download>Download JSON</a>
     </div>
     <span class="pack-card__copy-status" role="status" data-copy-success="Copied!" data-copy-error="Copy failed. Please select the URL above."></span>
   </div>

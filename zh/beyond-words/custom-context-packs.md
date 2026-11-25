@@ -4,7 +4,7 @@ layout: app-page
 app_key: "beyond-words"
 permalink: /zh/beyond-words/custom-context-packs/
 description: "了解如何为言外创建、校验、下载和导入自定义语境包。"
-last_updated: "2026-09-24"
+last_updated: "2026-11-25"
 lang: zh-CN
 translation_key: beyond-words-custom-context-packs
 alternate_lang: en
@@ -139,6 +139,71 @@ HTML 下载页面、ZIP 文件或内置语境包清单。
     <div class="pack-card__actions">
       <button class="pack-card__copy" type="button" data-copy-url aria-label="复制高级嘲讽的导入 URL">复制 URL</button>
       <a class="pack-card__download" href="{{ example_pack_path | relative_url }}" download>下载 JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
+  </div>
+  <div class="pack-card">
+    <h3>潜兵征召</h3>
+    <p>把日常小事改成《绝地潜兵2》开场式的热血征兵广告。</p>
+    <div class="pack-card__url">
+      <span class="pack-card__url-label">导入 URL</span>
+      <code>{{ '/assets/downloads/beyond-words/helldivers_recruitment.v1.json' | absolute_url }}</code>
+    </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="复制潜兵征召的导入 URL">复制 URL</button>
+      <a class="pack-card__download" href="{{ '/assets/downloads/beyond-words/helldivers_recruitment.v1.json' | relative_url }}" download>下载 JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
+  </div>
+  <div class="pack-card">
+    <h3>自然纪录片</h3>
+    <p>用自然纪录片般冷静、充满敬畏的旁白解说日常小事。</p>
+    <div class="pack-card__url">
+      <span class="pack-card__url-label">导入 URL</span>
+      <code>{{ '/assets/downloads/beyond-words/nature-documentary.v1.json' | absolute_url }}</code>
+    </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="复制自然纪录片的导入 URL">复制 URL</button>
+      <a class="pack-card__download" href="{{ '/assets/downloads/beyond-words/nature-documentary.v1.json' | relative_url }}" download>下载 JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
+  </div>
+  <div class="pack-card">
+    <h3>后宫机锋</h3>
+    <p>用温婉含蓄、绵里藏针的古装宫廷对话腔改写日常表达。支持简体和繁体中文。</p>
+    <div class="pack-card__url">
+      <span class="pack-card__url-label">导入 URL</span>
+      <code>{{ '/assets/downloads/beyond-words/palace-drama.v1.json' | absolute_url }}</code>
+    </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="复制后宫机锋的导入 URL">复制 URL</button>
+      <a class="pack-card__download" href="{{ '/assets/downloads/beyond-words/palace-drama.v1.json' | relative_url }}" download>下载 JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
+  </div>
+  <div class="pack-card">
+    <h3>大厂黑话</h3>
+    <p>用互联网大厂周报、复盘与 OKR 口吻改写日常内容。支持简体中文。</p>
+    <div class="pack-card__url">
+      <span class="pack-card__url-label">导入 URL</span>
+      <code>{{ '/assets/downloads/beyond-words/tech-jargon.v1.json' | absolute_url }}</code>
+    </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="复制大厂黑话的导入 URL">复制 URL</button>
+      <a class="pack-card__download" href="{{ '/assets/downloads/beyond-words/tech-jargon.v1.json' | relative_url }}" download>下载 JSON</a>
+    </div>
+    <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
+  </div>
+  <div class="pack-card">
+    <h3>新三国体</h3>
+    <p>用 2010 版《三国》角色口吻，将现代中文改写为戏剧化的古风台词。支持简体中文。</p>
+    <div class="pack-card__url">
+      <span class="pack-card__url-label">导入 URL</span>
+      <code>{{ '/assets/downloads/beyond-words/xinsanguo-style.v1.json' | absolute_url }}</code>
+    </div>
+    <div class="pack-card__actions">
+      <button class="pack-card__copy" type="button" data-copy-url aria-label="复制新三国体的导入 URL">复制 URL</button>
+      <a class="pack-card__download" href="{{ '/assets/downloads/beyond-words/xinsanguo-style.v1.json' | relative_url }}" download>下载 JSON</a>
     </div>
     <span class="pack-card__copy-status" role="status" data-copy-success="已复制！" data-copy-error="复制失败，请手动选择上方 URL。"></span>
   </div>
