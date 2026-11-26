@@ -48,3 +48,17 @@ requests should explain the user-visible change, list validation/build results,
 link relevant issues, and include screenshots for visual updates. Call out
 configuration, domain, or legal-text changes explicitly; legal drafts require
 review against actual production behavior before publishing.
+
+## Agent skills
+
+### Issue tracker
+
+Track specs and issues as local Markdown under `.scratch/`. For paths and ticket numbering, see `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+When triaging an issue, use the five default labels defined in `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This site uses a single-context layout. When exploring terminology or prior design decisions, follow `docs/agents/domain.md`.
