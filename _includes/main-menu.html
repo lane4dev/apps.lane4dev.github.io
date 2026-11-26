@@ -1,17 +1,9 @@
-<div id="main-menu" class="main-menu">
-  {% if current_lang == "zh-CN" %}
-    {% assign mainmenu = site.data.menus_zh.main | sort: 'weight' %}
-  {% else %}
-    {% assign mainmenu = site.data.menus.main | sort: 'weight' %}
-  {% endif %}
-  <ul>
-    {% for item in mainmenu %}
-    <li class="{% if item.type == 'project' %}main-menu__item--project {% endif %}{% if item.url == page.url %}active{% endif %}">
-      <a href="{{ item.url | relative_url }}">
-        {% if item.type == "project" %}<span class="main-menu__item-label" aria-hidden="true">{% if current_lang == "zh-CN" %}项目{% else %}PROJECT{% endif %}</span>{% endif %}
-        <span>{{ item.name }}</span>
-      </a>
+<nav id="main-menu" class="main-menu" aria-label="{{ t.nav.pages_label }}">
+  <ul class="main-menu__list">
+    {% for app_page in sorted_apps %}
+    <li class="main-menu__item{% if app_page.url == page.url %} active{% endif %}">
+      <a class="main-menu__link" href="{{ app_page.url | relative_url }}">{{ app_page.title | escape }}</a>
     </li>
     {% endfor %}
   </ul>
-</div>
+</nav>

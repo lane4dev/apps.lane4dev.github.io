@@ -68,3 +68,6 @@ page:
   eyebrow: "lane4dev • apps"
   effective_date: "Effective date"
   last_updated: "Last updated"
+footer:
+  products: "Products"
+  links: "Links"

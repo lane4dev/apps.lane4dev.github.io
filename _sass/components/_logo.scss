@@ -1,27 +1,29 @@
 .site-wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
+  gap: 8px;
+  font-size: 15.75px;
+  font-weight: 400;
+  letter-spacing: -1px;
   color: $white;
-  font-family: $font-family-base;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
   text-decoration: none;
-
-  &__logo {
-    display: block;
-    width: 28px;
-    height: 28px;
-    flex: 0 0 auto;
-  }
-
-  span {
-    color: #ff2d92;
-  }
+  white-space: nowrap;
 
   &:hover {
     color: $white;
     text-decoration: none;
+  }
+
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    color: $white;
+  }
+
+  &__suffix {
+    color: rgba(255, 255, 255, 0.6);
   }
 }

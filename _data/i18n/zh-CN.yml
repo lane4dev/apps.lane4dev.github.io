@@ -68,3 +68,6 @@ page:
   eyebrow: "lane4dev • apps"
   effective_date: "生效日期"
   last_updated: "最后更新"
+footer:
+  products: "产品"
+  links: "链接"
