@@ -87,48 +87,26 @@ bodyClass: "page-apps-home"
 </section>
 
 <section class="build-principles">
-  <div class="build-principles__grid" aria-hidden="true"></div>
   <div class="container">
-    <header class="lab-heading lab-heading--dark js-reveal">
+    <header class="lab-heading js-reveal">
       <div>
         <p class="lab-heading__index">02 / {{ t.home.operating_principles }}</p>
         <h2>{{ t.home.build_heading }}</h2>
       </div>
     </header>
-    <div class="row">
-      <div class="col-12 col-md-4">
-        <article class="principle-card js-reveal">
-          <span class="principle-card__number">01</span>
-          <h3>{{ t.home.principle_clear_title }}</h3>
-          <p>{{ t.home.principle_clear_body }}</p>
-        </article>
-      </div>
-      <div class="col-12 col-md-4">
-        <article class="principle-card js-reveal">
-          <span class="principle-card__number">02</span>
-          <h3>{{ t.home.principle_useful_title }}</h3>
-          <p>{{ t.home.principle_useful_body }}</p>
-        </article>
-      </div>
-      <div class="col-12 col-md-4">
-        <article class="principle-card js-reveal">
-          <span class="principle-card__number">03</span>
-          <h3>{{ t.home.principle_respect_title }}</h3>
-          <p>{{ t.home.principle_respect_body }}</p>
-        </article>
-      </div>
+    <div class="principle-grid">
+      <article class="principle-card js-reveal">
+        <h3>{{ t.home.principle_clear_title }}</h3>
+        <p>{{ t.home.principle_clear_body }}</p>
+      </article>
+      <article class="principle-card js-reveal">
+        <h3>{{ t.home.principle_useful_title }}</h3>
+        <p>{{ t.home.principle_useful_body }}</p>
+      </article>
+      <article class="principle-card js-reveal">
+        <h3>{{ t.home.principle_respect_title }}</h3>
+        <p>{{ t.home.principle_respect_body }}</p>
+      </article>
     </div>
   </div>
 </section>
-
-{% if content != "" %}
-<section class="home-transmission">
-  <div class="container">
-    <div class="home-transmission__inner js-reveal">
-      <span class="home-transmission__label">/ {{ t.home.manifest }}</span>
-      <div class="content">{{ content }}</div>
-      <a href="https://tangyu.me">{{ t.home.continue_personal }} <span aria-hidden="true">↗</span></a>
-    </div>
-  </div>
-</section>
-{% endif %}
