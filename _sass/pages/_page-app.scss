@@ -943,12 +943,13 @@ $app-shot-slide: 48%;
   }
 }
 
+// 01 — Selected work: neutral, token-driven split cards (5:7 text-to-preview)
+// echoing Linear/Raycast restraint — single mono eyebrow, concise description,
+// stretched card link, and real cropped UI previews on a stepped surface.
 .project-lab {
-  padding: 112px 0 136px;
-  background:
-    radial-gradient(circle at 12% 0, rgba(21, 245, 201, 0.07), transparent 24%),
-    #fff;
-  scroll-margin-top: 82px;
+  padding-block: var(--space-9) var(--space-10);
+  background: var(--bg);
+  scroll-margin-top: var(--header-h);
 }
 
 .lab-heading {
@@ -961,9 +962,9 @@ $app-shot-slide: 48%;
   h2 {
     margin: 4px 0 0;
     color: var(--app-primary-dark);
-    font-size: clamp(2.4rem, 2vw, 2rem);
-    font-weight: 300;
-    letter-spacing: -0.045em;
+    font-size: var(--h2);
+    font-weight: var(--regular);
+    letter-spacing: var(--tracking-display);
   }
 
   > p {
@@ -976,237 +977,246 @@ $app-shot-slide: 48%;
 .lab-heading__index {
   margin: 0;
   color: var(--app-primary);
-  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.13em;
+  font-family: var(--font-mono);
+  font-size: var(--eyebrow);
+  font-weight: var(--semibold);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
+}
+
+.page-apps-home {
+  .lab-heading {
+    margin-block-end: var(--space-7);
+
+    h2 {
+      margin-block: var(--space-2) 0;
+      color: var(--ink);
+    }
+  }
+
+  .lab-heading__index {
+    color: var(--muted);
+    font-weight: var(--medium);
+  }
 }
 
 .project-stack {
   display: grid;
-  gap: 34px;
+  gap: var(--space-5);
 }
 
 .project-panel {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
-  overflow: hidden;
-  background: #f7f7f7;
-  border: 1px solid #e8e8e8;
-  border-radius: 12px;
-  box-shadow: 0 18px 50px rgba(45, 39, 55, 0.08);
-  transition: border-color var(--duration-normal) var(--ease);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  overflow: clip;
+  background: var(--surface);
+  border: var(--stroke) solid var(--line);
+  border-radius: var(--radius-card);
+  transition:
+    border-color var(--duration-normal) var(--ease),
+    transform var(--duration-normal) var(--ease);
 
-  &:hover {
-    border-color: #d8d8dc;
+  &:has(.project-panel__title-link:focus-visible) {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-color: var(--line-hover);
   }
 }
 
 .project-panel__content {
   display: flex;
-  min-height: 560px;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(42px, 6vw, 88px);
+  min-inline-size: 0;
+  padding: var(--space-7) var(--space-6);
 }
 
-.project-panel__topline {
+.project-panel__meta {
   display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: auto;
-  color: #8b878e;
-  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-}
-
-.project-status {
-  display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 7px;
-  text-align: right;
-
-  i {
-    width: 6px;
-    height: 6px;
-    flex: 0 0 auto;
-    background: var(--app-accent);
-    border-radius: 50%;
-    box-shadow: 0 0 9px rgba(21, 245, 201, 0.8);
-  }
-}
-
-.project-panel__platform {
-  margin: 70px 0 8px;
-  color: var(--app-primary);
-  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  gap: 0.45em;
+  margin: 0 0 var(--space-4);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--eyebrow);
+  font-weight: var(--medium);
+  letter-spacing: var(--tracking-label);
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
-.project-panel h3 {
-  margin: 0 0 16px;
-  color: var(--app-primary-dark);
-  font-size: clamp(2.2rem, 2vw, 2rem);
-  font-weight: 400;
-  letter-spacing: -0.055em;
+.project-panel__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-3);
+
+  h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: var(--h3);
+    font-weight: var(--semibold);
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
 }
 
-.project-panel__tagline {
-  margin-bottom: 14px;
-  color: #454545;
-  font-size: 1.2rem;
+.project-panel__icon {
+  display: block;
+  flex: 0 0 auto;
+  inline-size: 32px;
+  block-size: 32px;
+  border: var(--stroke) solid var(--line);
+  border-radius: var(--radius-media);
+  background: var(--bg);
+  object-fit: cover;
+}
+
+.project-panel__title-link {
+  color: inherit;
+  text-decoration: none;
+
+  // Stretched link: the whole project card is a single keyboard & pointer target.
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+  }
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .project-panel__description {
-  max-width: 650px;
-  color: var(--app-muted);
+  max-inline-size: 60ch;
+  margin: 0 0 var(--space-5);
+  color: var(--muted);
+  font-size: var(--small);
+  line-height: 1.65;
+  text-wrap: pretty;
 }
 
-.project-panel__actions {
-  display: flex;
+.project-panel__cta {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: auto;
-  padding-top: 36px;
-  border-top: 1px solid #dfdfe1;
-  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  font-size: 0.74rem;
-
-  a {
-    color: var(--app-primary);
-    font-weight: 600;
-
-    // Stretched link: the whole project card is the click target.
-    &::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-    }
-  }
-
-  > span {
-    color: #918d94;
-  }
+  gap: 6px;
+  color: var(--ink);
+  font-size: var(--small);
+  font-weight: var(--medium);
+  line-height: 1.4;
 }
 
-.project-schematic {
+.project-panel__arrow {
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease);
+}
+
+.project-panel__media {
   position: relative;
-  min-height: 560px;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(255, 45, 146, 0.13),
-      transparent 38%
-    ),
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    var(--app-primary-dark);
-  background-size:
-    auto,
-    40px 40px,
-    40px 40px,
-    auto;
+  min-block-size: 360px;
+  overflow: clip;
+  background: var(--surface-raised);
+  border-inline-start: var(--stroke) solid var(--line);
 }
 
-.project-schematic__orbit {
+.project-preview {
+  transition: transform var(--duration-panel) var(--ease);
+}
+
+.project-preview--phone {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+  inset-inline: 0;
+  inset-block-start: 0;
+  display: flex;
+  justify-content: center;
+  padding-inline: var(--space-5);
+  transform-origin: center top;
 }
 
-.project-schematic__orbit--outer {
-  width: 390px;
-  height: 390px;
-  border-style: dashed;
-  animation: orbit-spin 30s linear infinite;
+.project-preview--phone .project-preview__image {
+  display: block;
+  inline-size: min(74%, 400px);
+  block-size: auto;
+  margin-block-start: -18px;
 }
 
-.project-schematic__orbit--inner {
-  width: 230px;
-  height: 230px;
-  border-color: rgba(21, 245, 201, 0.24);
-  box-shadow: inset 0 0 60px rgba(21, 245, 201, 0.035);
-}
-
-.project-schematic__core {
+.project-preview--window {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  width: 108px;
-  height: 108px;
-  place-content: center;
-  justify-items: center;
-  border: 1px solid rgba(21, 245, 201, 0.56);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 10px rgba(21, 245, 201, 0.035),
-    0 0 44px rgba(21, 245, 201, 0.15);
-  color: #fff;
-  transform: translate(-50%, -50%);
+  inset: var(--space-5) var(--space-5) 0;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+  background: #ffffff;
+  border: var(--stroke) solid var(--line);
+  border-block-end: 0;
+  border-radius: var(--radius-media) var(--radius-media) 0 0;
+  transform-origin: center bottom;
+}
+
+.project-preview__chrome {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  block-size: 26px;
+  padding-inline: 12px;
+  background: var(--surface);
+  border-block-end: var(--stroke) solid var(--line);
 
   span {
-    font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-}
-
-.project-schematic__app-icon {
-  display: block;
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-}
-
-.project-node {
-  position: absolute;
-  display: flex;
-  max-width: 180px;
-  align-items: center;
-  gap: 9px;
-  color: rgba(255, 255, 255, 0.67);
-  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  font-size: 0.64rem;
-  line-height: 1.35;
-
-  i {
-    width: 9px;
-    height: 9px;
-    flex: 0 0 auto;
-    background: #ff2d92;
-    border: 2px solid var(--app-primary-dark);
+    inline-size: 7px;
+    block-size: 7px;
+    background: var(--line-hover);
     border-radius: 50%;
-    box-shadow:
-      0 0 0 1px #ff2d92,
-      0 0 14px rgba(255, 45, 146, 0.7);
   }
 }
 
-.project-node--1 {
-  top: 20%;
-  left: 12%;
+.project-preview__viewport {
+  position: relative;
+  flex: 1 1 auto;
+  overflow: clip;
+  background: #ffffff;
 }
 
-.project-node--2 {
-  top: 35%;
-  right: 7%;
+.project-preview__image--heading-brief {
+  display: block;
+  inline-size: 162%;
+  max-inline-size: none;
+  block-size: auto;
+  transform: translate(-20%, -19%);
 }
 
-.project-node--3 {
-  bottom: 17%;
-  left: 18%;
+@media (hover: hover) and (pointer: fine) {
+  .project-panel:hover {
+    border-color: var(--line-hover);
+    transform: translateY(calc(var(--lift) * -1));
+
+    .project-panel__arrow {
+      transform: translateX(4px);
+    }
+
+    .project-preview {
+      transform: scale(1.015);
+    }
+  }
+}
+
+html[lang^="zh"] {
+  .project-panel__title-row h3 {
+    letter-spacing: 0;
+  }
+
+  .project-panel__description {
+    line-height: 1.75;
+  }
 }
 
 // 02 — Operating principles: three bare columns resting on the page surface.
@@ -1266,9 +1276,26 @@ $app-shot-slide: 48%;
   transform: translateY(0);
 }
 
-@keyframes orbit-spin {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
+@media (max-width: 1023.98px) {
+  .project-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .project-panel__content {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .project-panel__media {
+    min-block-size: 320px;
+  }
+
+  .project-preview--phone .project-preview__image {
+    inline-size: min(82%, 360px);
+    margin-block-start: -14px;
+  }
+
+  .project-preview--window {
+    inset: var(--space-4) var(--space-4) 0;
   }
 }
 
@@ -1279,14 +1306,6 @@ $app-shot-slide: 48%;
 
   .tech-hero__row {
     padding: 80px 0;
-  }
-
-  .project-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .project-panel__content {
-    min-height: auto;
   }
 
   .principle-grid {
@@ -1311,7 +1330,7 @@ $app-shot-slide: 48%;
 
   .project-lab,
   .build-principles {
-    padding: 56px 0 64px;
+    padding-block: var(--space-7) var(--space-8);
   }
 
   .lab-heading {
@@ -1322,31 +1341,49 @@ $app-shot-slide: 48%;
     }
   }
 
+  .page-apps-home .lab-heading {
+    margin-block-end: var(--space-6);
+  }
+
+  .project-panel {
+    grid-template-columns: 1fr;
+  }
+
   .project-panel__content {
-    padding: 38px 26px;
+    padding: var(--space-5);
   }
 
-  .project-panel__topline {
-    align-items: start;
+  .project-panel__media {
+    aspect-ratio: 4 / 3;
+    min-block-size: 240px;
+    border-inline-start: 0;
+    border-block-start: var(--stroke) solid var(--line);
   }
 
-  .project-panel__platform {
-    margin-top: 58px;
+  .project-preview--phone .project-preview__image {
+    inline-size: min(76%, 340px);
+    margin-block-start: -12px;
   }
 
-  .project-schematic {
-    min-height: 420px;
-  }
-
-  .project-schematic__orbit--outer {
-    width: 310px;
-    height: 310px;
+  .project-preview--window {
+    inset: var(--space-4) var(--space-4) 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-schematic__orbit--outer {
-    animation: none;
+  .project-panel,
+  .project-panel__arrow,
+  .project-preview {
+    transition: none;
+  }
+
+  .project-panel:hover {
+    transform: none;
+
+    .project-panel__arrow,
+    .project-preview {
+      transform: none;
+    }
   }
 
   .js-enabled .js-reveal {

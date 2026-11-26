@@ -34,7 +34,6 @@ bodyClass: "page-apps-home"
         <p class="lab-heading__index">01 / {{ t.home.selected_work }}</p>
         <h2>{{ t.home.project_lab }}</h2>
       </div>
-      <p>{{ t.home.project_intro }}</p>
     </header>
 
     <div class="project-stack">
@@ -45,41 +44,60 @@ bodyClass: "page-apps-home"
       {% else %}
       {% assign app = site.data.apps[app_page.app_key] %}
       {% endif %}
+      {% assign preview = app_config.home_preview %}
+      {% assign preview_alt = app.home_preview_alt | default: app_config.home_preview_alt | default: app.name %}
       <article class="project-panel js-reveal">
         <div class="project-panel__content">
-          <div class="project-panel__topline">
-            <span>PROJECT_{{ forloop.index | prepend: "0" }}</span>
-            <span class="project-status"><i aria-hidden="true"></i>{{ app.status }}</span>
-          </div>
-          <p class="project-panel__platform">{{ app.platform }} {{ t.home.application }}</p>
-          <h3>{{ app.name }}</h3>
-          <p class="project-panel__tagline">{{ app.tagline }}</p>
-          <p class="project-panel__description">{{ app.short_description }}</p>
-          <div class="project-panel__actions">
-            <a href="{{ app_page.url | relative_url }}">
-              {{ t.home.open_project }} <span aria-hidden="true">→</span>
-            </a>
-            <span>{{ app.features | size }} {{ t.home.capabilities }}</span>
-          </div>
-        </div>
-        <div class="project-schematic" aria-label="{{ app.name }} {{ t.home.capability_map }}">
-          <div class="project-schematic__orbit project-schematic__orbit--outer"></div>
-          <div class="project-schematic__orbit project-schematic__orbit--inner"></div>
-          <div class="project-schematic__core">
-            {% if app_config.app_icon %}
-            <img class="project-schematic__app-icon" src="{{ app_config.app_icon | relative_url }}"
-              alt="{{ app.name }} app icon" width="80" height="80" loading="lazy">
-            {% else %}
-            <span>{{ app.name }}</span>
+          <p class="project-panel__meta">
+            <span>{{ forloop.index | prepend: "0" }}</span>
+            <span aria-hidden="true">·</span>
+            <span>{{ app_config.platform | upcase }}</span>
+            {% if app_config.home_channel %}
+            <span aria-hidden="true">·</span>
+            <span>{{ app_config.home_channel | upcase }}</span>
             {% endif %}
+          </p>
+          <div class="project-panel__title-row">
+            {% if app_config.app_icon %}
+            <img class="project-panel__icon" src="{{ app_config.app_icon | relative_url }}"
+              alt="" width="32" height="32" loading="lazy" aria-hidden="true">
+            {% endif %}
+            <h3>
+              <a class="project-panel__title-link" href="{{ app_page.url | relative_url }}">{{ app.name }}</a>
+            </h3>
           </div>
-          {% for feature in app.features limit: 3 %}
-          <div class="project-node project-node--{{ forloop.index }}">
-            <i aria-hidden="true"></i>
-            <span>{{ feature.title }}</span>
-          </div>
-          {% endfor %}
+          <p class="project-panel__description">{{ app.short_description }}</p>
+          <span class="project-panel__cta" aria-hidden="true">
+            {{ t.home.open_project }} <span class="project-panel__arrow">→</span>
+          </span>
         </div>
+
+        {% if preview %}
+        <div class="project-panel__media project-panel__media--{{ preview.variant | default: 'window' }}">
+          {% if preview.variant == "window" %}
+          <div class="project-preview project-preview--window">
+            <div class="project-preview__chrome" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-preview__viewport">
+              <img class="project-preview__image project-preview__image--{{ app_page.app_key }}"
+                src="{{ preview.src | relative_url }}"
+                alt="{{ preview_alt | escape }}"
+                width="{{ preview.width }}" height="{{ preview.height }}"
+                loading="lazy">
+            </div>
+          </div>
+          {% else %}
+          <div class="project-preview project-preview--phone">
+            <img class="project-preview__image project-preview__image--{{ app_page.app_key }}"
+              src="{{ preview.src | relative_url }}"
+              alt="{{ preview_alt | escape }}"
+              width="{{ preview.width }}" height="{{ preview.height }}"
+              loading="lazy">
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
       </article>
       {% endfor %}
     </div>

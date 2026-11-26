@@ -8,6 +8,7 @@ beyond-words:
     选择语境、提供原文、检查生成结果，并在分享前继续调整。
   status: "已在 Google Play 上架"
   platform: "Android"
+  home_preview_alt: "言外界面预览：展示原始文本输入、语境切换与改写结果"
   store_label: "前往 Google Play"
   store_prefix: "立即下载"
   apk_label: "下载 APK"
@@ -59,6 +60,7 @@ accounted-for:
   status: "个人记账"
 
   platform: "Android"
+  home_preview_alt: "记然报表界面预览：展示支出分类环形图与各分类汇总金额"
 
   base_path: "/zh/accounted-for/"
   privacy_path: "/zh/accounted-for/privacy/"
@@ -94,6 +96,7 @@ heading-brief:
   long_description: "选择标题，即可在当前页面获取该章节及其子章节的摘要。"
   status: "已在 Chrome 网上应用店上架"
   platform: "Chrome"
+  home_preview_alt: "AI 章节速览界面预览：在文章标题下方内联展示该节内容摘要"
   store_label: "Chrome 网上应用店"
   base_path: "/zh/heading-brief/"
   privacy_path: "/zh/heading-brief/privacy/"

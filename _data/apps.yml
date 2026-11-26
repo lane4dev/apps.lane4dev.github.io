@@ -17,6 +17,13 @@ beyond-words:
     and refine it before sharing.
   status: "Available on Google Play"
   platform: "Android"
+  home_channel: "Google Play"
+  home_preview:
+    src: "/assets/images/beyond_words/screen_shoot_zh/01.png"
+    variant: "phone"
+    width: 1080
+    height: 1920
+  home_preview_alt: "Beyond Words interface showing original text, tone context selection, and the rewritten result"
 
   store_enabled: true
   store_type: "google-play"
@@ -93,6 +100,13 @@ accounted-for:
   long_description: "Record income and expenses, manage accounts, review monthly reports, and plan future bills and reminders. Your ledger stays on your device."
   status: "Personal finance"
   platform: "Android"
+  home_channel: "APK"
+  home_preview:
+    src: "/assets/images/accounted_for/screen_shoot_zh/04.png"
+    variant: "phone"
+    width: 1080
+    height: 1920
+  home_preview_alt: "Accounted For reports screen displaying an expense donut chart and category totals"
 
   store_enabled: false
 
@@ -133,6 +147,13 @@ heading-brief:
   long_description: "Choose a heading to summarize its section and subsections without leaving the page."
   status: "Available on the Chrome Web Store"
   platform: "Chrome"
+  home_channel: "Chrome Web Store"
+  home_preview:
+    src: "/assets/images/heading_brief/screen_shoot/01.png"
+    variant: "window"
+    width: 2061
+    height: 1221
+  home_preview_alt: "AI Heading Brief showing an inline section summary beside a Wikipedia article heading"
 
   store_enabled: true
   store_type: "chrome-web-store"
