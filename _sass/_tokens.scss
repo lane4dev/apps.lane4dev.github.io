@@ -1,0 +1,141 @@
+// ============================================================================
+// Design Tokens — apps.tangyu.me
+//
+// Semantic CSS custom properties shared by the whole gallery. They are the
+// single source of truth for color, type, space, shape, motion and layout.
+// The neutral palette continues tangyu.me's warm-neutral light base and its
+// cool dark-gray header, while the spacing / type / stroke tokens give the
+// gallery the precise, quiet feel of Linear and Raycast.
+//
+// Light and dark only swap the COLOR mappings — spacing, sizes and shapes are
+// theme-agnostic. The dark theme is staged here behind [data-theme="dark"];
+// the runtime toggle (the main site's 07:00 / 19:00 auto strategy plus a
+// manual override) is wired up in a later phase and simply flips that
+// attribute. Until then the gallery renders the light theme below.
+// ============================================================================
+
+:root {
+  // --- Neutral color chassis ---------------------------------------------
+  // Background hierarchy (page → card → pressed/hover surface)
+  --bg: #ffffff;              // page base
+  --surface: #f7f7f7;         // card surface, image frames, comparison panels
+  --surface-raised: #f0f0f0;  // selected segment, pressed background
+  --surface-hover: #f0f0f0;   // hover-state surface (cards, rows, list items)
+  --header-bg: #ffffff;       // fixed, opaque header
+
+  // Text hierarchy (display → body → secondary → faint eyebrow)
+  --ink: #191919;             // headings, navigation
+  --body: #454545;            // body copy
+  --muted: #606060;           // captions, secondary explanations
+  --faint: #757575;           // very-subtle kickers and decorative labels
+
+  // 1px precise borders — semi-transparent so they read on any surface
+  --line: rgb(0 0 0 / 13%);        // resting hairline: dividers, image strokes
+  --line-hover: rgb(0 0 0 / 27%);  // hairline brightens on hover
+  --control-line: #737373;          // outline-only controls (inputs, segmented)
+
+  // Action (the single primary CTA) — near-black keeps the shell neutral
+  --action: #202020;
+  --on-action: #ffffff;
+  --action-hover: #353535;
+  --action-active: #101010;
+
+  // Focus ring
+  --focus: #292929;           // 2px outer ring, kept 3px off the control
+
+  // --- Brand accents ------------------------------------------------------
+  // Product colors used sparingly (screenshot accents, status signals).
+  // They sit outside the neutral chassis and are never used for large fills.
+  --app-primary: #ff5100;
+  --app-primary-dark: #2d2737;
+  --app-accent: #15f5c9;
+  --app-accent-soft: #e4fcf7;
+
+  // --- Type ---------------------------------------------------------------
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono",
+    "Fira Code", Consolas, "Liberation Mono", monospace;
+
+  // Scale (narrow / medium / wide), 16px root → rem so users can zoom
+  --display: clamp(2.25rem, 1.4rem + 2.2vw, 3.75rem); // 36 / 48 / 60px
+  --h2: clamp(1.625rem, 1.2rem + 1.1vw, 2.5rem);      // 26 / 32 / 40px
+  --h3: clamp(1.25rem, 1.1rem + 0.4vw, 1.5rem);       // 20 / 22 / 24px
+  --text: 1rem;        // 16px
+  --lead: 1.125rem;    // 18px
+  --small: 0.875rem;   // 14px
+  --eyebrow: 0.75rem;  // 12px
+
+  // Weight
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+
+  // Tracking
+  --tracking-display: -0.03em; // tightened Latin display type
+  --tracking-label: 0.08em;    // loosened uppercase eyebrows
+
+  // --- Space (4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96px) ------------
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+
+  // --- Shape ---------------------------------------------------------------
+  --stroke: 1px;
+  --radius-control: 6px;
+  --radius-card: 12px;
+  --radius-media: 8px;
+
+  // --- Motion --------------------------------------------------------------
+  // Restrained: color, border and lift only. No heavy easing or long slides.
+  --duration-fast: 150ms;
+  --duration-normal: 180ms;
+  --duration-panel: 200ms;
+  --ease: ease-out;
+  --lift: 2px;
+
+  // --- Layout ---------------------------------------------------------------
+  --container: 1200px;
+  --measure: 68ch;       // long-form reading measure (65–72ch)
+  --header-h: 82px;      // global header height
+  --product-nav-h: 48px; // product sub-navigation height
+  --tap: 44px;           // minimum touch target
+
+  color-scheme: light;
+}
+
+// ---------------------------------------------------------------------------
+// Dark theme — color mappings only. Activated later by the theme toggle.
+// ---------------------------------------------------------------------------
+[data-theme="dark"] {
+  --bg: #252627;
+  --surface: #2d2e2f;
+  --surface-raised: #38393a;
+  --surface-hover: #38393a;
+  --header-bg: #313233;
+
+  --ink: #f8f8f8;
+  --body: #dedede;
+  --muted: #b8babc;
+  --faint: #9a9c9f;
+
+  --line: rgb(255 255 255 / 16%);
+  --line-hover: rgb(255 255 255 / 32%);
+  --control-line: #a3a3a3;
+
+  --action: #efefef;
+  --on-action: #202020;
+  --action-hover: #ffffff;
+  --action-active: #dcdcdc;
+
+  --focus: #f5f5f5;
+
+  color-scheme: dark;
+}

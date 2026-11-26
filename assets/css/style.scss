@@ -1,6 +1,10 @@
 ---
 ---
 
+// Design tokens — semantic CSS custom properties (colors, type, space,
+// shape, motion, layout). Imported first so every partial can read them.
+@import "tokens";
+
 // Colors from the visual language of tangyu.me
 $primary: #ff5100;
 $primary-dark: #2d2737;
@@ -76,16 +80,6 @@ $sub-footer-text-color: $white;
 @import "pages/page-service";
 @import "pages/page-app";
 
-body {
-  font-size: 16px;
-  line-height: 1.8;
-  font-family: $font-family-base;
-  color: $black;
-  background: $white;
-  -webkit-font-smoothing: antialiased;
-
-  @include media-breakpoint-up(md) {
-    font-size: 16px;
-    line-height: 1.8;
-  }
-}
+// Base typography and document defaults — imported last so element-level
+// defaults resolve against the tokens above.
+@import "base";
