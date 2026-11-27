@@ -599,7 +599,7 @@ if (heroSwiss && homeHeroEl) {
   }
 }
 
-// Beyond Words page: Sticky center phone screen switcher (desktop vertical / mobile horizontal)
+// Saylence page: Sticky center phone screen switcher (desktop vertical / mobile horizontal)
 var bwFeatures = document.querySelector('[data-bw-features]');
 
 if (bwFeatures) {

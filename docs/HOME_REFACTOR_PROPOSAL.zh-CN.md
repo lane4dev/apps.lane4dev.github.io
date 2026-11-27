@@ -44,7 +44,7 @@
 3. **作品区 `01 — SELECTED WORK`（参考 Section 03 视差步进舞台）**
    - **桌面端 Sticky 滚动遍历**：
      - 外层轨道高度随应用数量动态计算：`--app-count: {{ sorted_apps.size }}`，约 `calc(var(--app-count) * 80vh + 40vh)`。
-     - 内层舞台 `position: sticky; top: var(--header-h); height: calc(100svh - var(--header-h));`，随滚动进度逐个遍历 `01 Beyond Words` → `02 Accounted For` → `03 AI Heading Brief`。
+     - 内层舞台 `position: sticky; top: var(--header-h); height: calc(100svh - var(--header-h));`，随滚动进度逐个遍历 `01 Saylence` → `02 Accounted For` → `03 AI Heading Brief`。
    - **三列非对称布局**：
      - 左侧（约 48%）：固定统一高度与比例的直角展示画框，兼容手机竖屏与桌面浏览器窗口截图，切换时不跳动；背景叠加慢速视差弥散色晕，截图随局部滚动进度产生微幅垂直视差（约 `±14px`）。
      - 中右（约 40%）：等宽平台编号、常规字重大标题、简介、`查看详情 →` 链接，以及底部横向 `01 / 02 / 03` 步进进度条（顶部 `1px` 线条随局部滚动实时 `scaleX` 延展，且支持点击直达对应应用）。
@@ -116,7 +116,7 @@
 
 | 应用 | 中文文案（首页展示） | English Copy (Homepage) |
 | :--- | :--- | :--- |
-| **01 · 言外**<br>`Beyond Words` | 表达这件事，不必每次都那么严肃。言外既能帮你在需要分寸的场合把话说得体面、说得准，也留了一块让你随手试探边界的游乐场——只要换个语境包，一句平平无奇的日常消息就能瞬间跑偏到另一个次元。有用是它的底线，有趣才是它真正好玩的理由。 | Expression doesn't always have to be so serious. Beyond Words can help you land the right tone when it counts, yet it also leaves room for a playground—swap the context pack and an ordinary message can veer straight into another universe. Being useful is the baseline; being fun to mess around with is the real point. |
+| **01 · 言外**<br>`Saylence` | 表达这件事，不必每次都那么严肃。言外既能帮你在需要分寸的场合把话说得体面、说得准，也留了一块让你随手试探边界的游乐场——只要换个语境包，一句平平无奇的日常消息就能瞬间跑偏到另一个次元。有用是它的底线，有趣才是它真正好玩的理由。 | Expression doesn't always have to be so serious. Saylence can help you land the right tone when it counts, yet it also leaves room for a playground—swap the context pack and an ordinary message can veer straight into another universe. Being useful is the baseline; being fun to mess around with is the real point. |
 | **02 · 记然**<br>`Accounted For` | 市面上成熟的记账软件已经足够多，并不缺一个大而全的新面孔。所以我没打算用记然去覆盖所有人的需求，而是把重心收束在周期性账单与预算管理上——不只记下一笔花销，更想留住这笔钱背后的「所以然」。在我看来，记账的终点从来不是把数字填满，而是回头复盘时能坦然看清每一笔花在哪儿、值不值当，然后更从容地规划下一次消费。 | There is no shortage of feature-packed finance apps, and I never set out to build another one that tries to do everything. Accounted For stays focused on recurring bills and thoughtful budgeting—less about logging numbers for the sake of it, and more about understanding the "why" behind them. Tracking money only matters when it helps you look back, ask where each dollar went and whether it was worth it, and spend more intentionally going forward. |
 | **03 · AI 章节速览**<br>`AI Heading Brief` | 我始终认为，AI 不应该替代人去阅读——面对重要或有深度的内容，亲手读完一手原文依然无可替代。AI 章节速览想做的，其实是帮你削减进入长文时的那一点摩擦：在每个标题旁先递上一小段提要，让你在真正读下去之前，脑子里先有了落脚点和关注的重心。它不替你跳过原文，而是让接下来的阅读更顺畅、更有方向。 | AI shouldn't read on your behalf—there is no real substitute for engaging directly with original, primary text. AI Heading Brief is simply meant to take the friction out of diving into long writing. By placing a short preview right beside each heading, it gives your mind a few anchors before you read on—not to skip the text, but to enter it with sharper focus. |
 

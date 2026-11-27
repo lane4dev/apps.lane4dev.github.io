@@ -1,5 +1,5 @@
 ---
-title: "Beyond Words"
+title: "Saylence"
 layout: app
 app_key: "beyond-words"
 weight: 10

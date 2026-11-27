@@ -3,7 +3,7 @@ title: "Privacy Policy"
 layout: legal
 app_key: "beyond-words"
 permalink: /beyond-words/privacy/
-description: "How Beyond Words processes account information, user-provided text, service usage, diagnostics, and subscription data."
+description: "How Saylence processes account information, user-provided text, service usage, diagnostics, and subscription data."
 effective_date: "2026-07-29"
 last_updated: "2026-09-24"
 lang: en

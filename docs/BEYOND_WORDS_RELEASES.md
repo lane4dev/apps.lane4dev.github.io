@@ -1,4 +1,4 @@
-# Beyond Words APK releases
+# Saylence APK releases
 
 The landing pages and `/beyond-words/releases/latest.json` use the same release
 information in `_data/releases/beyond-words.yml`. The JSON is a public, static

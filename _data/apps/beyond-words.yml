@@ -1,4 +1,4 @@
-name: "Beyond Words"
+name: "Saylence"
 slug: "beyond-words"
 app_icon: "/assets/images/beyond-words/app_logo.png"
 screenshots:
@@ -10,9 +10,9 @@ screenshots:
   - "/assets/images/beyond-words/screen_shoot_zh/06.png"
 tagline: "Say what you mean, in the context that fits."
 short_description: "Rewrite, translate, adjust tone, or structure prompts from your own text—grounded in what you wrote, with reusable context packs."
-home_story: "Expression doesn't always have to be so serious. Beyond Words can help you land the right tone when it counts, yet it also leaves room for a playground—swap the context pack and an ordinary message can veer straight into another universe. Being useful is the baseline; being fun to mess around with is the real point."
+home_story: "Expression doesn't always have to be so serious. Saylence can help you land the right tone when it counts, yet it also leaves room for a playground—swap the context pack and an ordinary message can veer straight into another universe. Being useful is the baseline; being fun to mess around with is the real point."
 long_description: >-
-  Beyond Words helps you transform existing text without inventing missing
+  Saylence helps you transform existing text without inventing missing
   facts. Select a context, provide your text, review the generated result,
   and refine it before sharing.
 status: "Available on Google Play"
@@ -23,7 +23,7 @@ home_preview:
   variant: "phone"
   width: 1080
   height: 1920
-home_preview_alt: "Beyond Words interface showing original text, tone context selection, and the rewritten result"
+home_preview_alt: "Saylence interface showing original text, tone context selection, and the rewritten result"
 
 store_enabled: true
 store_type: "google-play"
@@ -57,7 +57,7 @@ workflow:
   - title: "Choose a context"
     description: "Select the transformation that matches the communication situation."
   - title: "Provide existing text"
-    description: "Beyond Words works from the text and context you supply."
+    description: "Saylence works from the text and context you supply."
   - title: "Review and refine"
     description: "Check the result before copying, sharing, or using it elsewhere."
 
@@ -116,7 +116,7 @@ marquee_contexts:
   - "Grammar Fix"
   - "Translate to Chinese"
 
-statement_eyebrow: "WHY BEYOND WORDS"
+statement_eyebrow: "WHY Saylence"
 statement_heading: "Expression doesn't always have to be so serious."
 statement_body: "Keep your original facts and intent untouched—then shift the voice from buttoned-up work notes to playful, offbeat experiments whenever the mood strikes."
 statement_cards:
@@ -153,12 +153,12 @@ spotlight_items:
 
 packs_card_badge: "CUSTOM CONTEXT PACKS"
 packs_card_title: "Build your own tone playground"
-packs_card_body: "Define your own personas, translation rules, or playful voices in a reusable context pack and import them right into Beyond Words."
+packs_card_body: "Define your own personas, translation rules, or playful voices in a reusable context pack and import them right into Saylence."
 packs_card_cta: "Explore custom packs"
 
 faq_heading: "Questions"
 faqs:
-  - q: "Will Beyond Words invent facts I didn't write?"
+  - q: "Will Saylence invent facts I didn't write?"
     a: "No. Every transformation is grounded in the text and context you provide, and the generated draft remains fully editable so you can review it before copying or sharing."
   - q: "Where is my text history stored?"
     a: "Your transformation history stays locally on your device by default—there is no cloud history sync and no mandatory account sign-up."

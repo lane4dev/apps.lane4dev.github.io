@@ -3,7 +3,7 @@ title: "Custom Context Pack Guide"
 layout: app-page
 app_key: "beyond-words"
 permalink: /beyond-words/custom-context-packs/
-description: "Create, validate, download, and import custom context packs for Beyond Words."
+description: "Create, validate, download, and import custom context packs for Saylence."
 last_updated: "2026-11-25"
 lang: en
 translation_key: beyond-words-custom-context-packs

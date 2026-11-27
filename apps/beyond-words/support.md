@@ -3,7 +3,7 @@ title: "Support"
 layout: app-page
 app_key: "beyond-words"
 permalink: /beyond-words/support/
-description: "Support for Beyond Words transformations, context packs, custom model services, voice input, purchases, privacy, and harmful-output reports."
+description: "Support for Saylence transformations, context packs, custom model services, voice input, purchases, privacy, and harmful-output reports."
 last_updated: "2026-09-24"
 lang: en
 translation_key: beyond-words-support
@@ -69,7 +69,7 @@ including the original input.
 
 If you cannot submit a report in the application, email
 [{{ developer.support_email }}](mailto:{{ developer.support_email }}) with the
-subject **Beyond Words output report**.
+subject **Saylence output report**.
 
 ### A subscription or lifetime entitlement is active but access is missing
 

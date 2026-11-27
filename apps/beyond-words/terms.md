@@ -3,7 +3,7 @@ title: "Terms of Service"
 layout: legal
 app_key: "beyond-words"
 permalink: /beyond-words/terms/
-description: "Terms governing use of Beyond Words, generated output, anonymous service access, context packs, purchases, and service availability."
+description: "Terms governing use of Saylence, generated output, anonymous service access, context packs, purchases, and service availability."
 effective_date: "2026-07-29"
 last_updated: "2026-09-24"
 lang: en

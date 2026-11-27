@@ -1,7 +1,7 @@
 # Personal App Portfolio — Jekyll Serif overlay
 
 This package adds a multi-application structure and a complete first set of
-Beyond Words pages to the
+Saylence pages to the
 [Jekyll Serif](https://github.com/zerostaticthemes/jekyll-serif-theme) theme.
 
 It is intentionally distributed as an **overlay**, rather than a copy of the
@@ -11,7 +11,7 @@ copy this package over the repository root.
 ## Included pages
 
 - `/` — application directory
-- `/beyond-words/` — Beyond Words landing page
+- `/beyond-words/` — Saylence landing page
 - `/beyond-words/custom-context-packs/` — Custom Context Pack Guide
 - `/beyond-words/privacy/` — Privacy Policy
 - `/beyond-words/terms/` — Terms of Service
