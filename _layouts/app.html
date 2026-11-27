@@ -13,7 +13,7 @@ bodyClass: "page-app"
   {% assign app = site.data.apps[page.app_key] %}
 {% endif %}
 
-{% include app/nav.html app=app %}
+{% include shared/nav.html app=app %}
 
 {% capture app_view %}apps/{{ page.app_key }}/page.html{% endcapture %}
 {% include {{ app_view }} app_config=app_config app=app app_release=app_release t=t %}

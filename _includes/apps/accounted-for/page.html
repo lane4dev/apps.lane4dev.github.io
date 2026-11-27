@@ -16,13 +16,13 @@
         </div>
         <p class="af-hero__tagline">{{ app.tagline }}</p>
         <p class="af-hero__story">{{ app.home_story | default: app.long_description }}</p>
-        {% include app/download-actions.html app_config=app_config app=app app_release=app_release t=t theme="light" %}
+        {% include shared/download-actions.html app_config=app_config app=app app_release=app_release t=t theme="light" %}
       </div>
 
       {% if app_config.screenshots.size > 0 %}
       <div class="af-hero__visual">
         <div class="af-hero__frame">
-          {% include app/screenshots.html app_config=app_config app=app t=t theme="light" %}
+          {% include shared/screenshots.html app_config=app_config app=app t=t theme="light" %}
         </div>
       </div>
       {% endif %}
@@ -68,4 +68,4 @@
   </div>
 </section>
 
-{% include app/legal-strip.html app=app t=t index_label="03" %}
+{% include shared/legal-strip.html app=app t=t index_label="03" %}

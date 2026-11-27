@@ -42,12 +42,12 @@ x_default_url: /feather-ledger/
 ---
 ```
 
-The `_layouts/app.html` dispatcher automatically loads `site.data.apps[page.app_key]`, `site.data.apps_zh[page.app_key]`, and `site.data.releases[page.app_key]`, renders `_includes/app/nav.html`, and includes `_includes/apps/<app-slug>/page.html`.
+The `_layouts/app.html` dispatcher automatically loads `site.data.apps[page.app_key]`, `site.data.apps_zh[page.app_key]`, and `site.data.releases[page.app_key]`, renders `_includes/shared/nav.html`, and includes `_includes/apps/<app-slug>/page.html`.
 
 ## 3. Add independent view and styles
 
 Create:
-- `_includes/apps/<app-slug>/page.html` (reusing shared blocks under `_includes/app/` as needed)
+- `_includes/apps/<app-slug>/page.html` (reusing shared blocks under `_includes/shared/` as needed)
 - `_sass/apps/_<app-slug>.scss` and import it from `assets/css/style.scss`
 - Assets under `assets/images/<app-slug>/`
 
