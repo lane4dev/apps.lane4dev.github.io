@@ -280,7 +280,7 @@
     display: flex;
     width: max-content;
     will-change: transform;
-    animation: bw-marquee-scroll 48s linear infinite;
+    animation: bw-marquee-scroll 56s linear infinite;
 
     &:hover {
       animation-play-state: paused;
