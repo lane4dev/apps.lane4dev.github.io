@@ -8,18 +8,28 @@ bodyClass: "page-apps-home"
 {% assign current_apps = site.apps | where: "lang", current_lang %}
 {% assign sorted_apps = current_apps | sort: "weight" %}
 
-<section class="tech-hero">
-  <div class="tech-hero__grid" aria-hidden="true"></div>
-  <div class="tech-hero__glow" aria-hidden="true"></div>
-  <div class="container">
-    <div class="tech-hero__row">
-      <div class="tech-hero__content">
-        <h1>{{ page.title }}</h1>
-        <p class="tech-hero__lead">{{ page.description }}</p>
-        <div class="tech-hero__actions">
-          <a class="tech-button tech-button--primary" href="#projects">{{ t.home.explore_projects }}</a>
-          <a class="tech-button tech-button--ghost" href="https://tangyu.me" rel="noopener">
-            {{ t.home.personal_website }} <span aria-hidden="true">↗</span>
+<section class="home-hero">
+  <div class="home-hero__swiss" data-hero-swiss aria-hidden="true"></div>
+
+  <div class="container home-hero__inner">
+    <div class="home-hero__grid">
+      <div class="home-hero__title-col">
+        <h1>
+          {% if page.hero_title_sub and page.hero_title_main %}
+          <span class="home-hero__title-sub">{{ page.hero_title_sub }}</span>
+          <span class="home-hero__title-main">{{ page.hero_title_main }}</span>
+          {% else %}
+          {{ page.title }}
+          {% endif %}
+        </h1>
+        <p class="home-hero__sublabel">{{ t.home.hero_sublabel }}</p>
+      </div>
+      <div class="home-hero__lead-col">
+        <p class="home-hero__lead">{{ page.description }}</p>
+        <div class="home-hero__actions">
+          <a class="home-btn" href="#projects">
+            <span class="home-btn__label">{{ t.home.explore_projects }}</span>
+            <span class="home-btn__icon" aria-hidden="true">↓</span>
           </a>
         </div>
       </div>
@@ -27,104 +37,201 @@ bodyClass: "page-apps-home"
   </div>
 </section>
 
-<section class="project-lab" id="projects">
+<section class="home-works" id="projects">
   <div class="container">
-    <header class="lab-heading js-reveal">
-      <div>
-        <p class="lab-heading__index">01 / {{ t.home.selected_work }}</p>
-        <h2>{{ t.home.project_lab }}</h2>
+    <header class="home-section-label">
+      <p class="home-section-label__index">({{ t.home.selected_work }})</p>
+      <h2 class="home-section-label__title">{{ t.home.works_heading }}</h2>
+    </header>
+  </div>
+
+  <div class="works-stage" data-works-stage style="--app-count: {{ sorted_apps.size }};">
+    <div class="works-stage__sticky">
+      <div class="container works-stage__inner">
+        <div class="works-stage__layout">
+          <div class="works-stage__visual">
+            <div class="works-stage__ambient" aria-hidden="true">
+              {% for app_page in sorted_apps %}
+              <div class="works-stage__glow works-stage__glow--{{ forloop.index }}{% if forloop.first %} is-active{% endif %}"
+                data-works-glow="{{ forloop.index0 }}"></div>
+              {% endfor %}
+            </div>
+
+            <div class="works-stage__frames">
+              {% for app_page in sorted_apps %}
+              {% assign app_config = site.data.apps[app_page.app_key] %}
+              {% if current_lang == "zh-CN" %}
+              {% assign app = site.data.apps_zh[app_page.app_key] %}
+              {% else %}
+              {% assign app = site.data.apps[app_page.app_key] %}
+              {% endif %}
+              {% assign preview = app_config.home_preview %}
+              {% assign preview_alt = app.home_preview_alt | default: app_config.home_preview_alt | default: app.name %}
+              <div class="works-stage__media{% if forloop.first %} is-active{% endif %}"
+                data-works-media="{{ forloop.index0 }}">
+                <a class="works-stage__media-link" href="{{ app_page.url | relative_url }}" aria-label="{{ app.name | escape }}">
+                  {% if preview %}
+                    {% if preview.variant == "window" %}
+                    <div class="works-preview works-preview--window">
+                      <div class="works-preview__chrome" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                      </div>
+                      <div class="works-preview__viewport">
+                        <img class="works-preview__image works-preview__image--{{ app_page.app_key }}"
+                          src="{{ preview.src | relative_url }}"
+                          alt="{{ preview_alt | escape }}"
+                          width="{{ preview.width }}" height="{{ preview.height }}"
+                          loading="lazy">
+                      </div>
+                    </div>
+                    {% else %}
+                    <div class="works-preview works-preview--phone">
+                      <img class="works-preview__image works-preview__image--{{ app_page.app_key }}"
+                        src="{{ preview.src | relative_url }}"
+                        alt="{{ preview_alt | escape }}"
+                        width="{{ preview.width }}" height="{{ preview.height }}"
+                        loading="lazy">
+                    </div>
+                    {% endif %}
+                  {% endif %}
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="works-stage__info">
+            <div class="works-stage__copies">
+              {% for app_page in sorted_apps %}
+              {% assign app_config = site.data.apps[app_page.app_key] %}
+              {% if current_lang == "zh-CN" %}
+              {% assign app = site.data.apps_zh[app_page.app_key] %}
+              {% else %}
+              {% assign app = site.data.apps[app_page.app_key] %}
+              {% endif %}
+              {% assign preview = app_config.home_preview %}
+              {% assign preview_alt = app.home_preview_alt | default: app_config.home_preview_alt | default: app.name %}
+              {% assign story = app.home_story | default: app.short_description %}
+              <article class="works-stage__copy{% if forloop.first %} is-active{% endif %}"
+                data-works-copy="{{ forloop.index0 }}">
+                {% if preview %}
+                <a class="works-stage__mobile-media" href="{{ app_page.url | relative_url }}" aria-label="{{ app.name | escape }}">
+                  {% if preview.variant == "window" %}
+                  <div class="works-preview works-preview--window">
+                    <div class="works-preview__chrome" aria-hidden="true">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div class="works-preview__viewport">
+                      <img class="works-preview__image works-preview__image--{{ app_page.app_key }}"
+                        src="{{ preview.src | relative_url }}"
+                        alt="{{ preview_alt | escape }}"
+                        width="{{ preview.width }}" height="{{ preview.height }}"
+                        loading="lazy">
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="works-preview works-preview--phone">
+                    <img class="works-preview__image works-preview__image--{{ app_page.app_key }}"
+                      src="{{ preview.src | relative_url }}"
+                      alt="{{ preview_alt | escape }}"
+                      width="{{ preview.width }}" height="{{ preview.height }}"
+                      loading="lazy">
+                  </div>
+                  {% endif %}
+                </a>
+                {% endif %}
+                <p class="works-stage__meta">
+                  <span>{{ forloop.index | prepend: "0" }}</span>
+                  <span aria-hidden="true">/</span>
+                  <span>{{ app_config.platform | upcase }}</span>
+                  {% if app_config.home_channel %}
+                  <span aria-hidden="true">·</span>
+                  <span>{{ app_config.home_channel | upcase }}</span>
+                  {% endif %}
+                </p>
+                <div class="works-stage__title-row">
+                  {% if app_config.app_icon %}
+                  <img class="works-stage__icon" src="{{ app_config.app_icon | relative_url }}"
+                    alt="" width="30" height="30" loading="lazy" aria-hidden="true">
+                  {% endif %}
+                  <h3>
+                    <a class="works-stage__title-link" href="{{ app_page.url | relative_url }}">{{ app.name }}</a>
+                  </h3>
+                </div>
+                <p class="works-stage__story">{{ story }}</p>
+                <a class="works-stage__cta" href="{{ app_page.url | relative_url }}">
+                  <span>{{ t.home.open_project }}</span>
+                  <span class="works-stage__arrow" aria-hidden="true">→</span>
+                </a>
+              </article>
+              {% endfor %}
+            </div>
+
+            <div class="works-stage__steps" role="tablist" aria-label="{{ t.home.selected_work | escape }}">
+              {% for app_page in sorted_apps %}
+              {% if current_lang == "zh-CN" %}
+              {% assign app = site.data.apps_zh[app_page.app_key] %}
+              {% else %}
+              {% assign app = site.data.apps[app_page.app_key] %}
+              {% endif %}
+              <button class="works-stage__step{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                role="tab"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                data-works-step="{{ forloop.index0 }}"
+                aria-label="{{ forloop.index | prepend: '0' }} {{ app.name | escape }}">
+                <span class="works-stage__step-track" aria-hidden="true">
+                  <span class="works-stage__step-fill"></span>
+                </span>
+                <span class="works-stage__step-num">{{ forloop.index | prepend: "0" }}</span>
+                <span class="works-stage__step-name">{{ app.name }}</span>
+              </button>
+              {% endfor %}
+            </div>
+          </div>
+
+          <aside class="works-stage__rail" aria-hidden="true">
+            <p class="works-stage__rail-text">{{ t.home.works_rail }}</p>
+          </aside>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-notes">
+  <div class="container">
+    <header class="home-section-label home-section-label--dark">
+      <p class="home-section-label__index">({{ t.home.notes_index }})</p>
+      <h2 class="home-section-label__title">{{ t.home.notes_heading }}</h2>
     </header>
 
-    <div class="project-stack">
-      {% for app_page in sorted_apps %}
-      {% assign app_config = site.data.apps[app_page.app_key] %}
-      {% if current_lang == "zh-CN" %}
-      {% assign app = site.data.apps_zh[app_page.app_key] %}
-      {% else %}
-      {% assign app = site.data.apps[app_page.app_key] %}
-      {% endif %}
-      {% assign preview = app_config.home_preview %}
-      {% assign preview_alt = app.home_preview_alt | default: app_config.home_preview_alt | default: app.name %}
-      <article class="project-panel js-reveal">
-        <div class="project-panel__content">
-          <p class="project-panel__meta">
-            <span>{{ forloop.index | prepend: "0" }}</span>
-            <span aria-hidden="true">·</span>
-            <span>{{ app_config.platform | upcase }}</span>
-            {% if app_config.home_channel %}
-            <span aria-hidden="true">·</span>
-            <span>{{ app_config.home_channel | upcase }}</span>
-            {% endif %}
-          </p>
-          <div class="project-panel__title-row">
-            {% if app_config.app_icon %}
-            <img class="project-panel__icon" src="{{ app_config.app_icon | relative_url }}"
-              alt="" width="32" height="32" loading="lazy" aria-hidden="true">
-            {% endif %}
-            <h3>
-              <a class="project-panel__title-link" href="{{ app_page.url | relative_url }}">{{ app.name }}</a>
-            </h3>
-          </div>
-          <p class="project-panel__description">{{ app.short_description }}</p>
-          <span class="project-panel__cta" aria-hidden="true">
-            {{ t.home.open_project }} <span class="project-panel__arrow">→</span>
-          </span>
-        </div>
-
-        {% if preview %}
-        <div class="project-panel__media project-panel__media--{{ preview.variant | default: 'window' }}">
-          {% if preview.variant == "window" %}
-          <div class="project-preview project-preview--window">
-            <div class="project-preview__chrome" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="project-preview__viewport">
-              <img class="project-preview__image project-preview__image--{{ app_page.app_key }}"
-                src="{{ preview.src | relative_url }}"
-                alt="{{ preview_alt | escape }}"
-                width="{{ preview.width }}" height="{{ preview.height }}"
-                loading="lazy">
-            </div>
-          </div>
-          {% else %}
-          <div class="project-preview project-preview--phone">
-            <img class="project-preview__image project-preview__image--{{ app_page.app_key }}"
-              src="{{ preview.src | relative_url }}"
-              alt="{{ preview_alt | escape }}"
-              width="{{ preview.width }}" height="{{ preview.height }}"
-              loading="lazy">
-          </div>
-          {% endif %}
-        </div>
-        {% endif %}
+    <div class="home-notes__grid">
+      {% for note in t.home.notes %}
+      <article class="home-note">
+        <p class="home-note__index">{{ note.index }}</p>
+        <h3 class="home-note__title">{{ note.title }}</h3>
+        <p class="home-note__body">{{ note.body }}</p>
       </article>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="build-principles">
+<section class="home-closing">
   <div class="container">
-    <header class="lab-heading js-reveal">
-      <div>
-        <p class="lab-heading__index">02 / {{ t.home.operating_principles }}</p>
-        <h2>{{ t.home.build_heading }}</h2>
+    <div class="home-closing__inner">
+      <p class="home-closing__lead">{{ t.home.closing_lead }}</p>
+      <div class="home-closing__actions">
+        <a class="home-btn home-btn--compact" href="https://tangyu.me" rel="noopener">
+          <span class="home-btn__label">tangyu.me</span>
+          <span class="home-btn__icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="home-closing__link" href="https://github.com/lane4dev" rel="noopener">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+        <a class="home-closing__link" href="mailto:hi@tangyu.me">hi@tangyu.me</a>
       </div>
-    </header>
-    <div class="principle-grid">
-      <article class="principle-card js-reveal">
-        <h3>{{ t.home.principle_clear_title }}</h3>
-        <p>{{ t.home.principle_clear_body }}</p>
-      </article>
-      <article class="principle-card js-reveal">
-        <h3>{{ t.home.principle_useful_title }}</h3>
-        <p>{{ t.home.principle_useful_body }}</p>
-      </article>
-      <article class="principle-card js-reveal">
-        <h3>{{ t.home.principle_respect_title }}</h3>
-        <p>{{ t.home.principle_respect_body }}</p>
-      </article>
     </div>
   </div>
 </section>

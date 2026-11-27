@@ -1,7 +1,9 @@
 ---
-title: "Turning useful ideas into working software"
+title: "Built for myself, shared with the world"
+hero_title_sub: "Built for myself,"
+hero_title_main: "shared with the world"
 layout: apps-home
-description: "Independent experiments and focused products, engineered for clarity, usefulness, and a little bit of wonder."
+description: "I have a bias for small, well-crafted tools. Building software is how I express a point of view—how I frame a real problem, and look for the sweet spot between useful and interesting."
 permalink: /
 lang: en
 translation_key: home

@@ -15,7 +15,8 @@
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
-    background: $white;
+    background: var(--ink);
+    transition: background-color var(--duration-fast) var(--ease);
   }
 
   .hamburger-inner::after {
@@ -24,6 +25,12 @@
   }
 
   &.is-active {
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+      background: #fafaf7;
+    }
+
     .hamburger-inner::after {
       width: inherit;
       right: unset;

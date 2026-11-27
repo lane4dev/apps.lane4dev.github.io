@@ -16,38 +16,43 @@
 
 :root {
   // --- Neutral color chassis ---------------------------------------------
-  // Background hierarchy (page → card → pressed/hover surface)
-  --bg: #ffffff;              // page base
-  --surface: #f7f7f7;         // card surface, image frames, comparison panels
-  --surface-raised: #f0f0f0;  // selected segment, pressed background
-  --surface-hover: #f0f0f0;   // hover-state surface (cards, rows, list items)
-  --header-bg: #ffffff;       // fixed, opaque header
+  // Architectural paper-and-slate palette inspired by editorial minimalism
+  --bg: #fafaf7;              // warm off-white paper base
+  --surface: #f2f5f6;         // subtle architectural surface
+  --surface-raised: #eff5f7;  // soft mist surface for frames & hover
+  --surface-hover: #eff5f7;   // hover-state surface
+  --header-bg: transparent;   // fixed progressive-blur header
+
+  // Dark slate-blue mid-page band surface & foreground
+  --band-dark: #5d6f7d;
+  --band-ink: #fafaf7;
+  --band-muted: rgba(250, 250, 247, 0.78);
+  --band-line: rgba(250, 250, 247, 0.35);
 
   // Text hierarchy (display → body → secondary → faint eyebrow)
-  --ink: #191919;             // headings, navigation
-  --body: #454545;            // body copy
-  --muted: #606060;           // captions, secondary explanations
-  --faint: #757575;           // very-subtle kickers and decorative labels
+  --ink: #263846;             // deep cool slate-navy headings & primary copy
+  --body: #263846;            // primary body copy
+  --muted: #5d6f7d;           // secondary copy, metadata, captions
+  --faint: #758694;           // subtle kickers and decorative labels
 
-  // 1px precise borders — semi-transparent so they read on any surface
-  --line: rgb(0 0 0 / 13%);        // resting hairline: dividers, image strokes
-  --line-hover: rgb(0 0 0 / 27%);  // hairline brightens on hover
-  --control-line: #737373;          // outline-only controls (inputs, segmented)
+  // 1px precise borders
+  --line: #d7e0e5;                 // resting architectural hairline
+  --line-hover: rgba(38, 56, 70, 0.38); // hairline sharpens on hover
+  --control-line: rgba(38, 56, 70, 0.32);
 
-  // Action (the single primary CTA) — near-black keeps the shell neutral
-  --action: #202020;
-  --on-action: #ffffff;
-  --action-hover: #353535;
-  --action-active: #101010;
+  // Action (the single primary CTA)
+  --action: #263846;
+  --on-action: #fafaf7;
+  --action-hover: #fafaf7;
+  --action-active: #1c2a35;
 
   // Focus ring
-  --focus: #292929;           // 2px outer ring, kept 3px off the control
+  --focus: #263846;           // 2px outer ring, kept 3px off the control
 
   // --- Brand accents ------------------------------------------------------
-  // Product colors used sparingly (screenshot accents, status signals).
-  // They sit outside the neutral chassis and are never used for large fills.
+  // Product colors used sparingly (screenshot accents, diffused hover glow).
   --app-primary: #ff5100;
-  --app-primary-dark: #2d2737;
+  --app-primary-dark: #263846;
   --app-accent: #15f5c9;
   --app-accent-soft: #e4fcf7;
 
@@ -89,9 +94,9 @@
 
   // --- Shape ---------------------------------------------------------------
   --stroke: 1px;
-  --radius-control: 6px;
-  --radius-card: 12px;
-  --radius-media: 8px;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --radius-media: 0px;
 
   // --- Motion --------------------------------------------------------------
   // Restrained: color, border and lift only. No heavy easing or long slides.

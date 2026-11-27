@@ -2,9 +2,15 @@
 {% if current_lang == "zh-CN" %}{% assign home_url = "/zh/" %}{% endif %}
 {% assign sorted_apps = site.apps | where: "lang", current_lang | sort: "weight" %}
 <header class="header">
+  <div class="header__blur" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <div class="container">
     <a class="site-wordmark" href="{{ home_url | relative_url }}" aria-label="{{ t.site.home_label | escape }}">
-      <img class="site-wordmark__logo" src="{{ '/images/favicon.svg' | relative_url }}" alt="" width="24" height="24" aria-hidden="true">
+      <img class="site-wordmark__logo" src="{{ '/images/favicon.svg' | relative_url }}" alt="" width="22" height="22" aria-hidden="true">
       <span class="site-wordmark__name">lane4dev</span><span class="site-wordmark__suffix">• apps</span>
     </a>
     {% include main-menu.html %}

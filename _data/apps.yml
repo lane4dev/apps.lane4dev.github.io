@@ -10,7 +10,8 @@ beyond-words:
     - "/assets/images/beyond_words/screen_shoot_zh/05.png"
     - "/assets/images/beyond_words/screen_shoot_zh/06.png"
   tagline: "Say what you mean, in the context that fits."
-  short_description: "A context-aware writing assistant for rewriting, translation, tone adjustment, and prompt normalization."
+  short_description: "Rewrite, translate, adjust tone, or structure prompts from your own text—grounded in what you wrote, with reusable context packs."
+  home_story: "Expression doesn't always have to be so serious. Beyond Words can help you land the right tone when it counts, yet it also leaves room for a playground—swap the context pack and an ordinary message can veer straight into another universe. Being useful is the baseline; being fun to mess around with is the real point."
   long_description: >-
     Beyond Words helps you transform existing text without inventing missing
     facts. Select a context, provide your text, review the generated result,
@@ -96,7 +97,8 @@ accounted-for:
     - "/assets/images/accounted_for/screen_shoot_zh/05.png"
     - "/assets/images/accounted_for/screen_shoot_zh/06.png"
   tagline: "A clearer picture of every expense and income."
-  short_description: "A personal finance app for recording transactions, managing accounts, and planning bills."
+  short_description: "Track transactions, multiple accounts, recurring bills, and monthly category reports—no account required, with your ledger kept on-device."
+  home_story: "There is no shortage of feature-packed finance apps, and I never set out to build another one that tries to do everything. Accounted For stays focused on recurring bills and thoughtful budgeting—less about logging numbers for the sake of it, and more about understanding the \"why\" behind them. Tracking money only matters when it helps you look back, ask where each dollar went and whether it was worth it, and spend more intentionally going forward."
   long_description: "Record income and expenses, manage accounts, review monthly reports, and plan future bills and reminders. Your ledger stays on your device."
   status: "Personal finance"
   platform: "Android"
@@ -143,7 +145,8 @@ heading-brief:
   screenshots:
     - "/assets/images/heading_brief/screen_shoot/01.png"
   tagline: "Get to the point, one section at a time."
-  short_description: "A browser extension that summarizes article sections beside the original text."
+  short_description: "Summarize any article section right beside the original text without leaving the page, using the AI provider and model you choose."
+  home_story: "AI shouldn't read on your behalf—there is no real substitute for engaging directly with original, primary text. AI Heading Brief is simply meant to take the friction out of diving into long writing. By placing a short preview right beside each heading, it gives your mind a few anchors before you read on—not to skip the text, but to enter it with sharper focus."
   long_description: "Choose a heading to summarize its section and subsections without leaving the page."
   status: "Available on the Chrome Web Store"
   platform: "Chrome"

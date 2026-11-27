@@ -9,7 +9,7 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: 64px;
+    gap: 40px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -23,15 +23,15 @@
   &__link {
     display: inline-block;
     padding: 8px 0;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.88);
+    color: var(--ink);
     text-decoration: none;
     white-space: nowrap;
     transition: color var(--duration-fast) var(--ease);
 
     &:hover {
-      color: $white;
+      color: var(--muted);
       text-decoration: none;
     }
   }

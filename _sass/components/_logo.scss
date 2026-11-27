@@ -4,13 +4,15 @@
   gap: 8px;
   font-size: 15.75px;
   font-weight: 400;
-  letter-spacing: -1px;
-  color: $white;
+  letter-spacing: -0.02em;
+  color: var(--ink);
   text-decoration: none;
   white-space: nowrap;
+  transition: opacity var(--duration-fast) var(--ease);
 
   &:hover {
-    color: $white;
+    color: var(--ink);
+    opacity: 0.78;
     text-decoration: none;
   }
 
@@ -20,10 +22,10 @@
   }
 
   &__name {
-    color: $white;
+    color: var(--ink);
   }
 
   &__suffix {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--muted);
   }
 }
