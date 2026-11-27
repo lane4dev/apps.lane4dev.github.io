@@ -2,7 +2,7 @@
 title: "Accounted For"
 layout: app
 app_key: "accounted-for"
-weight: 30
+weight: 20
 permalink: /accounted-for/
 description: "A personal finance app for recording transactions, managing accounts, and planning bills."
 lang: en

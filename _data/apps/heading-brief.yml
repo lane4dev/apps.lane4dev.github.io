@@ -50,3 +50,34 @@ workflow:
     description: "AI Heading Brief finds article headings on enabled sites and adds summary buttons."
   - title: "Choose a section"
     description: "Select a button to generate a summary beside the original text."
+
+reader_toc_label: "On this page"
+reader_brief_btn: "Brief"
+reader_brief_title: "Section Brief"
+reader_brief_copy: "Copy"
+reader_brief_copied: "Copied"
+reader_brief_close: "Collapse"
+reader_demo_hint: "Try it: click \"✦ Brief\" beside any heading below to see how inline summaries unfold right next to the text."
+
+reader_why_title: "Why it exists"
+reader_why_brief: "AI shouldn't read on your behalf. Placing a short brief beside each heading lowers the friction of long articles and gives your mind clear anchors before you read on."
+reader_why_paragraphs:
+  - "When facing a dense technical reference, Wikipedia entry, or long-form essay, compressing the whole piece into three bullets strips away the nuance—while switching to a side panel or another chat tab breaks your reading flow."
+  - "There is no real substitute for engaging directly with original, primary text. AI Heading Brief isn't built to skip the article for you; it sits quietly beside each heading to offer a short preview, so you step into the paragraphs ahead with sharper focus."
+
+reader_specs_title: "Built around your setup"
+reader_specs_brief: "Bring your own provider, model, output language, and prompt—and inspect extracted text, copy, or regenerate inline beside the source."
+reader_specs:
+  - label: "Provider & model"
+    value: "Pick a supported AI provider, model, or compatible endpoint—you control where requests go."
+  - label: "Section scope"
+    value: "Summarize a single heading and its subsections, or the full article when a main title is detected."
+  - label: "Language & prompt"
+    value: "Choose your preferred output language and customize the summary prompt to match how you read."
+  - label: "Inspect & verify"
+    value: "Read summaries inline beside the source, inspect the extracted text, copy a result, or regenerate."
+
+reader_workflow_title: "Three steps to a brief"
+reader_workflow_brief: "Configure your preferred model provider, open an article on an enabled site, and click the button beside any heading."
+
+reader_privacy_toc: "Transparency"

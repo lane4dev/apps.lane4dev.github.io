@@ -2,7 +2,7 @@
 title: "AI Heading Brief"
 layout: app
 app_key: "heading-brief"
-weight: 20
+weight: 30
 permalink: /heading-brief/
 description: "Summarize article sections beside the original text with your chosen AI provider."
 lang: en

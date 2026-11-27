@@ -11,6 +11,8 @@ screenshots:
   - "/assets/images/accounted-for/screen_shoot_zh/04.png"
   - "/assets/images/accounted-for/screen_shoot_zh/05.png"
   - "/assets/images/accounted-for/screen_shoot_zh/06.png"
+  - "/assets/images/accounted-for/screen_shoot_zh/07.png"
+  - "/assets/images/accounted-for/screen_shoot_zh/08.png"
 tagline: "A clearer picture of every expense and income."
 short_description: "Track transactions, multiple accounts, recurring bills, and monthly category reports—no account required, with your ledger kept on-device."
 home_story: "There is no shortage of feature-packed finance apps, and I never set out to build another one that tries to do everything. Accounted For stays focused on recurring bills and thoughtful budgeting—less about logging numbers for the sake of it, and more about understanding the \"why\" behind them. Tracking money only matters when it helps you look back, ask where each dollar went and whether it was worth it, and spend more intentionally going forward."
@@ -53,3 +55,88 @@ workflow:
     description: "Schedule future bills and set reminders."
   - title: "Review and back up"
     description: "Review reports and regularly save a backup and your original attachments."
+
+hero_badge: "ANDROID · LOCAL FIRST"
+hero_headline: "Know what you spent, and why."
+hero_lead: "Accounted For is a local-first personal ledger built around budgeting and reflection. Keep daily spending, recurring bills, and monthly reviews in one clean, offline ledger—so you always know where your money goes and whether it was worth it."
+hero_scroll_hint: "(SCROLL TO EXPLORE)"
+hero_corner_tag: "@ACCOUNTED FOR · LOCAL FIRST"
+
+gallery_eyebrow: "(PREVIEW)"
+gallery_heading: "From a single entry to a clear monthly review"
+gallery_items:
+  - num: "(01)"
+    title: "Ledger"
+    caption: "Income, expenses, transfers, and balance adjustments each stay in their lane"
+    screenshot_index: 0
+  - num: "(02)"
+    title: "Quick entry"
+    caption: "Instant remaining-budget cues as soon as you pick a category"
+    screenshot_index: 1
+  - num: "(03)"
+    title: "Budget"
+    caption: "Expected remaining balance combining posted spending and upcoming fixed bills"
+    screenshot_index: 2
+  - num: "(04)"
+    title: "Review"
+    caption: "Category totals, multi-month trends, and a daily cash-flow heatmap"
+    screenshot_index: 3
+  - num: "(05)"
+    title: "Recurring"
+    caption: "Scheduled bills and subscriptions organized and editable per occurrence"
+    screenshot_index: 4
+  - num: "(06)"
+    title: "Accounts & backups"
+    caption: "Isolated multi-currency views with manual backups and CSV export"
+    screenshot_index: 5
+
+philosophy_eyebrow: "PHILOSOPHY"
+philosophy_heading: "The hardest part of tracking money isn't logging entries—it's keeping the picture clear."
+philosophy_paragraphs:
+  - "The goal of a ledger was never to fill up rows of numbers. It's to look back with clarity—seeing where your money went, whether it felt worthwhile, and how you want to plan the month ahead."
+  - "Accounted For starts from clean accounting semantics: opening balances, balance adjustments, transfers, and real income or expenses each stay in their own lane, so your balances and reports always tell the same truth."
+  - "Everything revolves around one steady rhythm: plan, track, and reflect. Your ledger stays offline on your own device—quiet, accurate, and built solely for your own clarity."
+
+pillars_eyebrow: "FEATURES"
+pillars_heading: |-
+  Review · Track · Plan
+  All-in-one budgeting
+pillars:
+  - num: "(01)"
+    title: "Budgeting across past, present, and future"
+    body: "Track the current month with both posted spending and upcoming fixed bills factored into your remaining balance, with live budget cues right as you log. Category budgets carry forward cleanly—adjusting one month never disturbs the months ahead, while long-range projections keep fixed commitments visible early."
+  - num: "(02)"
+    title: "Built for honest monthly reflection"
+    body: "Past months are evaluated strictly against posted spending, paired with multi-month budget-vs-actual trends, fixed vs. flexible breakdowns, unusual swing alerts, a daily cash-flow heatmap, and monthly or category review notes—so you can reflect on what was truly worth it."
+  - num: "(03)"
+    title: "Clean semantics & dependable recurring bills"
+    body: "Adjustments and transfers never pollute spending totals. Editing a recurring bill clearly separates a single occurrence from the ongoing rule so past history stays intact, and overdue backlogs switch to manual confirmation instead of silently posting."
+
+flow_eyebrow: "FLOW"
+flow_heading: "Three deliberate steps for budgeting and reflection"
+flow_steps:
+  - num: "(Step 01)"
+    title: "Plan budgets & recurring bills"
+    body: "Set category budgets and schedule fixed obligations like rent or subscriptions. Budgets carry forward naturally so you see fixed commitments before the month even begins."
+  - num: "(Step 02)"
+    title: "Log with live budget cues"
+    body: "Record transactions, transfers, and receipts. Live remaining-budget feedback appears right inside the entry form to inform decisions without getting in the way, with a privacy toggle to mask totals in public."
+  - num: "(Step 03)"
+    title: "Review monthly & own your data"
+    body: "At month's end, compare budgets against actuals, scan your activity heatmap, and jot down review notes to guide next month. Enjoy isolated multi-currency ledgers, CSV export, and manual backup and restore anytime."
+
+faq_eyebrow: "FAQ"
+faq_heading: "Common questions"
+faqs:
+  - num: "Q.01"
+    q: "Does Accounted For require an account or internet?"
+    a: "No. It works completely offline with no account sign-up and no bank linking."
+  - num: "Q.02"
+    q: "Does auto-posting charge my bank card?"
+    a: "No. Auto-posting only records scheduled entries inside your local ledger and never touches real funds; long backlogs switch to manual confirmation automatically."
+  - num: "Q.03"
+    q: "Does it convert currencies automatically?"
+    a: "No approximate exchange mixing. Each currency keeps its own isolated ledger, budgets, and reports—switching currencies never alters existing balances."
+  - num: "Q.04"
+    q: "How do I move my data to a new phone?"
+    a: "Export a manual ledger backup in Settings and restore it on your new device (restoring replaces the current ledger). Original image and file attachments are not included in backups, so please save them separately."

@@ -86,7 +86,7 @@
 #### Hero 首屏（已选定方向 A）
 
 - **主标题（H1）**
-  - **中文**：`先做给自己，再分享给世界`
+  - **中文**：`做给自己，分享给世界`
   - **English**：`Built for myself, shared with the world`
 - **主标题下方副标（Eyebrow / Sub-label）**
   - **中文页副标**：`BUILT FOR MYSELF · SHARED WITH THE WORLD`

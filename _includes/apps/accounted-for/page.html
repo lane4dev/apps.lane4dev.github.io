@@ -3,69 +3,193 @@
 {% assign app_release = include.app_release %}
 {% assign t = include.t %}
 
-<section class="af-hero">
-  <div class="container">
-    <div class="af-hero__grid">
-      <div class="af-hero__copy">
-        <p class="af-hero__meta">{{ app.platform | upcase }} · {{ app.status }}</p>
-        <div class="af-hero__title-row">
-          {% if app_config.app_icon %}
-          <img class="af-hero__icon" src="{{ app_config.app_icon | relative_url }}" alt="" width="40" height="40" aria-hidden="true">
-          {% endif %}
-          <h1>{{ app.name }}</h1>
+<div class="af-page">
+  <!-- 0. Warm Stone Sculptural Hero -->
+  <section class="af-hero">
+    <div class="container af-hero__inner">
+      <div class="af-hero__grid">
+        <div class="af-hero__copy">
+          <div class="af-hero__brand">
+            {% if app_config.app_icon %}
+            <img class="af-hero__icon" src="{{ app_config.app_icon | relative_url }}" alt="" width="36" height="36" aria-hidden="true">
+            {% endif %}
+            <span class="af-hero__name">{{ app.name }}</span>
+            <span class="af-hero__status">
+              <span class="af-hero__status-dot" aria-hidden="true"></span>
+              {{ app.hero_badge | default: app.platform }}
+            </span>
+          </div>
+
+          <h1>{{ app.hero_headline | default: app.tagline }}</h1>
+          <p class="af-hero__lead">{{ app.hero_lead | default: app.home_story | default: app.long_description }}</p>
+
+          <div class="af-hero__actions">
+            {% include shared/download-actions.html app_config=app_config app=app app_release=app_release t=t theme="light" %}
+          </div>
         </div>
-        <p class="af-hero__tagline">{{ app.tagline }}</p>
-        <p class="af-hero__story">{{ app.home_story | default: app.long_description }}</p>
-        {% include shared/download-actions.html app_config=app_config app=app app_release=app_release t=t theme="light" %}
+
+        {% if app_config.screenshots.size > 0 %}
+        <div class="af-hero__visual">
+          <div class="af-phone-stage">
+            <img src="{{ app_config.home_preview.src | default: app_config.screenshots.first | relative_url }}"
+              alt="{{ app.home_preview_alt | default: app.name | escape }}"
+              loading="eager">
+          </div>
+        </div>
+        {% endif %}
       </div>
 
-      {% if app_config.screenshots.size > 0 %}
-      <div class="af-hero__visual">
-        <div class="af-hero__frame">
-          {% include shared/screenshots.html app_config=app_config app=app t=t theme="light" %}
+      <div class="af-hero__bar" aria-hidden="true">
+        <span>{{ app.hero_scroll_hint | default: "(SCROLL TO EXPLORE)" }}</span>
+        <span>{{ app.hero_corner_tag | default: "@ACCOUNTED FOR · LOCAL FIRST" }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Scroll-Driven Horizontal Parallax Ledger Gallery -->
+  {% if app.gallery_items and app_config.screenshots.size > 0 %}
+  <section class="af-gallery" data-af-gallery>
+    <div class="af-gallery__sticky">
+      <div class="container">
+        <header class="af-gallery__head">
+          <div>
+            <p class="af-eyebrow">{{ app.gallery_eyebrow }}</p>
+            <h2>{{ app.gallery_heading }}</h2>
+          </div>
+          <p class="af-gallery__counter" aria-hidden="true">
+            <span data-af-current>01</span> / 0{{ app.gallery_items.size }}
+          </p>
+        </header>
+      </div>
+
+      <div class="af-gallery__viewport" data-af-viewport>
+        <div class="af-gallery__track" data-af-track>
+          {% for item in app.gallery_items %}
+          {% assign shot_idx = item.screenshot_index | default: forloop.index0 %}
+          {% assign shot_src = app_config.screenshots[shot_idx] | default: app_config.screenshots.first %}
+          <article class="af-gallery__card" data-af-card>
+            <div class="af-gallery__media">
+              <img src="{{ shot_src | relative_url }}"
+                alt="{{ item.title | escape }} — {{ item.caption | escape }}"
+                loading="lazy">
+            </div>
+            <div class="af-gallery__meta">
+              <span class="af-gallery__num">{{ item.num }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.caption }}</p>
+            </div>
+          </article>
+          {% endfor %}
         </div>
       </div>
-      {% endif %}
     </div>
-  </div>
-</section>
+  </section>
+  {% endif %}
 
-<section class="af-section">
-  <div class="container">
-    <header class="af-section__head">
-      <p class="af-section__index">(01 — {{ t.app.capabilities | upcase }})</p>
-      <h2>{{ app.capabilities_heading | default: t.app.capabilities_heading }}</h2>
-      <p>{{ app.capabilities_intro | default: t.app.capabilities_intro }}</p>
-    </header>
-    <div class="af-ledger">
-      {% for feature in app.features %}
-      <article class="af-ledger__row">
-        <p class="af-ledger__index">{{ forloop.index | prepend: "0" }}</p>
-        <h3 class="af-ledger__title">{{ feature.title }}</h3>
-        <p class="af-ledger__desc">{{ feature.description }}</p>
-      </article>
-      {% endfor %}
+  <!-- 2. Deep Charcoal Band: Philosophy + Sticky Heading with Alternating White Cards -->
+  <section class="af-dark-band">
+    {% if app.philosophy_paragraphs %}
+    <div class="af-philosophy">
+      <div class="container">
+        <div class="af-philosophy__inner">
+          <p class="af-eyebrow af-eyebrow--dark">{{ app.philosophy_eyebrow }}</p>
+          <h2 class="af-philosophy__heading">{{ app.philosophy_heading }}</h2>
+          <div class="af-philosophy__prose">
+            {% for para in app.philosophy_paragraphs %}
+            <p class="af-philosophy__para" data-af-reveal>{{ para }}</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+    {% endif %}
 
-<section class="af-section af-section--band">
-  <div class="container">
-    <header class="af-section__head">
-      <p class="af-section__index">(02 — {{ t.app.workflow | upcase }})</p>
-      <h2>{{ app.workflow_heading | default: t.app.workflow_heading }}</h2>
-      <p>{{ app.workflow_intro | default: t.app.workflow_intro }}</p>
-    </header>
-    <div class="af-steps">
-      {% for step in app.workflow %}
-      <article class="af-step">
-        <p class="af-step__num">0{{ forloop.index }}</p>
-        <h3>{{ step.title }}</h3>
-        <p>{{ step.description }}</p>
-      </article>
-      {% endfor %}
+    {% if app.pillars %}
+    <div class="af-pillars">
+      <div class="af-pillars__sticky-wrap">
+        <div class="af-pillars__sticky">
+          <div class="container">
+            <p class="af-eyebrow af-eyebrow--dark">{{ app.pillars_eyebrow }}</p>
+            <h2 class="af-pillars__heading">{{ app.pillars_heading | newline_to_br }}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="container af-pillars__cards">
+        {% for pillar in app.pillars %}
+        {% assign mod = forloop.index0 | modulo: 2 %}
+        <article class="af-pillar-card af-pillar-card--{% if mod == 0 %}left{% else %}right{% endif %}">
+          <p class="af-pillar-card__num">{{ pillar.num }}</p>
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.body }}</p>
+        </article>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-</section>
+    {% endif %}
+  </section>
 
-{% include shared/legal-strip.html app=app t=t index_label="03" %}
+  <!-- 3. Interactive Asymmetric Flow Switcher -->
+  {% if app.flow_steps %}
+  <section class="af-flow" data-af-flow>
+    <div class="container">
+      <header class="af-flow__head">
+        <p class="af-eyebrow">{{ app.flow_eyebrow }}</p>
+        <h2>{{ app.flow_heading }}</h2>
+      </header>
+
+      <div class="af-flow__grid">
+        <div class="af-flow__menu" role="tablist" aria-label="{{ app.flow_eyebrow | escape }}">
+          {% for step in app.flow_steps %}
+          <button class="af-flow__item{% if forloop.first %} is-active{% endif %}"
+            type="button"
+            role="tab"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            data-af-step="{{ forloop.index0 }}">
+            <span class="af-flow__item-num">{{ step.num }}</span>
+            <span class="af-flow__item-title">{{ step.title }}</span>
+            <span class="af-circle-btn af-circle-btn--sm" aria-hidden="true">↗</span>
+          </button>
+          {% endfor %}
+        </div>
+
+        <div class="af-flow__detail">
+          {% for step in app.flow_steps %}
+          <div class="af-flow__panel{% if forloop.first %} is-active{% endif %}"
+            role="tabpanel"
+            data-af-panel="{{ forloop.index0 }}">
+            <p class="af-flow__panel-num">{{ step.num }}</p>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.body }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- 4. 2x2 Flat White FAQ Grid -->
+  {% if app.faqs %}
+  <section class="af-faq">
+    <div class="container">
+      <header class="af-faq__head">
+        <p class="af-eyebrow">{{ app.faq_eyebrow }}</p>
+        <h2>{{ app.faq_heading }}</h2>
+      </header>
+
+      <div class="af-faq__grid">
+        {% for faq in app.faqs %}
+        <article class="af-faq__card">
+          <p class="af-faq__num">{{ faq.num }}</p>
+          <h3 class="af-faq__q">{{ faq.q }}</h3>
+          <p class="af-faq__a">{{ faq.a }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% include shared/legal-strip.html app=app t=t index_label="05" %}
+</div>

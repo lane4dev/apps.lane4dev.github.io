@@ -2,7 +2,7 @@
 title: "AI 章节速览"
 layout: app
 app_key: "heading-brief"
-weight: 20
+weight: 30
 permalink: /zh/heading-brief/
 description: "使用你选择的 AI 服务，在原文旁生成文章章节摘要。"
 lang: zh-CN

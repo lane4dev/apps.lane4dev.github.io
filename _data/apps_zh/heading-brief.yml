@@ -35,3 +35,34 @@ workflow:
     description: "章节速览在已启用的网站上查找文章标题并添加摘要按钮。"
   - title: "选择章节"
     description: "点击按钮，在原文旁生成摘要。"
+
+reader_toc_label: "目录"
+reader_brief_btn: "速览"
+reader_brief_title: "内容摘要"
+reader_brief_copy: "复制"
+reader_brief_copied: "已复制"
+reader_brief_close: "收起"
+reader_demo_hint: "提示：点击下方任意章节标题旁的「✦ 速览」，即可原地体验扩展的摘要卡片效果。"
+
+reader_why_title: "为什么做它"
+reader_why_brief: "AI 不应替代人阅读一手原文；AI 章节速览在标题旁提供一小段提要，帮你减少进入长文时的摩擦，带着重点继续读下去。"
+reader_why_paragraphs:
+  - "面对几千上万字的技术文档、维基词条或深度长文时，整篇压缩成几条结论往往会丢掉原本的论证脉络；而切到侧边栏或外部对话窗口，又会一次次打断正在进行的阅读节奏。"
+  - "我始终认为，阅读原始的一手资料依然无可替代。AI 章节速览想做的不是替你跳过原文，而是在每个标题旁先递上一小段提要——让你在真正读下去之前，脑子里先有了落脚点和关注的重心。"
+
+reader_specs_title: "按你的方式配置"
+reader_specs_brief: "自带模型与 API 密钥（BYOK），自由选择服务商、输出语言与自定义提示词，并可随时核对提取出的原文内容。"
+reader_specs:
+  - label: "AI 服务与模型"
+    value: "支持自选 AI 服务商、模型或兼容端点，由你决定请求发往哪里。"
+  - label: "摘要范围"
+    value: "按单个标题及其子章节生成提要；识别到文章主标题时，也可概括全文。"
+  - label: "输出与提示词"
+    value: "自由指定输出语言，并按自己的阅读习惯自定义摘要提示词。"
+  - label: "对照与核验"
+    value: "摘要紧贴原文展示，随时查看提取出的原文片段、一键复制或重新生成。"
+
+reader_workflow_title: "三步上手"
+reader_workflow_brief: "配置好你偏好的模型服务，打开任意启用网站的长文，点击标题旁的速览按钮即可在原文旁生成摘要。"
+
+reader_privacy_toc: "透明与隐私"

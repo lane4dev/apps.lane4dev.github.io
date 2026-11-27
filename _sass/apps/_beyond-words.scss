@@ -470,17 +470,35 @@
   @media (max-width: 991.98px) {
     &__phone-col {
       position: static;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
+      pointer-events: auto;
     }
 
     &__sticky {
       position: static;
+      width: min(260px, 64vw);
+      margin: 0 auto;
       padding: 0;
+
+      .bw-phone-frame {
+        max-height: 48svh;
+      }
     }
 
     &__items {
-      gap: 24px;
-      padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 14px;
+      margin: 0 -12px;
+      padding: 4px 8vw 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 }
@@ -551,8 +569,11 @@
   }
 
   @media (max-width: 991.98px) {
-    width: 100%;
-    justify-self: stretch;
+    flex: 0 0 84%;
+    width: auto;
+    padding: 22px;
+    scroll-snap-align: center;
+    cursor: pointer;
   }
 }
 

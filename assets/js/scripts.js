@@ -599,12 +599,15 @@ if (heroSwiss && homeHeroEl) {
   }
 }
 
-// Beyond Words page: Sticky center phone screen switcher
+// Beyond Words page: Sticky center phone screen switcher (desktop vertical / mobile horizontal)
 var bwFeatures = document.querySelector('[data-bw-features]');
 
 if (bwFeatures) {
   var bwScreens = Array.prototype.slice.call(bwFeatures.querySelectorAll('[data-bw-screen]'));
   var bwItems = Array.prototype.slice.call(bwFeatures.querySelectorAll('[data-bw-item]'));
+  var bwItemsContainer = bwFeatures.querySelector('.bw-features__items');
+  var bwDesktopQuery = window.matchMedia('(min-width: 992px)');
+  var bwObserver = null;
 
   function setBwActive(targetIdx) {
     var clamped = Math.max(0, Math.min(bwScreens.length - 1, targetIdx));
@@ -617,21 +620,327 @@ if (bwFeatures) {
     });
   }
 
-  if ('IntersectionObserver' in window && bwScreens.length > 1 && bwItems.length > 0) {
-    var bwObserver = new IntersectionObserver(function(entries) {
+  function setupBwObserver() {
+    if (bwObserver) {
+      bwObserver.disconnect();
+      bwObserver = null;
+    }
+    if (!('IntersectionObserver' in window) || bwScreens.length < 2 || bwItems.length === 0) {
+      return;
+    }
+
+    var isDesktop = bwDesktopQuery.matches;
+    bwObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           var idx = parseInt(entry.target.getAttribute('data-bw-item'), 10) || 0;
           setBwActive(idx);
         }
       });
-    }, {
+    }, isDesktop ? {
       rootMargin: '-38% 0px -38% 0px',
       threshold: 0.1
+    } : {
+      root: bwItemsContainer,
+      threshold: 0.6
     });
 
     bwItems.forEach(function(item) {
       bwObserver.observe(item);
+    });
+  }
+
+  bwItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var idx = parseInt(item.getAttribute('data-bw-item'), 10) || 0;
+      setBwActive(idx);
+      if (!bwDesktopQuery.matches && item.scrollIntoView) {
+        item.scrollIntoView({
+          behavior: motionAllowed ? 'smooth' : 'instant',
+          inline: 'center',
+          block: 'nearest'
+        });
+      }
+    });
+  });
+
+  if (bwDesktopQuery.addEventListener) {
+    bwDesktopQuery.addEventListener('change', setupBwObserver);
+  }
+  setupBwObserver();
+}
+
+// Accounted For page: Scroll-driven horizontal parallax gallery, philosophy reveal, and Flow switcher
+var afGallery = document.querySelector('[data-af-gallery]');
+
+if (afGallery && motionAllowed) {
+  var afViewport = afGallery.querySelector('[data-af-viewport]');
+  var afTrack = afGallery.querySelector('[data-af-track]');
+  var afCards = Array.prototype.slice.call(afGallery.querySelectorAll('[data-af-card]'));
+  var afCurrent = afGallery.querySelector('[data-af-current]');
+  var afDesktopQuery = window.matchMedia('(min-width: 1024px)');
+  var afMaxX = 0;
+  var afRafPending = false;
+  var afListening = false;
+
+  function measureAfGeometry() {
+    if (!afViewport || !afTrack) {
+      return;
+    }
+    if (afDesktopQuery.matches) {
+      afGallery.classList.add('is-enhanced');
+      afMaxX = Math.max(0, afTrack.scrollWidth - afViewport.clientWidth);
+      afGallery.style.setProperty('--af-scroll-dist', Math.round(afMaxX) + 'px');
+      updateAfParallax();
+    } else {
+      afGallery.classList.remove('is-enhanced');
+      afGallery.style.removeProperty('--af-scroll-dist');
+      afTrack.style.removeProperty('--af-track-x');
+      afCards.forEach(function(card) {
+        card.style.removeProperty('--af-img-shift');
+      });
+      unbindAfScroll();
+    }
+  }
+
+  function updateAfParallax() {
+    afRafPending = false;
+    if (!afGallery.classList.contains('is-enhanced') || !afTrack || afMaxX <= 0) {
+      return;
+    }
+
+    var rect = afGallery.getBoundingClientRect();
+    var headerOffset = 82;
+    var scrollable = Math.max(1, rect.height - (window.innerHeight - headerOffset));
+    var scrolled = Math.max(0, Math.min(scrollable, headerOffset - rect.top));
+    var progress = scrolled / scrollable;
+
+    afTrack.style.setProperty('--af-track-x', (-progress * afMaxX).toFixed(1) + 'px');
+
+    var viewportCenter = window.innerWidth / 2;
+    afCards.forEach(function(card) {
+      var cardRect = card.getBoundingClientRect();
+      var cardCenter = cardRect.left + cardRect.width / 2;
+      var offsetRatio = Math.max(-1, Math.min(1, (cardCenter - viewportCenter) / (window.innerWidth * 0.65)));
+      card.style.setProperty('--af-img-shift', (offsetRatio * -16).toFixed(1) + 'px');
+    });
+
+    if (afCurrent && afCards.length > 0) {
+      var activeIdx = Math.min(afCards.length, Math.floor(progress * afCards.length) + 1);
+      afCurrent.textContent = activeIdx < 10 ? '0' + activeIdx : String(activeIdx);
+    }
+  }
+
+  function scheduleAfParallax() {
+    if (!afRafPending) {
+      afRafPending = true;
+      window.requestAnimationFrame(updateAfParallax);
+    }
+  }
+
+  function bindAfScroll() {
+    if (!afListening) {
+      window.addEventListener('scroll', scheduleAfParallax, { passive: true });
+      afListening = true;
+    }
+  }
+
+  function unbindAfScroll() {
+    if (afListening) {
+      window.removeEventListener('scroll', scheduleAfParallax);
+      afListening = false;
+    }
+  }
+
+  if ('IntersectionObserver' in window) {
+    var afGalleryObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && afGallery.classList.contains('is-enhanced')) {
+          bindAfScroll();
+          scheduleAfParallax();
+        } else {
+          unbindAfScroll();
+        }
+      });
+    }, { threshold: 0 });
+    afGalleryObserver.observe(afGallery);
+  } else {
+    bindAfScroll();
+  }
+
+  window.addEventListener('resize', measureAfGeometry, { passive: true });
+  if (afDesktopQuery.addEventListener) {
+    afDesktopQuery.addEventListener('change', measureAfGeometry);
+  }
+  measureAfGeometry();
+}
+
+var afFlow = document.querySelector('[data-af-flow]');
+
+if (afFlow) {
+  var afSteps = Array.prototype.slice.call(afFlow.querySelectorAll('[data-af-step]'));
+  var afPanels = Array.prototype.slice.call(afFlow.querySelectorAll('[data-af-panel]'));
+
+  function setAfFlowStep(idx) {
+    afSteps.forEach(function(step, i) {
+      var active = i === idx;
+      step.classList.toggle('is-active', active);
+      step.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    afPanels.forEach(function(panel, i) {
+      panel.classList.toggle('is-active', i === idx);
+    });
+  }
+
+  afSteps.forEach(function(step, i) {
+    step.addEventListener('click', function() {
+      setAfFlowStep(i);
+    });
+  });
+}
+
+var afRevealItems = Array.prototype.slice.call(document.querySelectorAll('[data-af-reveal]'));
+var afPhilosophy = document.querySelector('.af-philosophy');
+
+if (afRevealItems.length > 0) {
+  if (motionAllowed) {
+    var afRevealRaf = false;
+    var afRevealListening = false;
+
+    function updateAfReveal() {
+      afRevealRaf = false;
+      var vh = window.innerHeight || 1;
+      var startY = vh * 0.86;
+      var endY = vh * 0.42;
+
+      afRevealItems.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        var centerY = rect.top + rect.height * 0.5;
+        var t = (startY - centerY) / Math.max(1, startY - endY);
+        var clamped = Math.max(0, Math.min(1, t));
+        var opacity = 0.34 + clamped * 0.62;
+        el.style.setProperty('--af-lit', opacity.toFixed(3));
+      });
+    }
+
+    function scheduleAfReveal() {
+      if (!afRevealRaf) {
+        afRevealRaf = true;
+        window.requestAnimationFrame(updateAfReveal);
+      }
+    }
+
+    function bindAfReveal() {
+      if (!afRevealListening) {
+        window.addEventListener('scroll', scheduleAfReveal, { passive: true });
+        window.addEventListener('resize', scheduleAfReveal, { passive: true });
+        afRevealListening = true;
+      }
+    }
+
+    function unbindAfReveal() {
+      if (afRevealListening) {
+        window.removeEventListener('scroll', scheduleAfReveal);
+        window.removeEventListener('resize', scheduleAfReveal);
+        afRevealListening = false;
+      }
+    }
+
+    if ('IntersectionObserver' in window && afPhilosophy) {
+      var afRevealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            bindAfReveal();
+            scheduleAfReveal();
+          } else {
+            unbindAfReveal();
+          }
+        });
+      }, { threshold: 0 });
+      afRevealObserver.observe(afPhilosophy);
+    } else {
+      bindAfReveal();
+    }
+
+    updateAfReveal();
+  } else {
+    afRevealItems.forEach(function(el) {
+      el.style.setProperty('--af-lit', '0.96');
+    });
+  }
+}
+
+// AI Heading Brief page: Inline brief card toggles, copy action, and sticky TOC sync
+var hbReader = document.querySelector('[data-hb-reader]');
+
+if (hbReader) {
+  var hbTriggers = Array.prototype.slice.call(hbReader.querySelectorAll('[data-hb-trigger]'));
+  var hbClosers = Array.prototype.slice.call(hbReader.querySelectorAll('[data-hb-close]'));
+  var hbCopyBtns = Array.prototype.slice.call(hbReader.querySelectorAll('[data-hb-copy]'));
+  var hbTocLinks = Array.prototype.slice.call(hbReader.querySelectorAll('[data-hb-toc]'));
+  var hbSections = Array.prototype.slice.call(hbReader.querySelectorAll('[data-hb-section]'));
+
+  function setHbCardOpen(key, open) {
+    var card = hbReader.querySelector('[data-hb-card="' + key + '"]');
+    var trigger = hbReader.querySelector('[data-hb-trigger="' + key + '"]');
+    if (!card || !trigger) {
+      return;
+    }
+    card.hidden = !open;
+    card.classList.toggle('is-open', open);
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  hbTriggers.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var key = btn.getAttribute('data-hb-trigger');
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      setHbCardOpen(key, !expanded);
+    });
+  });
+
+  hbClosers.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var key = btn.getAttribute('data-hb-close');
+      setHbCardOpen(key, false);
+    });
+  });
+
+  hbCopyBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var card = btn.closest('.hb-brief-card');
+      var textEl = card ? card.querySelector('[data-hb-brief-text]') : null;
+      if (!textEl || !navigator.clipboard) {
+        return;
+      }
+      var original = btn.textContent;
+      var copied = btn.getAttribute('data-copied-label') || 'Copied';
+      navigator.clipboard.writeText(textEl.textContent.trim()).then(function() {
+        btn.textContent = copied;
+        setTimeout(function() {
+          btn.textContent = original;
+        }, 1600);
+      });
+    });
+  });
+
+  if ('IntersectionObserver' in window && hbSections.length > 0 && hbTocLinks.length > 0) {
+    var hbTocObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var key = entry.target.getAttribute('data-hb-section');
+          hbTocLinks.forEach(function(link) {
+            link.classList.toggle('is-active', link.getAttribute('data-hb-toc') === key);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-25% 0px -60% 0px',
+      threshold: 0
+    });
+
+    hbSections.forEach(function(sec) {
+      hbTocObserver.observe(sec);
     });
   }
 }
