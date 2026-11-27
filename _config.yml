@@ -9,10 +9,6 @@ collections:
   apps:
     output: true
     sort_by: weight
-  services:
-    output: false
-  team:
-    output: false
 defaults:
   - scope:
       path: ""

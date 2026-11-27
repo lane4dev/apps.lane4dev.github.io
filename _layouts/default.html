@@ -7,7 +7,7 @@
   <title>{% if page.meta_title %}{{ page.meta_title | escape }}{% elsif page.title %}{{ page.title | escape }} · {{ t.site.title | escape }}{% else %}{{ t.site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/site/favicon.svg' | relative_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="alternate" hreflang="{{ current_lang }}" href="{{ page.url | absolute_url }}">
   {% if page.alternate_url and page.alternate_lang %}
@@ -31,15 +31,15 @@
   <meta name="twitter:card" content="summary">
 </head>
 
-<body class="page {{ layout.bodyClass }} {{ page.bodyClass }}" data-lang="{{ current_lang }}">
-  {% include main-menu-mobile.html %}
+<body class="page {{ layout.bodyClass }} {{ page.bodyClass }}{% if page.app_key %} page-app--{{ page.app_key }}{% endif %}" data-lang="{{ current_lang }}">
+  {% include layout/main-menu-mobile.html %}
   <div id="wrapper" class="wrapper">
-    {% include header.html headerClass='header-extra' %}
+    {% include layout/header.html headerClass='header-extra' %}
     <main id="main-content">
       {{ content }}
     </main>
   </div>
-  {% include footer.html %}
+  {% include layout/footer.html %}
   <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
   {% if page.translation_key == "beyond-words-custom-context-packs" %}
   <script src="{{ '/assets/js/copy-pack-url.js' | relative_url }}"></script>

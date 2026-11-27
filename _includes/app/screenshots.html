@@ -1,0 +1,31 @@
+{% assign app_config = include.app_config %}
+{% assign app = include.app %}
+{% assign t = include.t %}
+{% assign theme = include.theme | default: "light" %}
+
+{% if app_config.screenshots.size == 1 %}
+<img class="app-single-shot" src="{{ app_config.screenshots.first | relative_url }}" alt="{{ app.name }} {{ t.app.screenshot_alt }}" loading="eager">
+{% elsif app_config.screenshots.size > 1 %}
+<div class="app-shots app-shots--{{ theme }}" aria-roledescription="carousel" aria-label="{{ t.app.screenshots_label }}">
+  <div class="app-shots__stage">
+    <div class="app-shots__viewport" tabindex="0">
+      <div class="app-shots__track">
+        <div class="app-shots__spacer" aria-hidden="true"></div>
+        {% for shot in app_config.screenshots %}
+        <div class="app-shots__slide">
+          <img src="{{ shot | relative_url }}" alt="{{ app.name }} {{ t.app.screenshot_alt }} {{ forloop.index }}"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+        </div>
+        {% endfor %}
+        <div class="app-shots__spacer" aria-hidden="true"></div>
+      </div>
+    </div>
+    <button type="button" class="app-shots__nav app-shots__nav--prev" data-shots-prev aria-label="{{ t.app.screenshots_prev }}">&lsaquo;</button>
+    <button type="button" class="app-shots__nav app-shots__nav--next" data-shots-next aria-label="{{ t.app.screenshots_next }}">&rsaquo;</button>
+  </div>
+  <div class="app-shots__dots">
+    {% for shot in app_config.screenshots %}
+    <button type="button" class="app-shots__dot{% if forloop.first %} is-active{% endif %}" data-shots-dot aria-label="{{ t.app.screenshot_alt }} {{ forloop.index }}"></button>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

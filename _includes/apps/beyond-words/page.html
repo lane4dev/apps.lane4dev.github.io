@@ -1,0 +1,71 @@
+{% assign app_config = include.app_config %}
+{% assign app = include.app %}
+{% assign app_release = include.app_release %}
+{% assign t = include.t %}
+
+<section class="bw-hero">
+  <div class="container">
+    <div class="bw-hero__grid">
+      <div class="bw-hero__copy">
+        <p class="bw-hero__meta">{{ app.platform | upcase }} · {{ app.status }}</p>
+        <div class="bw-hero__title-row">
+          {% if app_config.app_icon %}
+          <img class="bw-hero__icon" src="{{ app_config.app_icon | relative_url }}" alt="" width="40" height="40" aria-hidden="true">
+          {% endif %}
+          <h1>{{ app.name }}</h1>
+        </div>
+        <p class="bw-hero__tagline">{{ app.tagline }}</p>
+        <p class="bw-hero__story">{{ app.home_story | default: app.long_description }}</p>
+        {% include app/download-actions.html app_config=app_config app=app app_release=app_release t=t theme="light" %}
+      </div>
+
+      {% if app_config.screenshots.size > 0 %}
+      <div class="bw-hero__visual">
+        <div class="bw-hero__frame">
+          {% include app/screenshots.html app_config=app_config app=app t=t theme="light" %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="bw-section">
+  <div class="container">
+    <header class="bw-section__head">
+      <p class="bw-section__index">(01 — {{ t.app.capabilities | upcase }})</p>
+      <h2>{{ app.capabilities_heading | default: t.app.capabilities_heading }}</h2>
+      <p>{{ app.capabilities_intro | default: t.app.capabilities_intro }}</p>
+    </header>
+    <div class="bw-grid">
+      {% for feature in app.features %}
+      <article class="bw-card">
+        <p class="bw-card__index">{{ forloop.index | prepend: "0" }}</p>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bw-section bw-section--band">
+  <div class="container">
+    <header class="bw-section__head">
+      <p class="bw-section__index">(02 — {{ t.app.workflow | upcase }})</p>
+      <h2>{{ app.workflow_heading | default: t.app.workflow_heading }}</h2>
+      <p>{{ app.workflow_intro | default: t.app.workflow_intro }}</p>
+    </header>
+    <div class="bw-steps">
+      {% for step in app.workflow %}
+      <article class="bw-step">
+        <p class="bw-step__num">0{{ forloop.index }}</p>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include app/legal-strip.html app=app t=t index_label="03" %}

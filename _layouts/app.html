@@ -6,179 +6,20 @@ bodyClass: "page-app"
 {% assign current_lang = page.lang | default: site.lang | default: "en" %}
 {% assign t = site.data.i18n[current_lang] | default: site.data.i18n.en %}
 {% assign app_config = site.data.apps[page.app_key] %}
-{% assign release_key = page.app_key | replace: "-", "_" | append: "_release" %}
-{% assign app_release = site.data[release_key] %}
+{% assign app_release = site.data.releases[page.app_key] %}
 {% if current_lang == "zh-CN" %}
   {% assign app = site.data.apps_zh[page.app_key] %}
 {% else %}
   {% assign app = site.data.apps[page.app_key] %}
 {% endif %}
 
-<section class="tech-hero app-product-hero">
-  <div class="tech-hero__grid" aria-hidden="true"></div>
-  <div class="tech-hero__glow" aria-hidden="true"></div>
-  <div class="container">
-    <div class="row align-items-center app-product-hero__row">
-      <div class="col-12{% if app_config.screenshots.size > 0 %} col-lg-4{% endif %}">
-        <div class="system-badge">
-          <span class="system-badge__signal" aria-hidden="true"></span>
-          {{ app.platform }} / {{ app.status }}
-        </div>
-        <h1>{{ app.name }}</h1>
-        <p class="app-hero__tagline">{{ app.tagline }}</p>
-        <p class="app-hero__description">{{ app.long_description }}</p>
+{% include app/nav.html app=app %}
 
-        <div class="tech-hero__actions">
-          {% if app_config.store_enabled %}
-            {% if app_config.store_type == "google-play" %}
-            <a class="play-store-button" href="{{ app_config.store_url }}" rel="noopener" aria-label="{{ app.store_label }}">
-              <svg class="play-store-button__icon" viewBox="0 0 32 36" aria-hidden="true" focusable="false">
-                <path fill="#00d4ff" d="M1 1.5v33L18 18z" />
-                <path fill="#00ef8e" d="M1 1.5 22 13l-4 5z" />
-                <path fill="#ff3a44" d="M1 34.5 22 23l-4-5z" />
-                <path fill="#ffce00" d="m22 13 8 4.3c.8.4.8 1 0 1.4L22 23l-4-5z" />
-              </svg>
-              <span class="play-store-button__text"><span>{{ app.store_prefix }}</span><strong>Google Play</strong></span>
-            </a>
-            {% elsif app_config.store_type == "chrome-web-store" %}
-            <a class="chrome-store-button" href="{{ app_config.store_url }}" rel="noopener" aria-label="{{ app.store_label }}">
-              <img src="{{ app_config.store_badge | relative_url }}" alt="" width="340" height="96">
-            </a>
-            {% else %}
-            <a class="tech-button tech-button--primary" href="{{ app_config.store_url }}" rel="noopener">{{ app.store_label }}</a>
-            {% endif %}
-          {% elsif app.store_label %}
-            <span class="tech-button tech-button--disabled" aria-disabled="true">{{ app.store_label }} — {{ t.app.coming_soon }}</span>
-          {% endif %}
-          {% if app_config.test_invite_url and app_config.test_invite_url != "" %}
-          <a class="tech-button tech-button--primary" href="{{ app_config.test_invite_url | escape }}" rel="noopener">{{ app.test_invite_label | escape }}</a>
-          {% endif %}
-          {% if app_release.apkUrl and app_release.apkUrl != "" %}
-          <a class="tech-button tech-button--ghost" href="{{ app_release.apkUrl | escape }}">{{ app.apk_label }}</a>
-          {% endif %}
-        </div>
-        {% if app_release.apkUrl and app_release.apkUrl != "" and app.apk_install_note %}
-        <p style="margin-top: 12px; font-size: 0.875rem; color: rgba(255, 255, 255, 0.72);">{{ app.apk_install_note }}</p>
-        {% endif %}
-
-        <dl class="tech-hero__facts app-product-hero__facts">
-          <div>
-            <dt>{{ app.features | size | prepend: "0" | slice: -2, 2 }}</dt>
-            <dd>{{ t.app.capabilities }}</dd>
-          </div>
-          <div>
-            <dt>{{ app.workflow | size | prepend: "0" | slice: -2, 2 }}</dt>
-            <dd>{{ t.app.workflow_steps }}</dd>
-          </div>
-          <div>
-            <dt>{{ app.platform }}</dt>
-            <dd>{{ t.app.platform }}</dd>
-          </div>
-        </dl>
-      </div>
-
-      {% if app_config.screenshots.size > 0 %}
-      <div class="col-12 col-lg-8">
-        {% if app_config.screenshots.size == 1 %}
-        <img class="app-single-shot" src="{{ app_config.screenshots.first | relative_url }}" alt="{{ app.name }} {{ t.app.screenshot_alt }}" loading="eager">
-        {% else %}
-        <div class="app-shots js-reveal" aria-roledescription="carousel" aria-label="{{ t.app.screenshots_label }}">
-          <div class="app-shots__stage">
-            <div class="app-shots__viewport" tabindex="0">
-              <div class="app-shots__track">
-                <div class="app-shots__spacer" aria-hidden="true"></div>
-                {% for shot in app_config.screenshots %}
-                <div class="app-shots__slide">
-                  <img src="{{ shot | relative_url }}" alt="{{ app.name }} {{ t.app.screenshot_alt }} {{ forloop.index }}"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
-                </div>
-                {% endfor %}
-                <div class="app-shots__spacer" aria-hidden="true"></div>
-              </div>
-            </div>
-            <button type="button" class="app-shots__nav app-shots__nav--prev" data-shots-prev aria-label="{{ t.app.screenshots_prev }}">&lsaquo;</button>
-            <button type="button" class="app-shots__nav app-shots__nav--next" data-shots-next aria-label="{{ t.app.screenshots_next }}">&rsaquo;</button>
-          </div>
-          <div class="app-shots__dots">
-            {% for shot in app_config.screenshots %}
-            <button type="button" class="app-shots__dot{% if forloop.first %} is-active{% endif %}" data-shots-dot aria-label="{{ t.app.screenshot_alt }} {{ forloop.index }}"></button>
-            {% endfor %}
-          </div>
-        </div>
-        {% endif %}
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
-
-{% include app-nav.html app=app %}
-
-<section class="app-section">
-  <div class="container">
-    <header class="lab-heading app-lab-heading js-reveal">
-      <div>
-        <p class="lab-heading__index">01 / {{ t.app.capabilities }}</p>
-        <h2>{{ app.capabilities_heading | default: t.app.capabilities_heading }}</h2>
-      </div>
-      <p>{{ app.capabilities_intro | default: t.app.capabilities_intro }}</p>
-    </header>
-    <div class="row">
-      {% for feature in app.features %}
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="app-feature js-reveal">
-          <span class="app-feature__index">CAP_{{ forloop.index | prepend: "0" }}</span>
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
-        </article>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="app-section app-workflow-lab">
-  <div class="build-principles__grid" aria-hidden="true"></div>
-  <div class="container">
-    <header class="lab-heading lab-heading--dark app-lab-heading js-reveal">
-      <div>
-        <p class="lab-heading__index">02 / {{ t.app.workflow }}</p>
-        <h2>{{ app.workflow_heading | default: t.app.workflow_heading }}</h2>
-      </div>
-      <p>{{ app.workflow_intro | default: t.app.workflow_intro }}</p>
-    </header>
-    <div class="row">
-      {% for step in app.workflow %}
-      <div class="col-12 col-md-4">
-        <article class="workflow-step js-reveal">
-          <div class="workflow-step__number">0{{ forloop.index }}</div>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.description }}</p>
-        </article>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="app-section app-transparency-lab">
-  <div class="container">
-    <div class="app-assurance js-reveal">
-      <div>
-        <p class="lab-heading__index">03 / {{ t.app.transparency }}</p>
-        <h2>{{ app.transparency_heading | default: t.app.transparency_heading }}</h2>
-        <p>{{ app.transparency_intro | default: t.app.transparency_intro }}</p>
-      </div>
-      <div class="app-assurance__links">
-        <a href="{{ app.privacy_path | relative_url }}">{{ t.nav.privacy_policy }}</a>
-        <a href="{{ app.terms_path | relative_url }}">{{ t.nav.terms_of_service }}</a>
-        <a href="{{ app.support_path | relative_url }}">{{ t.nav.support }}</a>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture app_view %}apps/{{ page.app_key }}/page.html{% endcapture %}
+{% include {{ app_view }} app_config=app_config app=app app_release=app_release t=t %}
 
 {% if content != "" %}
-<section class="app-section">
+<section class="app-extra-prose">
   <div class="container">
     <div class="content app-prose">{{ content }}</div>
   </div>

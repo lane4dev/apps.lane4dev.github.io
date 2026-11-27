@@ -2,4 +2,4 @@
 layout: null
 permalink: /accounted-for/releases/latest.json
 ---
-{{ site.data.accounted_for_release | jsonify }}
+{{ site.data.releases['accounted-for'] | jsonify }}

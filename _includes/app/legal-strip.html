@@ -1,0 +1,29 @@
+{% assign app = include.app %}
+{% assign t = include.t %}
+{% assign index_label = include.index_label | default: "03" %}
+
+<section class="app-legal-strip">
+  <div class="container">
+    <div class="app-legal-strip__inner">
+      <div class="app-legal-strip__copy">
+        <p class="app-legal-strip__index">({{ index_label }} — {{ t.app.transparency | upcase }})</p>
+        <h2 class="app-legal-strip__title">{{ app.transparency_heading | default: t.app.transparency_heading }}</h2>
+        <p class="app-legal-strip__desc">{{ app.transparency_intro | default: t.app.transparency_intro }}</p>
+      </div>
+      <div class="app-legal-strip__links">
+        <a class="app-legal-strip__link" href="{{ app.privacy_path | relative_url }}">
+          <span>{{ t.nav.privacy_policy }}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="app-legal-strip__link" href="{{ app.terms_path | relative_url }}">
+          <span>{{ t.nav.terms_of_service }}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="app-legal-strip__link" href="{{ app.support_path | relative_url }}">
+          <span>{{ t.nav.support }}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

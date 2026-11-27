@@ -64,20 +64,21 @@ $sub-footer-text-color: $white;
 @import "components/main-menu-mobile";
 @import "components/hamburger";
 @import "components/buttons";
-@import "components/call";
 @import "components/title";
 @import "components/content";
 @import "components/intro";
 @import "components/intro-image";
 @import "components/strip";
 @import "components/feature";
-@import "components/social";
 
 // Pages
-@import "pages/page-home";
-@import "pages/page-teams";
-@import "pages/page-service";
-@import "pages/page-app";
+@import "pages/home";
+@import "pages/app-shared";
+
+// Apps (independent per-app styles)
+@import "apps/beyond-words";
+@import "apps/accounted-for";
+@import "apps/heading-brief";
 
 // Base typography and document defaults — imported last so element-level
 // defaults resolve against the tokens above.

@@ -1,0 +1,220 @@
+// ============================================================================
+// AI Heading Brief (AI 章节速览) — Independent App Page Styles
+// Aesthetic direction: Editorial reading & marginalia, classic book-slate ink
+// ============================================================================
+
+.page-app--heading-brief {
+  --hb-accent: #3c6997;
+
+  h1,
+  h2,
+  h3 {
+    font-weight: var(--regular);
+    color: var(--ink);
+  }
+}
+
+.hb-hero {
+  padding: clamp(56px, 7vw, 96px) 0;
+  background-color: var(--bg);
+
+  &__header {
+    max-width: 780px;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+
+  &__meta {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1.1;
+    }
+  }
+
+  &__icon {
+    display: block;
+    border: 1px solid var(--line);
+    background-color: #ffffff;
+  }
+
+  &__tagline {
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+    line-height: 1.5;
+  }
+
+  &__story {
+    margin: 0 0 32px;
+    max-width: 60ch;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  &__window {
+    border: 1px solid var(--line);
+    background-color: #ffffff;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__chrome {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 30px;
+    padding: 0 14px;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--line);
+
+    span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--line-hover);
+    }
+  }
+}
+
+.hb-section {
+  padding: clamp(64px, 8vw, 112px) 0;
+  border-top: 1px solid var(--line);
+
+  &--band {
+    background-color: var(--band-dark);
+    border-top-color: transparent;
+    color: var(--band-ink);
+
+    .hb-section__index {
+      border-bottom-color: var(--band-line);
+      color: var(--band-muted);
+    }
+
+    h2,
+    h3 {
+      color: var(--band-ink);
+    }
+
+    p {
+      color: var(--band-muted);
+    }
+  }
+
+  &__head {
+    margin-bottom: clamp(36px, 5vw, 56px);
+
+    h2 {
+      margin: 24px 0 12px;
+      font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+      line-height: 1.25;
+    }
+
+    > p:last-child {
+      margin: 0;
+      max-width: 56ch;
+      color: var(--muted);
+    }
+  }
+
+  &__index {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+.hb-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 48px);
+
+  @media (max-width: 991.98px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hb-item {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+
+  &__index {
+    margin: 0 0 14px;
+    color: var(--hb-accent);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}
+
+.hb-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--band-line);
+  border-left: 1px solid var(--band-line);
+
+  @media (max-width: 991.98px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hb-step {
+  padding: clamp(24px, 3vw, 40px);
+  border-right: 1px solid var(--band-line);
+  border-bottom: 1px solid var(--band-line);
+
+  &__num {
+    margin: 0 0 20px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 1.3rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}

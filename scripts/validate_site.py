@@ -28,8 +28,8 @@ for path in ROOT.rglob("*"):
 required_paths = [
     ROOT / "index.md",
     ROOT / "zh" / "index.md",
-    ROOT / "_apps" / "beyond-words.md",
-    ROOT / "_apps" / "beyond-words-zh.md",
+    ROOT / "_apps" / "beyond-words" / "en.md",
+    ROOT / "_apps" / "beyond-words" / "zh.md",
     ROOT / "apps" / "beyond-words" / "privacy.md",
     ROOT / "apps" / "beyond-words" / "terms.md",
     ROOT / "apps" / "beyond-words" / "support.md",

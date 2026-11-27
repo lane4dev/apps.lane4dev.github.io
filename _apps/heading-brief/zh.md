@@ -1,5 +1,5 @@
 ---
-title: "章节速览"
+title: "AI 章节速览"
 layout: app
 app_key: "heading-brief"
 weight: 20

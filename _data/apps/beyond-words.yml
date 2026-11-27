@@ -1,0 +1,80 @@
+name: "Beyond Words"
+slug: "beyond-words"
+app_icon: "/assets/images/beyond-words/app_logo.png"
+screenshots:
+  - "/assets/images/beyond-words/screen_shoot_zh/01.png"
+  - "/assets/images/beyond-words/screen_shoot_zh/02.png"
+  - "/assets/images/beyond-words/screen_shoot_zh/03.png"
+  - "/assets/images/beyond-words/screen_shoot_zh/04.png"
+  - "/assets/images/beyond-words/screen_shoot_zh/05.png"
+  - "/assets/images/beyond-words/screen_shoot_zh/06.png"
+tagline: "Say what you mean, in the context that fits."
+short_description: "Rewrite, translate, adjust tone, or structure prompts from your own text—grounded in what you wrote, with reusable context packs."
+home_story: "Expression doesn't always have to be so serious. Beyond Words can help you land the right tone when it counts, yet it also leaves room for a playground—swap the context pack and an ordinary message can veer straight into another universe. Being useful is the baseline; being fun to mess around with is the real point."
+long_description: >-
+  Beyond Words helps you transform existing text without inventing missing
+  facts. Select a context, provide your text, review the generated result,
+  and refine it before sharing.
+status: "Available on Google Play"
+platform: "Android"
+home_channel: "Google Play"
+home_preview:
+  src: "/assets/images/beyond-words/screen_shoot_zh/01.png"
+  variant: "phone"
+  width: 1080
+  height: 1920
+home_preview_alt: "Beyond Words interface showing original text, tone context selection, and the rewritten result"
+
+store_enabled: true
+store_type: "google-play"
+store_url: "https://play.google.com/store/apps/details?id=me.tangyu.beyondwords"
+store_label: "Get it on Google Play"
+store_prefix: "GET IT ON"
+apk_label: "Download APK"
+apk_install_note: "Some features are unavailable in the APK version. We recommend downloading from Google Play"
+
+base_path: "/beyond-words/"
+custom_packs_path: "/beyond-words/custom-context-packs/"
+privacy_path: "/beyond-words/privacy/"
+terms_path: "/beyond-words/terms/"
+support_path: "/beyond-words/support/"
+
+features:
+  - title: "Context-aware rewriting"
+    description: "Transform wording for a specific audience, channel, tone, or communication goal."
+  - title: "Translation with intent"
+    description: "Preserve the practical meaning of a message while adapting it to another language."
+  - title: "Prompt normalization"
+    description: "Turn a rough one-line request into a structured prompt suitable for a language model."
+  - title: "Reusable context packs"
+    description: "Use built-in or imported context packs for repeatable transformations."
+  - title: "Review before use"
+    description: "Generated text remains editable so you can verify facts, tone, and suitability."
+  - title: "History and reuse"
+    description: "Return to previous results stored on the device and continue refining them."
+
+workflow:
+  - title: "Choose a context"
+    description: "Select the transformation that matches the communication situation."
+  - title: "Provide existing text"
+    description: "Beyond Words works from the text and context you supply."
+  - title: "Review and refine"
+    description: "Check the result before copying, sharing, or using it elsewhere."
+
+privacy:
+  account_required: false
+  local_history_enabled: true
+  cloud_history_sync_enabled: false
+  analytics_enabled: false
+  diagnostics_enabled: false
+  advertising_enabled: false
+  firebase_services: "Firebase Authentication, Cloud Functions, Firestore, and App Check"
+
+subscriptions:
+  enabled: true
+  billing_provider: "Google Play Billing"
+  restore_supported: true
+
+support:
+  harmful_output_reporting: true
+  in_app_report_path: "Use the Report action beside a generated result."

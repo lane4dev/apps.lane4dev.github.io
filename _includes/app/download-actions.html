@@ -1,0 +1,43 @@
+{% assign app_config = include.app_config %}
+{% assign app = include.app %}
+{% assign app_release = include.app_release %}
+{% assign t = include.t %}
+{% assign theme = include.theme | default: "light" %}
+
+<div class="app-download-actions app-download-actions--{{ theme }}">
+  <div class="app-download-actions__row">
+    {% if app_config.store_enabled %}
+      {% if app_config.store_type == "google-play" %}
+      <a class="play-store-button" href="{{ app_config.store_url }}" rel="noopener" aria-label="{{ app.store_label }}">
+        <svg class="play-store-button__icon" viewBox="0 0 32 36" aria-hidden="true" focusable="false">
+          <path fill="#00d4ff" d="M1 1.5v33L18 18z" />
+          <path fill="#00ef8e" d="M1 1.5 22 13l-4 5z" />
+          <path fill="#ff3a44" d="M1 34.5 22 23l-4-5z" />
+          <path fill="#ffce00" d="m22 13 8 4.3c.8.4.8 1 0 1.4L22 23l-4-5z" />
+        </svg>
+        <span class="play-store-button__text"><span>{{ app.store_prefix }}</span><strong>Google Play</strong></span>
+      </a>
+      {% elsif app_config.store_type == "chrome-web-store" %}
+      <a class="chrome-store-button" href="{{ app_config.store_url }}" rel="noopener" aria-label="{{ app.store_label }}">
+        <img src="{{ app_config.store_badge | relative_url }}" alt="" width="340" height="96">
+      </a>
+      {% else %}
+      <a class="app-action-btn app-action-btn--primary" href="{{ app_config.store_url }}" rel="noopener">{{ app.store_label }}</a>
+      {% endif %}
+    {% elsif app.store_label %}
+      <span class="app-action-btn app-action-btn--disabled" aria-disabled="true">{{ app.store_label }} — {{ t.app.coming_soon }}</span>
+    {% endif %}
+
+    {% if app_config.test_invite_url and app_config.test_invite_url != "" %}
+    <a class="app-action-btn app-action-btn--primary" href="{{ app_config.test_invite_url | escape }}" rel="noopener">{{ app.test_invite_label | escape }}</a>
+    {% endif %}
+
+    {% if app_release.apkUrl and app_release.apkUrl != "" %}
+    <a class="app-action-btn app-action-btn--ghost" href="{{ app_release.apkUrl | escape }}">{{ app.apk_label }}</a>
+    {% endif %}
+  </div>
+
+  {% if app_release.apkUrl and app_release.apkUrl != "" and app.apk_install_note %}
+  <p class="app-download-actions__note">{{ app.apk_install_note }}</p>
+  {% endif %}
+</div>

@@ -1,0 +1,55 @@
+name: "Accounted For"
+slug: "accounted-for"
+app_icon: "/assets/images/accounted-for/app_logo.png"
+test_invite_label: "Join Google Play closed testing"
+test_invite_url: ""
+apk_label: "Download APK"
+screenshots:
+  - "/assets/images/accounted-for/screen_shoot_zh/01.png"
+  - "/assets/images/accounted-for/screen_shoot_zh/02.png"
+  - "/assets/images/accounted-for/screen_shoot_zh/03.png"
+  - "/assets/images/accounted-for/screen_shoot_zh/04.png"
+  - "/assets/images/accounted-for/screen_shoot_zh/05.png"
+  - "/assets/images/accounted-for/screen_shoot_zh/06.png"
+tagline: "A clearer picture of every expense and income."
+short_description: "Track transactions, multiple accounts, recurring bills, and monthly category reports—no account required, with your ledger kept on-device."
+home_story: "There is no shortage of feature-packed finance apps, and I never set out to build another one that tries to do everything. Accounted For stays focused on recurring bills and thoughtful budgeting—less about logging numbers for the sake of it, and more about understanding the \"why\" behind them. Tracking money only matters when it helps you look back, ask where each dollar went and whether it was worth it, and spend more intentionally going forward."
+long_description: "Record income and expenses, manage accounts, review monthly reports, and plan future bills and reminders. Your ledger stays on your device."
+status: "Personal finance"
+platform: "Android"
+home_channel: "APK"
+home_preview:
+  src: "/assets/images/accounted-for/screen_shoot_zh/04.png"
+  variant: "phone"
+  width: 1080
+  height: 1920
+home_preview_alt: "Accounted For reports screen displaying an expense donut chart and category totals"
+
+store_enabled: false
+
+base_path: "/accounted-for/"
+privacy_path: "/accounted-for/privacy/"
+terms_path: "/accounted-for/terms/"
+support_path: "/accounted-for/support/"
+capabilities_heading: "A ledger for everyday life"
+capabilities_intro: "Keep track of your money, from daily transactions to upcoming bills."
+workflow_heading: "Keep your ledger in order"
+workflow_intro: "Record transactions, plan ahead, and review your finances."
+transparency_heading: "Your data, on your device"
+transparency_intro: "Learn about local storage, backups, and the support available to you."
+
+features:
+  - title: "Record income and expenses"
+    description: "Choose an account and category, add an amount, date and note, and attach files."
+  - title: "Manage accounts"
+    description: "Track balances and transfers, and choose which accounts count toward your total."
+  - title: "Plan future bills"
+    description: "Set up scheduled or recurring transactions, subscriptions, and reminders. Due subscriptions are posted when the app starts."
+
+workflow:
+  - title: "Record"
+    description: "Add transactions and organize them by account and category."
+  - title: "Plan"
+    description: "Schedule future bills and set reminders."
+  - title: "Review and back up"
+    description: "Review reports and regularly save a backup and your original attachments."

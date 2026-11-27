@@ -1,0 +1,215 @@
+// ============================================================================
+// Beyond Words (言外) — Independent App Page Styles
+// Aesthetic direction: Expressive text playground, indigo + warm coral accents
+// ============================================================================
+
+.page-app--beyond-words {
+  --bw-accent: #4d82ca;
+  --bw-warm: #d9774c;
+
+  h1,
+  h2,
+  h3 {
+    font-weight: var(--regular);
+    color: var(--ink);
+  }
+}
+
+.bw-hero {
+  padding: clamp(56px, 7vw, 96px) 0;
+  background-color: var(--bg);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 64px);
+  }
+
+  &__meta {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1.1;
+    }
+  }
+
+  &__icon {
+    display: block;
+    border: 1px solid var(--line);
+    background-color: #ffffff;
+  }
+
+  &__tagline {
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+    line-height: 1.5;
+  }
+
+  &__story {
+    margin: 0 0 32px;
+    max-width: 52ch;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  &__frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(16px, 2.5vw, 28px);
+    background:
+      radial-gradient(circle at 26% 30%, rgba(77, 130, 202, 0.14), transparent 54%),
+      radial-gradient(circle at 76% 72%, rgba(217, 119, 76, 0.14), transparent 52%),
+      var(--bg);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  @media (max-width: 991.98px) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.bw-section {
+  padding: clamp(64px, 8vw, 112px) 0;
+  border-top: 1px solid var(--line);
+
+  &--band {
+    background-color: var(--band-dark);
+    border-top-color: transparent;
+    color: var(--band-ink);
+
+    .bw-section__index {
+      border-bottom-color: var(--band-line);
+      color: var(--band-muted);
+    }
+
+    h2,
+    h3 {
+      color: var(--band-ink);
+    }
+
+    p {
+      color: var(--band-muted);
+    }
+  }
+
+  &__head {
+    margin-bottom: clamp(36px, 5vw, 56px);
+
+    h2 {
+      margin: 24px 0 12px;
+      font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+      line-height: 1.25;
+    }
+
+    > p:last-child {
+      margin: 0;
+      max-width: 56ch;
+      color: var(--muted);
+    }
+  }
+
+  &__index {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+.bw-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+
+  @media (max-width: 991.98px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bw-card {
+  padding: clamp(24px, 3vw, 36px);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  &__index {
+    margin: 0 0 18px;
+    color: var(--bw-accent);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+}
+
+.bw-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--band-line);
+  border-left: 1px solid var(--band-line);
+
+  @media (max-width: 991.98px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bw-step {
+  padding: clamp(24px, 3vw, 40px);
+  border-right: 1px solid var(--band-line);
+  border-bottom: 1px solid var(--band-line);
+
+  &__num {
+    margin: 0 0 20px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 1.3rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}

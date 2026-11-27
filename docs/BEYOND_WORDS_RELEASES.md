@@ -1,7 +1,7 @@
 # Beyond Words APK releases
 
 The landing pages and `/beyond-words/releases/latest.json` use the same release
-information in `_data/beyond_words_release.yml`. The JSON is a public, static
+information in `_data/releases/beyond-words.yml`. The JSON is a public, static
 endpoint; it does not require authentication. Clients should tolerate missing
 or null optional values and a temporarily unavailable endpoint. A null
 `versionCode` means clients cannot compare version codes and should skip the
