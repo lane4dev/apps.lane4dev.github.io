@@ -601,9 +601,9 @@
     flex: 0 0 auto;
     width: 32px;
     height: 32px;
-    border: 1px solid var(--line);
-    background-color: var(--bg);
-    object-fit: cover;
+    border: 0;
+    background: transparent;
+    object-fit: contain;
   }
 
   &__title-link {
