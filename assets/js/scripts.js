@@ -598,3 +598,40 @@ if (heroSwiss && homeHeroEl) {
     startSwissLoop();
   }
 }
+
+// Beyond Words page: Sticky center phone screen switcher
+var bwFeatures = document.querySelector('[data-bw-features]');
+
+if (bwFeatures) {
+  var bwScreens = Array.prototype.slice.call(bwFeatures.querySelectorAll('[data-bw-screen]'));
+  var bwItems = Array.prototype.slice.call(bwFeatures.querySelectorAll('[data-bw-item]'));
+
+  function setBwActive(targetIdx) {
+    var clamped = Math.max(0, Math.min(bwScreens.length - 1, targetIdx));
+    bwScreens.forEach(function(screen, i) {
+      screen.classList.toggle('is-active', i === clamped);
+    });
+    bwItems.forEach(function(item) {
+      var idx = parseInt(item.getAttribute('data-bw-item'), 10) || 0;
+      item.classList.toggle('is-active', idx === clamped);
+    });
+  }
+
+  if ('IntersectionObserver' in window && bwScreens.length > 1 && bwItems.length > 0) {
+    var bwObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var idx = parseInt(entry.target.getAttribute('data-bw-item'), 10) || 0;
+          setBwActive(idx);
+        }
+      });
+    }, {
+      rootMargin: '-38% 0px -38% 0px',
+      threshold: 0.1
+    });
+
+    bwItems.forEach(function(item) {
+      bwObserver.observe(item);
+    });
+  }
+}

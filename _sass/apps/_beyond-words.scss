@@ -1,11 +1,27 @@
 // ============================================================================
 // Beyond Words (言外) — Independent App Page Styles
-// Aesthetic direction: Expressive text playground, indigo + warm coral accents
+// Reference rhythm: bonx.co/work/ (inset rounded hero, marquee + statement,
+// dark sticky-phone features, cool-mist dual cards, asymmetric FAQ)
+// Palette: Periwinkle / Lavender-Blue (#5f71e0) + Deep Charcoal-Plum (#242330)
+// Typography: Regular weight (400) headings for site-wide restraint
 // ============================================================================
 
-.page-app--beyond-words {
-  --bw-accent: #4d82ca;
-  --bw-warm: #d9774c;
+.bw-page {
+  --bw-primary: #5f71e0;
+  --bw-primary-hover: #7383eb;
+  --bw-primary-bright: #9aa8f8;
+  --bw-tint: #eef0fc;
+  --bw-mist: #f0f3f8;
+  --bw-dark: #242330;
+  --bw-dark-surface: #302f3f;
+  --bw-radius: 14px;
+  --bw-radius-lg: 20px;
+
+  background-color: var(--bg);
+  color: var(--ink);
+
+  // Keep sticky phone working cleanly without horizontal overflow
+  overflow-x: clip;
 
   h1,
   h2,
@@ -15,201 +31,763 @@
   }
 }
 
-.bw-hero {
-  padding: clamp(56px, 7vw, 96px) 0;
+// Shared micro-elements
+.bw-eyebrow {
+  margin: 0 0 14px;
+  color: var(--bw-primary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: var(--regular);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  &--dark {
+    color: var(--bw-primary-bright);
+  }
+}
+
+.bw-accent-rule {
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin: 22px auto 0;
+  background-color: var(--bw-primary);
+
+  &--bright {
+    background-color: var(--bw-primary-bright);
+  }
+}
+
+.bw-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 26px;
+  background-color: var(--bw-primary);
+  border: 1px solid var(--bw-primary);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: var(--regular);
+  text-decoration: none;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+
+  &:hover {
+    background-color: var(--bw-primary-hover);
+    border-color: var(--bw-primary-hover);
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+}
+
+.bw-phone-frame {
+  position: relative;
+  width: min(444px, 100%);
+  aspect-ratio: 9 / 19.2;
+  max-height: calc(100svh - var(--header-h) - 48px);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: transparent;
+    filter: drop-shadow(0 18px 34px rgba(38, 56, 70, 0.14));
+  }
+
+  &--dark img {
+    filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.42));
+  }
+}
+
+// ----------------------------------------------------------------------------
+// 1. Inset Rounded Light Periwinkle-Lavender Hero Card
+// ----------------------------------------------------------------------------
+.bw-hero-wrap {
+  padding: 20px clamp(14px, 2.2vw, 32px) 28px;
   background-color: var(--bg);
+}
+
+.bw-hero-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(44px, 6vw, 76px) 0 clamp(32px, 4vw, 48px);
+  background:
+    radial-gradient(circle at 84% 18%, rgba(139, 152, 240, 0.26), transparent 48%),
+    radial-gradient(circle at 12% 88%, rgba(182, 168, 245, 0.24), transparent 52%),
+    #eaedfc;
+  border: 1px solid rgba(95, 113, 224, 0.16);
+  border-radius: var(--bw-radius-lg);
+  color: var(--ink);
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
 
   &__grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
-    gap: clamp(32px, 5vw, 64px);
+    gap: clamp(32px, 4.5vw, 56px);
   }
 
-  &__meta {
-    margin: 0 0 18px;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  &__title-row {
-    display: flex;
+  &__brand {
+    display: inline-flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 18px;
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2.5rem, 4.5vw, 4rem);
-      line-height: 1.1;
-    }
+    gap: 12px;
+    margin-bottom: 24px;
   }
 
   &__icon {
     display: block;
-    border: 1px solid var(--line);
-    background-color: #ffffff;
+    border-radius: 9px;
+    background-color: transparent;
   }
 
-  &__tagline {
-    margin: 0 0 18px;
+  &__name {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
     color: var(--ink);
-    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-    line-height: 1.5;
   }
 
-  &__story {
+  &__badge {
+    padding: 3px 10px;
+    border: 1px solid rgba(95, 113, 224, 0.34);
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.56);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--bw-primary);
+  }
+
+  &__copy {
+    // Leave clean room at bottom-left on desktop for the dialogue illustration
+    @media (min-width: 992px) {
+      padding-bottom: 196px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      color: var(--ink);
+      font-size: clamp(2.15rem, 4vw, 3.4rem);
+      line-height: 1.26;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+    }
+  }
+
+  &__desc {
     margin: 0 0 32px;
-    max-width: 52ch;
+    max-width: 50ch;
     color: var(--muted);
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     line-height: 1.85;
+    text-wrap: pretty;
   }
 
-  &__frame {
+  &__actions {
+    .app-action-btn--ghost {
+      border-radius: 999px;
+      padding-inline: 22px;
+      border-color: rgba(38, 56, 70, 0.28);
+      background-color: rgba(255, 255, 255, 0.55);
+      color: var(--ink);
+
+      &:hover {
+        background-color: var(--bw-primary);
+        border-color: var(--bw-primary);
+        color: #ffffff;
+      }
+    }
+
+    .play-store-button {
+      border-radius: 999px;
+      padding: 6px 20px 6px 14px;
+      border-color: rgba(38, 56, 70, 0.2);
+    }
+  }
+
+  &__device {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: clamp(16px, 2.5vw, 28px);
-    background:
-      radial-gradient(circle at 26% 30%, rgba(77, 130, 202, 0.14), transparent 54%),
-      radial-gradient(circle at 76% 72%, rgba(217, 119, 76, 0.14), transparent 52%),
-      var(--bg);
-    border: 1px solid var(--line);
+  }
+
+  &__scene {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    width: min(460px, 44%);
+    aspect-ratio: 16 / 9;
     overflow: hidden;
+    pointer-events: none;
+    // Softly blend top and right edges into the hero card's lavender gradient
+    mask-image: linear-gradient(to top, #000 72%, transparent 100%),
+      linear-gradient(to right, #000 74%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-image: linear-gradient(to top, #000 72%, transparent 100%),
+      linear-gradient(to right, #000 74%, transparent 100%);
+    -webkit-mask-composite: source-in;
+  }
+
+  &__illustration {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left bottom;
   }
 
   @media (max-width: 991.98px) {
     &__grid {
       grid-template-columns: 1fr;
     }
+
+    &__device {
+      margin-top: 8px;
+    }
+
+    &__scene {
+      position: relative;
+      width: min(380px, 100%);
+      margin: 24px 0 calc(clamp(32px, 4vw, 48px) * -1);
+    }
   }
 }
 
-.bw-section {
-  padding: clamp(64px, 8vw, 112px) 0;
-  border-top: 1px solid var(--line);
+// ----------------------------------------------------------------------------
+// 2. Context Marquee + Statement & Before/After Mini Cards
+// ----------------------------------------------------------------------------
+.bw-marquee {
+  padding: 22px 0;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
 
-  &--band {
-    background-color: var(--band-dark);
-    border-top-color: transparent;
-    color: var(--band-ink);
+  &__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: bw-marquee-scroll 48s linear infinite;
 
-    .bw-section__index {
-      border-bottom-color: var(--band-line);
-      color: var(--band-muted);
-    }
-
-    h2,
-    h3 {
-      color: var(--band-ink);
-    }
-
-    p {
-      color: var(--band-muted);
+    &:hover {
+      animation-play-state: paused;
     }
   }
 
-  &__head {
-    margin-bottom: clamp(36px, 5vw, 56px);
+  &__group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 12px;
+    padding-right: 12px;
+  }
+
+  &__pill {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding: 7px 16px;
+    background-color: var(--bw-tint);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+
+@keyframes bw-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.bw-statement {
+  padding: clamp(72px, 9vw, 124px) 0;
+  background-color: var(--bg);
+
+  &__header {
+    max-width: 740px;
+    margin: 0 auto clamp(44px, 6vw, 68px);
+    text-align: center;
 
     h2 {
-      margin: 24px 0 12px;
-      font-size: clamp(1.6rem, 2.6vw, 2.35rem);
-      line-height: 1.25;
-    }
-
-    > p:last-child {
       margin: 0;
-      max-width: 56ch;
-      color: var(--muted);
+      font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+      line-height: 1.3;
+      text-wrap: balance;
     }
   }
 
-  &__index {
-    margin: 0;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
+  &__body {
+    margin: 26px auto 0;
+    max-width: 56ch;
     color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    text-wrap: pretty;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+
+    @media (max-width: 767.98px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
-.bw-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+.bw-contrast-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(24px, 3.2vw, 36px);
+  background-color: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--bw-radius);
 
-  @media (max-width: 991.98px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.bw-card {
-  padding: clamp(24px, 3vw, 36px);
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-
-  &__index {
-    margin: 0 0 18px;
-    color: var(--bw-accent);
-    font-family: var(--font-mono);
+  &__tag {
+    align-self: flex-start;
+    padding: 4px 12px;
+    background-color: var(--bw-tint);
+    border-radius: 999px;
+    color: var(--bw-primary);
     font-size: 0.78rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.04em;
   }
 
-  h3 {
-    margin: 0 0 12px;
-    font-size: 1.25rem;
-    line-height: 1.35;
-  }
-
-  p {
-    margin: 0;
+  &__before {
+    margin: 4px 0 0;
     color: var(--muted);
     font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  &__arrow {
+    color: var(--bw-primary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+
+  &__after {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.0625rem;
     line-height: 1.75;
   }
 }
 
-.bw-steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--band-line);
-  border-left: 1px solid var(--band-line);
+// ----------------------------------------------------------------------------
+// 3. Dark Charcoal-Plum Band: Sticky Center Phone + Alternating Features
+// ----------------------------------------------------------------------------
+.bw-features {
+  padding: clamp(84px, 10vw, 140px) 0;
+  background-color: var(--bw-dark);
+  color: #ffffff;
+
+  .container {
+    max-width: min(1360px, 94vw);
+  }
+
+  &__head {
+    max-width: 720px;
+    margin: 0 auto clamp(56px, 7vw, 96px);
+    text-align: center;
+
+    h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.85rem, 3vw, 2.5rem);
+      line-height: 1.3;
+    }
+  }
+
+  &__stage {
+    position: relative;
+  }
+
+  &__phone-col {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  &__sticky {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+    align-self: flex-start;
+    width: min(444px, 100%);
+    height: fit-content;
+    padding: 8px 0;
+
+    .bw-phone-frame {
+      width: 100%;
+    }
+  }
+
+  &__screen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 380ms ease;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  &__items {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(56px, 10vh, 112px);
+    padding: 40px 0;
+  }
 
   @media (max-width: 991.98px) {
-    grid-template-columns: 1fr;
+    &__phone-col {
+      position: static;
+      margin-bottom: 40px;
+    }
+
+    &__sticky {
+      position: static;
+      padding: 0;
+    }
+
+    &__items {
+      gap: 24px;
+      padding: 0;
+    }
   }
 }
 
-.bw-step {
-  padding: clamp(24px, 3vw, 40px);
-  border-right: 1px solid var(--band-line);
-  border-bottom: 1px solid var(--band-line);
+.bw-feature-item {
+  width: min(350px, 29%);
+  padding: 28px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--bw-radius);
+  transition:
+    border-color 280ms ease,
+    background-color 280ms ease;
+
+  &.is-active {
+    background-color: rgba(154, 168, 248, 0.08);
+    border-color: rgba(154, 168, 248, 0.45);
+  }
+
+  &--left {
+    justify-self: start;
+  }
+
+  &--right {
+    justify-self: end;
+  }
 
   &__num {
-    margin: 0 0 20px;
+    margin: 0 0 14px;
+    color: var(--bw-primary-bright);
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     letter-spacing: 0.12em;
   }
 
   h3 {
-    margin: 0 0 12px;
-    font-size: 1.3rem;
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+    line-height: 1.3;
   }
 
-  p {
-    margin: 0;
+  &__desc {
+    margin: 0 0 22px;
+    color: rgba(255, 255, 255, 0.74);
     font-size: 0.95rem;
     line-height: 1.8;
+  }
+
+  &__kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  &__metric {
+    color: var(--bw-primary-bright);
+    font-size: clamp(1.4rem, 2vw, 1.85rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  &__caption {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 991.98px) {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// 4. Cool Mist Band: 3-Step Workflow + Custom Context Packs Card
+// ----------------------------------------------------------------------------
+.bw-utility {
+  padding: clamp(72px, 9vw, 120px) 0;
+  background-color: var(--bw-mist);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 24px;
+    align-items: stretch;
+
+    @media (max-width: 991.98px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.bw-utility-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(28px, 4vw, 48px);
+  background-color: #ffffff;
+  border: 1px solid rgba(38, 56, 70, 0.08);
+  border-radius: var(--bw-radius);
+
+  &--accent {
+    justify-content: center;
+    background:
+      radial-gradient(circle at 88% 16%, rgba(95, 113, 224, 0.14), transparent 52%),
+      #ffffff;
+  }
+
+  &__badge {
+    align-self: flex-start;
+    margin: 0 0 20px;
+    padding: 5px 12px;
+    background-color: var(--bw-tint);
+    border-radius: 999px;
+    color: var(--bw-primary);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  h2 {
+    margin: 0 0 22px;
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
+    line-height: 1.3;
+  }
+
+  &__body {
+    margin: 0 0 32px;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.85;
+  }
+
+  .bw-pill-btn {
+    align-self: flex-start;
+  }
+}
+
+.bw-workflow-list {
+  display: grid;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+
+    &:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 1.125rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+  }
+
+  &__num {
+    color: var(--bw-primary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding-top: 3px;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// 5. Asymmetric FAQ Accordion
+// ----------------------------------------------------------------------------
+.bw-faq {
+  padding: clamp(72px, 9vw, 120px) 0;
+  background-color: var(--bg);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.36fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: start;
+
+    @media (max-width: 991.98px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title-col {
+    h2 {
+      margin: 0;
+      font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+      line-height: 1.25;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 14px;
+  }
+
+  &__item {
+    background-color: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: var(--bw-radius);
+    transition: border-color 220ms ease;
+
+    &[open] {
+      border-color: var(--bw-primary);
+
+      .bw-faq__toggle::after {
+        transform: rotate(0deg);
+        opacity: 0;
+      }
+    }
+  }
+
+  &__q {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 24px;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__q-text {
+    color: var(--ink);
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+
+  &__prefix {
+    color: var(--bw-primary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  &__toggle {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    justify-self: end;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--bw-primary);
+      content: "";
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__a {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 12px;
+    padding: 18px 24px 22px;
+    border-top: 1px solid var(--line);
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Reduced Motion Safety
+// ----------------------------------------------------------------------------
+@media (prefers-reduced-motion: reduce) {
+  .bw-marquee__track {
+    animation: none;
+  }
+
+  .bw-pill-btn,
+  .bw-features__screen,
+  .bw-feature-item,
+  .bw-faq__item,
+  .bw-faq__toggle::after {
+    transition: none !important;
   }
 }

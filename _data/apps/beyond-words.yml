@@ -78,3 +78,82 @@ subscriptions:
 support:
   harmful_output_reporting: true
   in_app_report_path: "Use the Report action beside a generated result."
+
+hero_bubbles:
+  - label: "Diplomatic work reply"
+    tone: "light"
+  - label: "Natural translation"
+    tone: "soft"
+  - label: "Medieval duel invite"
+    tone: "dark"
+  - label: "Structured AI prompt"
+    tone: "light"
+  - label: "Deadpan memo"
+    tone: "soft"
+  - label: "Custom context pack"
+    tone: "dark"
+
+marquee_contexts:
+  - "Polite decline"
+  - "Concise Slack update"
+  - "Natural English"
+  - "Prompt normalizer"
+  - "Playful exaggeration"
+  - "Wuxia challenge letter"
+  - "Calm bug report"
+  - "Warm thank-you"
+  - "Deadpan memo"
+  - "Friendly follow-up"
+  - "Dramatic dinner invite"
+  - "Crisp meeting recap"
+
+statement_eyebrow: "WHY BEYOND WORDS"
+statement_heading: "Expression doesn't always have to be so serious."
+statement_body: "Keep your original facts and intent untouched—then shift the voice from buttoned-up work notes to playful, offbeat experiments whenever the mood strikes."
+statement_cards:
+  - tag: "Work reply"
+    before: "Can't make it tonight, too swamped."
+    after: "I'm tied up with a deadline tonight—could we push this to tomorrow afternoon?"
+  - tag: "Playful twist"
+    before: "Let's grab hotpot tonight."
+    after: "At sundown, we meet at the bubbling cauldron. Bring your finest appetite."
+
+spotlight_eyebrow: "CORE CAPABILITIES"
+spotlight_heading: "One text, endless contexts"
+spotlight_items:
+  - title: "Context-aware rewriting"
+    description: "Adapt wording for a specific audience, channel, or mood—grounded strictly in the text you provide, without inventing missing facts."
+    metric: "0 fabrication"
+    metric_caption: "Stays faithful to your input"
+    screenshot_index: 0
+  - title: "Translation with intent"
+    description: "Move across languages while preserving the practical subtext, rhythm, and social nuance of what you actually meant to say."
+    metric: "Intent first"
+    metric_caption: "Natural phrasing, not stiff literals"
+    screenshot_index: 1
+  - title: "Prompt normalization"
+    description: "Turn a rough one-line thought into a clean, structured prompt ready for any language model—without manually typing boilerplate."
+    metric: "1 line → spec"
+    metric_caption: "Structured in seconds"
+    screenshot_index: 2
+  - title: "Reusable packs & local history"
+    description: "Switch between built-in or imported context packs, edit every generated draft before use, and revisit past results stored locally on your device."
+    metric: "∞ packs"
+    metric_caption: "Import & customize your own"
+    screenshot_index: 3
+
+packs_card_badge: "CUSTOM CONTEXT PACKS"
+packs_card_title: "Build your own tone playground"
+packs_card_body: "Define your own personas, translation rules, or playful voices in a reusable context pack and import them right into Beyond Words."
+packs_card_cta: "Explore custom packs"
+
+faq_heading: "Questions"
+faqs:
+  - q: "Will Beyond Words invent facts I didn't write?"
+    a: "No. Every transformation is grounded in the text and context you provide, and the generated draft remains fully editable so you can review it before copying or sharing."
+  - q: "Where is my text history stored?"
+    a: "Your transformation history stays locally on your device by default—there is no cloud history sync and no mandatory account sign-up."
+  - q: "What is the difference between Google Play and the APK version?"
+    a: "The Google Play release includes the complete feature set and billing support. Some features are unavailable in the standalone APK build, so Google Play is recommended."
+  - q: "Can I create and share my own context packs?"
+    a: "Yes. You can author custom context packs for repeatable work templates or playful voices and import them directly—see the Custom Packs guide for the format."

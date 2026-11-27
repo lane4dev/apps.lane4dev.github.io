@@ -47,3 +47,82 @@ privacy:
 
 support:
   in_app_report_path: "使用生成结果旁边的“举报”操作。"
+
+hero_bubbles:
+  - label: "职场得体回复"
+    tone: "light"
+  - label: "地道跨语言"
+    tone: "soft"
+  - label: "武侠战书体"
+    tone: "dark"
+  - label: "结构化 Prompt"
+    tone: "light"
+  - label: "克制婉拒"
+    tone: "soft"
+  - label: "自定义语境包"
+    tone: "dark"
+
+marquee_contexts:
+  - "职场得体回复"
+  - "高情商婉拒"
+  - "地道英文表达"
+  - "提示词规范化"
+  - "武侠战书体"
+  - "冷幽默吐槽"
+  - "温和提意见"
+  - "克制致谢"
+  - "古风邀约"
+  - "简明周报"
+  - "道歉不卑微"
+  - "科幻播报腔"
+
+statement_eyebrow: "ABOUT BEYOND WORDS"
+statement_heading: "表达这件事，不必每次都那么严肃。"
+statement_body: "忠于你原本的事实与意图，既能帮你在需要分寸的场合把话说得得体、准确，也留了一块随时可以换个语境放飞的游乐场。"
+statement_cards:
+  - tag: "得体回复"
+    before: "今晚太忙了去不了，改天吧。"
+    after: "今晚手头有项收尾工作走不开，要不我们改约明晚？"
+  - tag: "放飞一下"
+    before: "今晚一起吃火锅吧。"
+    after: "暮色四合，红汤沸腾，特邀阁下赴此一战，不见不散。"
+
+spotlight_eyebrow: "CORE CAPABILITIES"
+spotlight_heading: "同一句原意，换一种语境长出不同样子"
+spotlight_items:
+  - title: "感知上下文的改写"
+    description: "根据受众、渠道、语气或沟通目标调整措辞——严格基于你提供的原文工作，不替你凭空编造事实。"
+    metric: "0 脑补"
+    metric_caption: "始终忠于你的原文事实"
+    screenshot_index: 0
+  - title: "保留意图的翻译"
+    description: "在跨语言转换时，不只是字面对应，更保留话语背后的实际含义、分寸感与自然语气。"
+    metric: "懂语境"
+    metric_caption: "保留弦外之音，而非机械直译"
+    screenshot_index: 1
+  - title: "提示词规范化"
+    description: "把随手写下的一句粗略想法，迅速整理为结构清晰、可直接交给语言模型使用的高质量提示词。"
+    metric: "一句话 → 结构化"
+    metric_caption: "几秒完成整理，省去反复铺垫"
+    screenshot_index: 2
+  - title: "可复用语境包与本地历史"
+    description: "自由切换内置或导入的自定义语境包；所有结果始终可编辑复核，历史记录默认留在你的设备本地。"
+    metric: "∞ 语境包"
+    metric_caption: "实用模板与放飞玩法随心扩展"
+    screenshot_index: 3
+
+packs_card_badge: "CUSTOM CONTEXT PACKS"
+packs_card_title: "搭一块属于你的语境游乐场"
+packs_card_body: "把常用的沟通模板、翻译偏好或天马行空的独特腔调写成自定义语境包，一键导入言外随时复用。"
+packs_card_cta: "查看自定义语境包说明"
+
+faq_heading: "常见问题"
+faqs:
+  - q: "言外会替我编造原文里没有的事实吗？"
+    a: "不会。言外严格围绕你提供的文本和选定语境进行转换，且生成结果始终保持可编辑，方便你在复制或分享前核对事实与分寸。"
+  - q: "我的文本历史记录保存在哪里？"
+    a: "历史记录默认保存在你的设备本地，不提供云端历史同步，也不要求强制注册账号。"
+  - q: "Google Play 版和 APK 版有什么区别？"
+    a: "Google Play 版本提供完整功能与订阅支持；独立 APK 版本有部分功能缺失，因此推荐通过 Google Play 商店下载。"
+  - q: "可以自己制作和导入语境包吗？"
+    a: "可以。你可以按文档格式编写自己的实用语境或趣味风格包并直接导入应用，详情可查看「自定义语境包」页面。"
